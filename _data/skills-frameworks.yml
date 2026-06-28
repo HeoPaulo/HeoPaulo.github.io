@@ -1,33 +1,17 @@
 # > name: Name of your framework
 # > weight: Describes how good you know the framework - values from 1 up to 5
-#
-# Example of a framework
-# - name: Framework
-#   weight: 5
 
-- name: Angular
-  weight: 5
-
-- name: AngularJS
-  weight: 3
-
-- name: React
+- name: ROS2
   weight: 4
 
-- name: Node
-  weight: 1
+- name: YOLOv8
+  weight: 4
 
-- name: Flutter
-  weight: 2
-
-- name: Express
+- name: OpenCV
   weight: 3
 
-- name: Django
-  weight: 1
+- name: IsaacSim
+  weight: 3
 
-- name: Spring
-  weight: 2
-
-- name: Rails
-  weight: 4
+- name: Gazebo
+  weight: 3

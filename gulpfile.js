@@ -135,3 +135,4 @@ var watch = gulp.parallel(watchData, watchMarkup, watchScripts, watchStyles);
  * compile the Jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', gulp.parallel(serve, watch));
+exports.styles = styles;

@@ -8,7 +8,7 @@
       }
     },
     "color": {
-      "value": ["#dc052d"]
+      "value": ["#0f3d28", "#1a5c3a", "#0a2a1c"]
     },
     "shape": {
       "type": "polygon",

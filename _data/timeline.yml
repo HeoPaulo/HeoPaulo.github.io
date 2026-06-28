@@ -1,61 +1,45 @@
-# > title: Name of your timeline entry, university or work place
-# > title-url: Link to your timeline entry, university or work place
-# > date: Time span
-# > subtitle: The description under the title
-# > tags: List of tags you want to associate with the entry
-# > timeline-side: The side on which you want to display the entry: left or right
+# > title / title_kr: Name of your timeline entry
+# > subtitle / subtitle_kr: Description
+# > timeline-side: left or right
 
-# Example of a timeline entry
-# - title: airbnb
-#   title-url: https://example.com/
-#   date: Sep 2019 - Present
-#   subtitle: Fullstack Developer
-#   tags:
-#     - tag: React
-#     - tag: Javascript
-#     - tag: Ruby
-#     - tag: Rails
-#   timeline-side: right
-
-- title: airbnb
-  title-url: https://example.com/
-  date: Sep 2019 - Present
-  subtitle: Fullstack Developer
+- title: ROKEY — Doosan Robotics
+  title-url: https://www.doosanrobotics.com
+  date: Dec 2025 - Jun 2026
+  subtitle: Intelligent Robotics Engineer Program (845hrs)
+  subtitle_kr: 지능형 로보틱스 엔지니어 과정 (845시간)
   tags:
-    - tag: React
-    - tag: Javascript
-    - tag: Ruby
-    - tag: Rails
+    - tag: ROS2
+    - tag: Python
+    - tag: Computer Vision
+    - tag: Ubuntu
+    - tag: DevOps
   timeline-side: right
 
-- title: Google
-  title-url: https://example.com/
-  date: Mar 2019 - Sep 2019
-  subtitle: Software Engineer as Intern
-  tags:
-    - tag: Flutter
-    - tag: Dart
-    - tag: Keycloak
-  timeline-side: right
-
-- title: Super University
-  title-url: https://example.com/
-  date: 2017 - 2019
-  subtitle: M.Sc. Computer Science
+- title: Suwon University
+  title-url: https://www.suwon.ac.kr
+  date: Feb 2018 - Aug 2024
+  subtitle: B.S. Mechanical Engineering — GPA 4.0 / 4.5
+  subtitle_kr: 기계공학과 학사 졸업 — 학점 4.0 / 4.5
   timeline-side: left
 
-- title: Facebook
-  title-url: https://example.com/
-  date: Sep 2017 - Mar 2019
-  subtitle: Front-End Developer as Intern
+- title: Korean Society of Mechanical Engineers
+  title-url: https://www.ksme.or.kr
+  date: Mar 2023 - Jun 2023
+  subtitle: Safe High-load Collaborative Robot Actuator Design — CAD & FEA
+  subtitle_kr: 안전한 고하중 협동로봇 구동기 설계 — CAD 및 수치해석
   tags:
-    - tag: React
-    - tag: Node
-    - tag: Javascript
+    - tag: CAD
+    - tag: FEA
+    - tag: MATLAB
   timeline-side: right
 
-- title: Super University
-  title-url: https://example.com/
-  date: 2014 - 2017
-  subtitle: B.A. Computer Science
+- title: Institute of Control, Robotics and Systems
+  title-url: https://www.icros.org
+  date: Mar 2023 - Apr 2023
+  subtitle: ANN-based Inverse Kinematics for High-load Collaborative Robot — CAD & FEA
+  subtitle_kr: 선형구동 방식 고하중 협동로봇 ANN 역기구학 — CAD 및 수치해석
+  tags:
+    - tag: CAD
+    - tag: FEA
+    - tag: MATLAB
   timeline-side: left

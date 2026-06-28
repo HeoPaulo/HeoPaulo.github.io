@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -17,11 +17,83 @@
   <link rel="stylesheet" href="{{ "/assets/css/main.min.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/assets/css/vendors.min.css" | prepend: site.baseurl }}">
 
+  <style>
+    /* Language toggle */
+    .lang-kr { display: none; }
+    [data-lang="kr"] .lang-en { display: none; }
+    [data-lang="kr"] .lang-kr { display: inline; }
+
+    #lang-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ccc;
+      padding: 5px 13px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(6px);
+      transition: background 0.2s, color 0.2s;
+    }
+    #lang-toggle:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+    }
+  </style>
+
+  <script>
+    // Apply saved language before render to avoid flash
+    (function() {
+      var lang = localStorage.getItem('lang') || 'en';
+      document.documentElement.setAttribute('data-lang', lang);
+    })();
+  </script>
+
   <script src="{{ "/assets/js/vendors.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/assets/js/app.min.js" | prepend: site.baseurl }}"></script>
+
+  <script>
+    // Patch TxtRotate: add _stopped flag support + auto-stop previous instance
+    // Must run after app.min.js (TxtRotate defined) but before its setTimeout(1500) fires
+    (function() {
+      var _origTick = TxtRotate.prototype.tick;
+      TxtRotate.prototype.tick = function() {
+        if (this._stopped) return;
+        _origTick.call(this);
+      };
+
+      var _OrigCtor = TxtRotate;
+      window.TxtRotate = function(el, toRotate, period) {
+        if (el._rotateInstance) el._rotateInstance._stopped = true;
+        _OrigCtor.call(this, el, toRotate, period);
+        el._rotateInstance = this;
+      };
+      window.TxtRotate.prototype = _OrigCtor.prototype;
+
+      // If KR is saved, swap data-rotate to KR array once DOM is ready
+      // (Cannot use getElementById in <head> — body not parsed yet)
+      var _initLang = localStorage.getItem('lang') || 'en';
+      if (_initLang === 'kr') {
+        document.addEventListener('DOMContentLoaded', function() {
+          var el = document.getElementById('txt-rotate');
+          if (el) {
+            var krData = el.getAttribute('data-rotate-kr');
+            if (krData) el.setAttribute('data-rotate', krData);
+          }
+        });
+      }
+    })();
+  </script>
 </head>
 
 <body>
+  <button id="lang-toggle" onclick="toggleLang()">KR</button>
+
   <div id="preloader">
     <div class="load">
       <hr />
@@ -59,5 +131,34 @@
     {% endif %}
   </div>
   {% include footer.html %}
+
+  <script>
+    (function() {
+      var btn = document.getElementById('lang-toggle');
+      var lang = document.documentElement.getAttribute('data-lang') || 'en';
+      btn.textContent = lang === 'kr' ? 'EN' : 'KR';
+    })();
+
+    function toggleLang() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-lang') || 'en';
+      var next = current === 'kr' ? 'en' : 'kr';
+      html.setAttribute('data-lang', next);
+      localStorage.setItem('lang', next);
+      document.getElementById('lang-toggle').textContent = next === 'kr' ? 'EN' : 'KR';
+
+      // Reinitialize typing text with correct language
+      var el = document.getElementById('txt-rotate');
+      if (el) {
+        var rotateData = next === 'kr'
+          ? el.getAttribute('data-rotate-kr')
+          : el.getAttribute('data-rotate');
+        if (rotateData) {
+          el.innerHTML = '<span class="wrap"></span>';
+          new TxtRotate(el, JSON.parse(rotateData), el.getAttribute('data-period'));
+        }
+      }
+    }
+  </script>
 </body>
 </html>
