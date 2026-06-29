@@ -1,8 +1,17 @@
-<h1 class="title">
-  <span class="lang-en">{{site.about_me_title}}</span>
-  <span class="lang-kr">{{site.data.i18n.about_me_title}}</span>
-</h1>
-<p class="description" data-aos="fade-down">
-  <span class="lang-en">{{site.about_me_description}}</span>
-  <span class="lang-kr">{{site.data.i18n.about_me_description}}</span>
-</p>
+<div class="aboutme-wrapper">
+  {% if site.profile_photo %}
+  <div class="aboutme-photo-wrapper" data-aos="fade-left">
+    <img class="aboutme-photo" src="{{ site.profile_photo | prepend: site.baseurl }}" alt="{{ site.username }}">
+  </div>
+  {% endif %}
+  <div class="aboutme-content">
+    <h1 class="title">
+      <span class="lang-en">{{site.about_me_title}}</span>
+      <span class="lang-kr">{{site.data.i18n.about_me_title}}</span>
+    </h1>
+    <p class="description" data-aos="fade-down">
+      <span class="lang-en">{{site.about_me_description}}</span>
+      <span class="lang-kr">{{site.data.i18n.about_me_description}}</span>
+    </p>
+  </div>
+</div>

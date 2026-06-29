@@ -5,6 +5,7 @@
   </span></h1>
   <div class="projects-wrapper">
     {% for project in site.data.projects %}
+      {% assign detail_page = site.portfolio | where: "project_name", project.name | first %}
       <div class="project neumorphism-card" data-aos="zoom-in-down">
         <div class="name-link-wrapper">
           <h3>
@@ -16,9 +17,17 @@
           <span class="lang-en">{{project.descr}}</span>
           <span class="lang-kr">{{project.descr_kr | default: project.descr}}</span>
         </p>
-        {% if project.demo %}
-          <a class="highlight-link" href="{{project.demo}}" target="_blank" rel="noreferrer">Demo</a>
-        {% endif %}
+        <div class="project-card-links">
+          {% if project.demo %}
+            <a class="highlight-link" href="{{project.demo}}" target="_blank" rel="noreferrer">Demo</a>
+          {% endif %}
+          {% if detail_page %}
+            <a class="highlight-link" href="{{ detail_page.url | prepend: site.baseurl }}">
+              <span class="lang-en">More →</span>
+              <span class="lang-kr">더보기 →</span>
+            </a>
+          {% endif %}
+        </div>
         {% if project.tags %}
           <div class="tag-wrapper">
             {% for tag in project.tags %}
@@ -76,10 +85,12 @@
             </div>
           </div>
           <p class="project-desc">{{repository.description}}</p>
-          {% if repository.homepage != "" and repository.homepage != nil %}
-            <a class="highlight-link" href="{{repository.homepage}}" target="_blank" rel="noreferrer">Demo</a>
-          {% endif %}
-          <a class="highlight-link" href="{{repository.html_url}}" target="_blank" rel="noreferrer">Github</a>
+          <div class="project-card-links">
+            {% if repository.homepage != "" and repository.homepage != nil %}
+              <a class="highlight-link" href="{{repository.homepage}}" target="_blank" rel="noreferrer">Demo</a>
+            {% endif %}
+            <a class="highlight-link" href="{{repository.html_url}}" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
           {% if repository.topics %}
             <div class="tag-wrapper">
               {% for topic in repository.topics %}

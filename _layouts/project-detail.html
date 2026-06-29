@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} — {{ site.title }}</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/vendors.min.css" | prepend: site.baseurl }}">
+  <style>
+    .project-detail-page {
+      max-width: 62em;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: #00c896;
+      font-weight: 600;
+      text-decoration: none;
+      transition: letter-spacing 0.2s;
+    }
+    .back-link:hover { letter-spacing: 0.05rem; color: #dff0e8; }
+    .project-detail-page h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-detail-page h2 {
+      font-size: 1.4rem;
+      color: #00c896;
+      margin: 2rem 0 0.75rem;
+    }
+    .project-detail-page p { line-height: 1.7; }
+    .project-detail-content img,
+    .project-detail-content video,
+    .project-detail-content iframe {
+      max-width: 100%;
+      border-radius: 0.75rem;
+      margin: 1rem 0;
+      display: block;
+    }
+    .project-detail-content video { width: 100%; }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 200, 150, 0.15);
+    }
+    .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  </style>
+</head>
+
+<body>
+  <div class="project-detail-page">
+    <a class="back-link" href="{{ "/" | prepend: site.baseurl }}">← Back</a>
+
+    <h1>
+      <span class="lang-en">{{ page.title }}</span>
+      <span class="lang-kr">{{ page.title_kr | default: page.title }}</span>
+    </h1>
+
+    <div class="project-meta">
+      {% if page.tags %}
+      <div class="tag-wrapper" style="margin:0">
+        {% for tag in page.tags %}
+          <span class="tag neumorphism-card">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="project-links">
+        {% if page.demo %}
+          <a class="highlight-link" href="{{ page.demo }}" target="_blank" rel="noreferrer">Demo</a>
+        {% endif %}
+        {% if page.github %}
+          <a class="highlight-link" href="{{ page.github }}" target="_blank" rel="noreferrer">GitHub</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="project-detail-content">
+      {{ content }}
+    </div>
+  </div>
+
+  {% include footer.html %}
+
+  <script>
+    (function() {
+      var lang = localStorage.getItem('lang') || 'en';
+      document.documentElement.setAttribute('data-lang', lang);
+    })();
+  </script>
+</body>
+</html>

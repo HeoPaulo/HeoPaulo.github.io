@@ -44,6 +44,40 @@
       background: rgba(255, 255, 255, 0.18);
       color: #fff;
     }
+
+    /* About Me — photo layout */
+    .aboutme-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .aboutme-photo-wrapper { flex-shrink: 0; order: 2; }
+    .aboutme-photo {
+      border-radius: 50%;
+      width: 9rem;
+      height: 9rem;
+      object-fit: cover;
+      box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.5), 0 0 24px rgba(0, 200, 150, 0.12);
+      display: block;
+    }
+    .aboutme-content { flex: 1; order: 1; }
+    .aboutme-content .title { text-align: left; }
+    .aboutme-content .description { text-align: left; }
+    @media (max-width: 48em) {
+      .aboutme-wrapper { flex-direction: column; }
+      .aboutme-photo-wrapper { order: 1; }
+      .aboutme-content { order: 2; text-align: center; }
+      .aboutme-content .title,
+      .aboutme-content .description { text-align: center; }
+    }
+
+    /* Project card links row */
+    .project-card-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
   </style>
 
   <script>
@@ -109,14 +143,14 @@
         {% include section-aboutme.html %}
       </section>
     {% endif %}
-    {%if site.show_skills_card %}
-      <section class="card neumorphism-card-big">
-        {% include section-skills.html %}
-      </section>
-    {% endif %}
     {%if site.show_timeline_card %}
       <section class="card neumorphism-card-big">
         {% include section-timeline.html %}
+      </section>
+    {% endif %}
+    {%if site.show_skills_card %}
+      <section class="card neumorphism-card-big">
+        {% include section-skills.html %}
       </section>
     {% endif %}
     {%if site.show_projects_card %}
