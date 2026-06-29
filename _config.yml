@@ -4,11 +4,11 @@
 title: Chanyoung Heo
 description: Robotics Software Engineer Portfolio
 # baseurl: "" since this is a <user>.github.io repository
-baseurl: "https://github.com/HeoPaulo/HeoPaulo.github.io"
+baseurl: ""
 
 # LANDING PAGE
 username: Chanyoung Heo
-typing_text: Robot Engineer
+typing_text: robot engineer
 email: heopaulo70@gmail.com
 github_username: HeoPaulo
 linkedin_username: chanyoung-heo-509bbb419
@@ -31,8 +31,8 @@ skills_title_kr: 기술 스택
 
 # TIMELINE SECTION
 show_timeline_card: true
-timeline_title: Background
-timeline_title_kr: 학력 및 이력
+timeline_title: Experience
+timeline_title_kr: 이력
 cv_download_link: "#"
 
 # PROJECTS SECTION
