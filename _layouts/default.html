@@ -122,15 +122,17 @@
       };
       window.TxtRotate.prototype = _OrigCtor.prototype;
 
-      // If KR is saved, swap data-rotate to KR array once DOM is ready
-      // (Cannot use getElementById in <head> — body not parsed yet)
+      // On KR init: start carousel with KR data without overwriting data-rotate (EN stays intact)
       var _initLang = localStorage.getItem('lang') || 'en';
       if (_initLang === 'kr') {
         document.addEventListener('DOMContentLoaded', function() {
           var el = document.getElementById('txt-rotate');
           if (el) {
             var krData = el.getAttribute('data-rotate-kr');
-            if (krData) el.setAttribute('data-rotate', krData);
+            if (krData) {
+              el.innerHTML = '<span class="wrap"></span>';
+              new TxtRotate(el, JSON.parse(krData), el.getAttribute('data-period'));
+            }
           }
         });
       }

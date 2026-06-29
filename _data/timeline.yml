@@ -1,6 +1,56 @@
 # > title / title_kr: Name of your timeline entry
 # > subtitle / subtitle_kr: Description
-# > timeline-side: left or right
+
+- title: Apgujeong High School
+  title-url: https://apgujeong.sen.hs.kr
+  date: Mar 2014 - Feb 2017
+  subtitle: High School Graduation
+  subtitle_kr: 압구정고등학교 졸업
+
+- title: Korean History Proficiency Test
+  date: Sep 2020
+  subtitle: "Certified — No. 49-109425"
+  subtitle_kr: "한국사능력검정시험 인증 — 인증번호 49-109425"
+
+- title: JLPT N4
+  date: Dec 2021
+  subtitle: Japanese Language Proficiency Test — Level N4
+  subtitle_kr: 일본어능력시험 N4
+  tags:
+    - tag: Japanese
+
+- title: Korean Society of Mechanical Engineers
+  title-url: https://www.ksme.or.kr
+  date: Apr 2023
+  subtitle: ANN-based Inverse Kinematics for High-load Collaborative Robot — 2nd Author
+  subtitle_kr: 선형구동 방식 고하중 협동로봇 ANN 역기구학 — 제2저자
+  tags:
+    - tag: CAD
+    - tag: FEA
+    - tag: MATLAB
+
+- title: Institute of Control, Robotics and Systems
+  title-url: https://www.icros.org
+  date: Jun 2023
+  subtitle: Safe High-load Collaborative Robot Actuator Design — 3rd Author
+  subtitle_kr: 안전한 고하중 협동로봇 구동기 설계 — 제3저자
+  tags:
+    - tag: CAD
+    - tag: FEA
+    - tag: MATLAB
+
+- title: Suwon University
+  title-url: https://www.suwon.ac.kr
+  date: Feb 2018 - Aug 2024
+  subtitle: B.S. Mechanical Engineering — GPA 4.0 / 4.5
+  subtitle_kr: 기계공학과 학사 졸업 — 학점 4.0 / 4.5
+
+- title: TOEIC Speaking
+  date: Sep 2024
+  subtitle: Advanced Low — Score 160
+  subtitle_kr: 어드밴스드 로우 — 160점
+  tags:
+    - tag: English
 
 - title: ROKEY — Doosan Robotics
   title-url: https://www.doosanrobotics.com
@@ -13,62 +63,3 @@
     - tag: Computer Vision
     - tag: Ubuntu
     - tag: DevOps
-  timeline-side: right
-
-- title: TOEIC Speaking
-  date: Sep 2024
-  subtitle: Advanced Low — Score 160
-  subtitle_kr: 어드밴스드 로우 — 160점
-  tags:
-    - tag: English
-  timeline-side: left
-
-- title: Suwon University
-  title-url: https://www.suwon.ac.kr
-  date: Feb 2018 - Aug 2024
-  subtitle: B.S. Mechanical Engineering — GPA 4.0 / 4.5
-  subtitle_kr: 기계공학과 학사 졸업 — 학점 4.0 / 4.5
-  timeline-side: right
-
-- title: Institute of Control, Robotics and Systems
-  title-url: https://www.icros.org
-  date: Jun 2023
-  subtitle: Safe High-load Collaborative Robot Actuator Design — 3rd Author
-  subtitle_kr: 안전한 고하중 협동로봇 구동기 설계 — 제3저자
-  tags:
-    - tag: CAD
-    - tag: FEA
-    - tag: MATLAB
-  timeline-side: left
-
-- title: Korean Society of Mechanical Engineers
-  title-url: https://www.ksme.or.kr
-  date: Apr 2023
-  subtitle: ANN-based Inverse Kinematics for High-load Collaborative Robot — 2nd Author
-  subtitle_kr: 선형구동 방식 고하중 협동로봇 ANN 역기구학 — 제2저자
-  tags:
-    - tag: CAD
-    - tag: FEA
-    - tag: MATLAB
-  timeline-side: right
-
-- title: JLPT N4
-  date: Dec 2021
-  subtitle: Japanese Language Proficiency Test — Level N4
-  subtitle_kr: 일본어능력시험 N4
-  tags:
-    - tag: Japanese
-  timeline-side: left
-
-- title: Korean History Proficiency Test
-  date: Sep 2020
-  subtitle: "Certified — No. 49-109425"
-  subtitle_kr: "한국사능력검정시험 인증 — 인증번호 49-109425"
-  timeline-side: right
-
-- title: Apgujeong High School
-  title-url: https://apgujeong.sen.hs.kr
-  date: Mar 2014 - Feb 2017
-  subtitle: High School Graduation
-  subtitle_kr: 압구정고등학교 졸업
-  timeline-side: left
