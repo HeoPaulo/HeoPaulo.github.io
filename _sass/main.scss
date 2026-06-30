@@ -363,141 +363,92 @@ a {
 
 /* Skills Section */
 
-#skills {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  div {
-    padding: 0.2rem;
-    transition: opacity 0.5s;
-  }
-
-  div[skill-type="language"] {
-    color: #00c896;
-  }
-
-  div[skill-type="framework"] {
-    color: #52b788;
-  }
-
-  div[skill-type="tool"] {
-    color: #95d5b2;
-  }
-
-  div[skill-weight="1"] {
-    font-size: 0.75rem;
-    line-height: 0.25rem;
-  }
-
-  div[skill-weight="2"] {
-    font-size: 1.25rem;
-    line-height: 0.75rem;
-  }
-
-  div[skill-weight="3"] {
-    font-size: 1.75rem;
-    line-height: 1.25rem;
-  }
-
-  div[skill-weight="4"] {
-    font-size: 2.25rem;
-    line-height: 1.75rem;
-  }
-
-  div[skill-weight="5"] {
-    font-size: 2.75rem;
-    line-height: 2.25rem;
-  }
-
-  input[type="radio"] {
-    display: none;
-  }
-
-  .filter-button {
-    display: none;
-  }
-}
-
-/* Timeline Section — horizontal */
-
-.timeline-h-wrap {
-  overflow-x: auto;
-  padding: 0.5rem 0 1rem;
-
-  &::-webkit-scrollbar { height: 4px; }
-  &::-webkit-scrollbar-thumb { background: rgba(0, 200, 150, 0.3); border-radius: 2px; }
-}
-
-.timeline-h {
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-  min-width: max-content;
-  padding: 0 2rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: calc(2.4rem + 6px);
-    left: 2rem;
-    right: 2rem;
-    height: 2px;
-    background: linear-gradient(
-      to right,
-      rgba(0, 200, 150, 0) 0%,
-      #00c896 3%,
-      #00c896 97%,
-      rgba(0, 200, 150, 0) 100%
-    );
-  }
-}
-
-.tl-item {
+.skills-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 190px;
-  flex-shrink: 0;
-  padding: 0 0.5rem;
+  gap: 1rem;
+  padding: 0.5rem 0;
 }
 
-.tl-date-label {
-  font-family: $font-family-numbers;
-  font-size: 0.65rem;
+.skills-row {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem;
+  align-items: start;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}
+
+.skills-label {
+  font-size: 0.7rem;
+  font-weight: $font-weight-strong;
   color: $primary-color;
-  text-align: center;
-  height: 2.4rem;
+  padding-top: 0.3rem;
+  text-align: right;
+
+  @media (max-width: 480px) {
+    text-align: left;
+  }
+}
+
+.skills-tags {
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 0.35rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Timeline Section — vertical list */
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.tl-row {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 1rem;
+  align-items: start;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+
+.tl-date {
+  font-family: $font-family-numbers;
+  font-size: 0.7rem;
+  color: $primary-color;
+  padding-top: 0.1rem;
   white-space: nowrap;
+  text-align: right;
+
+  @media (max-width: 480px) {
+    text-align: left;
+    opacity: 0.8;
+  }
 }
 
-.tl-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: $primary-color;
-  box-shadow: 0 0 8px rgba(0, 200, 150, 0.5);
-  flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 0.75rem;
-}
+.tl-body {
+  border-left: 2px solid rgba(0, 200, 150, 0.25);
+  padding-left: 1rem;
 
-.tl-card {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  text-align: center;
+  @media (max-width: 480px) {
+    border-left: none;
+    padding-left: 0;
+  }
 }
 
 .tl-flag {
   font-weight: $font-weight-strong;
   font-size: 0.8rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 
   a {
     color: $primary-color;
@@ -512,8 +463,8 @@ a {
   margin-bottom: 0.4rem;
 }
 
-.tl-card .tag-wrapper {
-  margin-top: 0.5rem;
+.tl-body .tag-wrapper {
+  margin-top: 0.4rem;
 }
 
 /* Projects Card */
@@ -623,76 +574,6 @@ a {
     }
   }
 
-  #skills {
-    div[skill-weight="1"] {
-      font-size: 1rem;
-      line-height: 0rem;
-    }
-
-    div[skill-weight="2"] {
-      font-size: 2rem;
-      line-height: 1rem;
-    }
-
-    div[skill-weight="3"] {
-      font-size: 3rem;
-      line-height: 2rem;
-    }
-
-    div[skill-weight="4"] {
-      font-size: 4rem;
-      line-height: 3rem;
-    }
-
-    div[skill-weight="5"] {
-      font-size: 5rem;
-      line-height: 4rem;
-    }
-
-    .filter-button {
-      border-radius: 0.5rem;
-      cursor: pointer;
-      display: unset;
-      margin: 0 0.5rem 1rem;
-      padding: 0.5rem 0.25rem;
-      text-align: center;
-      width: 21%;
-
-      &:hover {
-        letter-spacing: 0.25rem;
-      }
-    }
-
-    @mixin filter-out {
-      height: 0;
-      margin: 0;
-      opacity: 0;
-      padding: 0;
-      width: 0;
-    }
-
-    input[type="radio"]:checked + .filter-button {
-      color: $primary-color;
-      font-weight: $font-weight-strong;
-      @include neumorphism-button-pressed();
-    }
-
-    input[id="language"]:checked ~ div[skill-type="framework"],
-    input[id="language"]:checked ~ div[skill-type="tool"] {
-      @include filter-out;
-    }
-
-    input[id="framework"]:checked ~ div[skill-type="language"],
-    input[id="framework"]:checked ~ div[skill-type="tool"] {
-      @include filter-out;
-    }
-
-    input[id="tool"]:checked ~ div[skill-type="language"],
-    input[id="tool"]:checked ~ div[skill-type="framework"] {
-      @include filter-out;
-    }
-  }
-
   .projects-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -722,10 +603,6 @@ a {
     padding: 1rem 3rem;
   }
 
-  #skills .filter-button {
-    width: 21.5%;
-  }
-
   .projects-wrapper {
     > * {
       width: 45%;
@@ -736,10 +613,6 @@ a {
 @media only screen and (min-width: $large-screen) {
   .layout {
     padding: 5rem 5rem;
-  }
-
-  #skills .filter-button {
-    width: 22%;
   }
 
   .projects-wrapper {

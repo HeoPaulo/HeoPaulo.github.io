@@ -3,37 +3,38 @@
   <span class="lang-kr">{{site.data.i18n.skills_title}}</span>
 </h1>
 
-<div id="skills">
-  <input type="radio" id="all" name="filter" checked />
-  <label class="filter-button neumorphism-button" for="all">
-    <span class="lang-en">All</span><span class="lang-kr">{{site.data.i18n.skills_filter_all}}</span>
-  </label>
-  <input type="radio" id="language" name="filter" />
-  <label class="filter-button neumorphism-button" for="language">
-    <span class="lang-en">Languages</span><span class="lang-kr">{{site.data.i18n.skills_filter_languages}}</span>
-  </label>
-  <input type="radio" id="framework" name="filter" />
-  <label class="filter-button neumorphism-button" for="framework">
-    <span class="lang-en">Frameworks</span><span class="lang-kr">{{site.data.i18n.skills_filter_frameworks}}</span>
-  </label>
-  <input type="radio" id="tool" name="filter" />
-  <label class="filter-button neumorphism-button" for="tool">
-    <span class="lang-en">Tools</span><span class="lang-kr">{{site.data.i18n.skills_filter_tools}}</span>
-  </label>
-
-  {% for language in site.data.skills-languages %}
-    <div skill-type="language" skill-weight="{{language.weight}}" data-aos="zoom-in">
-      {{language.name}}
+<div class="skills-list">
+  <div class="skills-row" data-aos="fade-up">
+    <div class="skills-label">
+      <span class="lang-en">Languages</span>
+      <span class="lang-kr">{{site.data.i18n.skills_filter_languages}}</span>
     </div>
-  {% endfor %}
-  {% for framework in site.data.skills-frameworks %}
-    <div skill-type="framework" skill-weight="{{framework.weight}}" data-aos="zoom-in">
-      {{framework.name}}
+    <div class="skills-tags">
+      {% for item in site.data.skills-languages %}
+      <span class="tag neumorphism-card">{{item.name}}</span>
+      {% endfor %}
     </div>
-  {% endfor %}
-  {% for tool in site.data.skills-tools %}
-    <div skill-type="tool" skill-weight="{{tool.weight}}" data-aos="zoom-in">
-      {{tool.name}}
+  </div>
+  <div class="skills-row" data-aos="fade-up">
+    <div class="skills-label">
+      <span class="lang-en">Frameworks</span>
+      <span class="lang-kr">{{site.data.i18n.skills_filter_frameworks}}</span>
     </div>
-  {% endfor %}
+    <div class="skills-tags">
+      {% for item in site.data.skills-frameworks %}
+      <span class="tag neumorphism-card">{{item.name}}</span>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="skills-row" data-aos="fade-up">
+    <div class="skills-label">
+      <span class="lang-en">Tools</span>
+      <span class="lang-kr">{{site.data.i18n.skills_filter_tools}}</span>
+    </div>
+    <div class="skills-tags">
+      {% for item in site.data.skills-tools %}
+      <span class="tag neumorphism-card">{{item.name}}</span>
+      {% endfor %}
+    </div>
+  </div>
 </div>

@@ -1,21 +1,14 @@
 <div id="landing">
   <div class="landing-title">
     <h1>
-      <span class="lang-en">Hi, I'm</span>
-      <span class="lang-kr">안녕하세요, 다정한 개발자</span>
+      <span class="lang-en">Hi, I'm your Robotics Solution</span>
+      <span class="lang-kr">안녕하세요, 당신의 로보틱스 솔루션</span>
       <span class="highlight-title">
         <span class="lang-en">{{site.username}}</span>
         <span class="lang-kr">{{site.data.i18n.username}}</span>
       </span><span class="lang-kr">입니다!</span>
-      </span><span class="lang-en">,</span>
     </h1>
-    <h1>
-      <span id="txt-rotate"
-        data-period="2000"
-        data-rotate='["{{site.typing_text}}", "scroll down for details."]'
-        data-rotate-kr='["{{site.data.i18n.typing_text}}", "{{site.data.i18n.scroll_down}}"]'
-      ><span class="wrap"></span></span>
-    </h1>
+    <span id="txt-rotate" style="display:none" data-period="2000" data-rotate='[""]' data-rotate-kr='[""]'><span class="wrap"></span></span>
     <div class="landing-icons">
       {% if site.email != null %}
         <a class="social-link email" aria-label="My E-Mail" href="mailto:{{site.email}}">

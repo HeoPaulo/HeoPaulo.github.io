@@ -1,11 +1,11 @@
 # > title / title_kr: Name of your timeline entry
 # > subtitle / subtitle_kr: Description
 
-- title: Apgujeong High School
-  title-url: https://apgujeong.sen.hs.kr
-  date: Mar 2014 - Feb 2017
-  subtitle: High School Graduation
-  subtitle_kr: 압구정고등학교 졸업
+# - title: Apgujeong High School
+#   title-url: https://apgujeong.sen.hs.kr
+#   date: Mar 2014 - Feb 2017
+#   subtitle: High School Graduation
+#   subtitle_kr: 압구정고등학교 졸업
 
 - title: Korean History Proficiency Test
   date: Sep 2020
