@@ -4,14 +4,25 @@
     <span class="lang-kr">{{site.data.i18n.projects_title}}</span>
   </span></h1>
   <div class="projects-wrapper">
-    {% for project in site.data.projects %}
+    {% assign sorted_projects = site.data.projects | sort: "date" | reverse %}
+    {% for project in sorted_projects %}
       {% assign detail_page = site.portfolio | where: "project_name", project.name | first %}
       <div class="project neumorphism-card" data-aos="zoom-in-down">
+        <div class="project-thumb">
+          {% if project.thumb and project.thumb != "" %}
+            <img src="{{ project.thumb | prepend: site.baseurl }}" alt="{{ project.name }}">
+          {% else %}
+            <div class="project-thumb-placeholder"></div>
+          {% endif %}
+        </div>
         <div class="name-link-wrapper">
           <h3>
             <span class="lang-en">{{project.name}}</span>
             <span class="lang-kr">{{project.name_kr | default: project.name}}</span>
           </h3>
+          {% if project.date and project.date != "" %}
+            <span class="project-date">{{ project.date }}</span>
+          {% endif %}
         </div>
         <p class="project-desc">
           <span class="lang-en">{{project.descr}}</span>
