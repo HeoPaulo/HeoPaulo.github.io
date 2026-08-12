@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Chanyoung Heo's Portfolio</title>
+  <meta name="description" content="Robotics Engineer Portfolio">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+  <link rel="stylesheet" href="/assets/css/vendors.min.css">
+
+  <style>
+    /* Language toggle */
+    .lang-kr { display: none; }
+    [data-lang="kr"] .lang-en { display: none; }
+    [data-lang="kr"] .lang-kr { display: inline; }
+
+    /* About Me — photo layout */
+    .aboutme-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .aboutme-photo-wrapper { flex-shrink: 0; order: 2; }
+    .aboutme-photo {
+      border-radius: 50%;
+      width: 9rem;
+      height: 9rem;
+      object-fit: cover;
+      box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.5), 0 0 24px rgba(4, 120, 87, 0.12);
+      display: block;
+    }
+    .aboutme-content { flex: 1; order: 1; }
+    .aboutme-content .title { text-align: left; }
+    .aboutme-content .description { text-align: left; }
+    @media (max-width: 48em) {
+      .aboutme-wrapper { flex-direction: column; }
+      .aboutme-photo-wrapper { order: 1; }
+      .aboutme-content { order: 2; text-align: center; }
+      .aboutme-content .title,
+      .aboutme-content .description { text-align: center; }
+    }
+
+    /* Project card links row */
+    .project-card-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+  </style>
+
+  <script>
+    // Apply saved language before render to avoid flash
+    (function() {
+      var lang = localStorage.getItem('lang') || 'en';
+      document.documentElement.setAttribute('data-lang', lang);
+    })();
+  </script>
+
+  <script src="/assets/js/vendors.min.js"></script>
+  <script src="/assets/js/app.min.js"></script>
+
+  <script>
+    // Patch TxtRotate: add _stopped flag support + auto-stop previous instance
+    // Must run after app.min.js (TxtRotate defined) but before its setTimeout(1500) fires
+    (function() {
+      var _origTick = TxtRotate.prototype.tick;
+      TxtRotate.prototype.tick = function() {
+        if (this._stopped) return;
+        _origTick.call(this);
+      };
+
+      var _OrigCtor = TxtRotate;
+      window.TxtRotate = function(el, toRotate, period) {
+        if (el._rotateInstance) el._rotateInstance._stopped = true;
+        _OrigCtor.call(this, el, toRotate, period);
+        el._rotateInstance = this;
+      };
+      window.TxtRotate.prototype = _OrigCtor.prototype;
+
+      // On KR init: start carousel with KR data without overwriting data-rotate (EN stays intact)
+      var _initLang = localStorage.getItem('lang') || 'en';
+      if (_initLang === 'kr') {
+        document.addEventListener('DOMContentLoaded', function() {
+          var el = document.getElementById('txt-rotate');
+          if (el) {
+            var krData = el.getAttribute('data-rotate-kr');
+            if (krData) {
+              el.innerHTML = '<span class="wrap"></span>';
+              new TxtRotate(el, JSON.parse(krData), el.getAttribute('data-period'));
+            }
+          }
+        });
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <nav id="site-nav">
+    <a class="nav-name" href="/">
+      <span class="lang-en">Chanyoung Heo</span>
+      <span class="lang-kr">허찬영</span>
+    </a>
+    <div class="nav-right">
+      <div class="nav-lang-toggle">
+        <button id="lang-btn-en" onclick="setLang('en')">EN</button>
+        <button id="lang-btn-kr" onclick="setLang('kr')">KR</button>
+      </div>
+      <a href="#contact" class="nav-hire-btn">
+        <span class="lang-en">Contact Me</span>
+        <span class="lang-kr">연락처</span>
+      </a>
+    </div>
+  </nav>
+
+  <div id="preloader">
+    <div class="load">
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+    </div>
+  </div>
+  <div id="landing">
+  <div class="landing-content">
+    <p class="landing-eyebrow">
+      <span class="lang-en">An Engineer Who Never Hesitates</span>
+      <span class="lang-kr">망설이지 않는 엔지니어</span>
+    </p>
+    <h1 class="landing-name">
+      <span class="lang-en">Chanyoung Heo</span>
+      <span class="lang-kr">허찬영</span>
+    </h1>
+<span id="txt-rotate" style="display:none" data-period="2000" data-rotate='[""]' data-rotate-kr='[""]'><span class="wrap"></span></span>
+  </div>
+</div>
+
+  <div class="layout">
+    
+      <section class="card neumorphism-card-big">
+        
+  <h1 class="title"><span>
+    <span class="lang-en">Projects</span>
+    <span class="lang-kr">프로젝트</span>
+  </span></h1>
+  <div class="projects-wrapper">
+    
+      <div class="project neumorphism-card"
+           data-aos="zoom-in-down"
+           data-name-en="SLAM-based Autonomous Nursing Assistant Medical Robot"
+           data-name-kr="SLAM 기반 자율주행 간호사 보조 의료 로봇"
+           data-desc-en="Hospital robot with two modes — autonomous ward patrol with QR-based patient identification (Mode A) and nurse-following medication verification via GCP OCR (Mode B). Led patient_identifier package and built the STT CS application with Ollama LLM."
+           data-desc-kr="자율 순찰·QR 환자 인식(모드 A)과 간호사 추종·GCP OCR 약품 검증(모드 B)을 수행하는 병원 보조 로봇. patient_identifier 패키지 및 Ollama LLM 기반 STT CS 앱 개발 담당."
+           data-img="/assets/img/projects/intel1.gif"
+           data-demo=""
+           data-tags="ROS2 Humble,TurtleBot4(AMR),OAK-D(RGB-D),SLAM,LiDAR,YOLOv8s,Ubuntu 22.04"
+           data-detail="slam-robot">
+        <div class="project-thumb">
+          
+            <img src="/assets/img/projects/intel1.gif" alt="SLAM-based Autonomous Nursing Assistant Medical Robot" loading="lazy">
+          
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">
+            <span class="lang-en">SLAM-based Autonomous Nursing Assistant Medical Robot</span>
+            <span class="lang-kr">SLAM 기반 자율주행 간호사 보조 의료 로봇</span>
+          </h3>
+          
+            <div class="tag-wrapper">
+              
+                <span class="tag neumorphism-card">ROS2 Humble</span>
+              
+                <span class="tag neumorphism-card">TurtleBot4(AMR)</span>
+              
+                <span class="tag neumorphism-card">OAK-D(RGB-D)</span>
+              
+                <span class="tag neumorphism-card">SLAM</span>
+              
+                <span class="tag neumorphism-card">LiDAR</span>
+              
+                <span class="tag neumorphism-card">YOLOv8s</span>
+              
+                <span class="tag neumorphism-card">Ubuntu 22.04</span>
+              
+            </div>
+          
+          <button class="project-more-btn" onclick="openProjectModal(this.closest('.project'))">
+            <span class="lang-en">More →</span>
+            <span class="lang-kr">더보기 →</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="project neumorphism-card"
+           data-aos="zoom-in-down"
+           data-name-en="Digital Twin-based Quadruped Robot Border Security Automation Simulation"
+           data-name-kr="Digital Twin 기반 4족 보행 로봇 경계 자동화 시뮬레이션 시스템"
+           data-desc-en="Isaac Sim digital twin of a Unitree Go2 quadruped robot performing autonomous border patrol. 2-PC architecture: simulation PC streams 7-camera feeds and telemetry; C2 command center runs Nav2 patrol FSM and a tactical web console."
+           data-desc-kr="Unitree Go2 4족 보행 로봇의 자율 경계 순찰을 Isaac Sim으로 구현한 디지털 트윈 시스템. 시뮬레이션 PC와 지휘통제실(C2) PC의 2-PC 구조로 7채널 카메라 스트림 및 전술 콘솔 운영."
+           data-img="/assets/img/projects/cobot3.gif"
+           data-demo="https://github.com/HeoPaulo/cobot3_project_JINDO"
+           data-tags="Isaac Sim 5.1.0,Unitree Go2,ROS2 Humble,Nav2,YOLOv8,FastAPI,Next.js,PostgreSQL"
+           data-detail="jindo">
+        <div class="project-thumb">
+          
+            <img src="/assets/img/projects/cobot3.gif" alt="Digital Twin-based Quadruped Robot Border Security Automation Simulation" loading="lazy">
+          
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">
+            <span class="lang-en">Digital Twin-based Quadruped Robot Border Security Automation Simulation</span>
+            <span class="lang-kr">Digital Twin 기반 4족 보행 로봇 경계 자동화 시뮬레이션 시스템</span>
+          </h3>
+          
+            <div class="tag-wrapper">
+              
+                <span class="tag neumorphism-card">Isaac Sim 5.1.0</span>
+              
+                <span class="tag neumorphism-card">Unitree Go2</span>
+              
+                <span class="tag neumorphism-card">ROS2 Humble</span>
+              
+                <span class="tag neumorphism-card">Nav2</span>
+              
+                <span class="tag neumorphism-card">YOLOv8</span>
+              
+                <span class="tag neumorphism-card">FastAPI</span>
+              
+                <span class="tag neumorphism-card">Next.js</span>
+              
+                <span class="tag neumorphism-card">PostgreSQL</span>
+              
+            </div>
+          
+          <button class="project-more-btn" onclick="openProjectModal(this.closest('.project'))">
+            <span class="lang-en">More →</span>
+            <span class="lang-kr">더보기 →</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="project neumorphism-card"
+           data-aos="zoom-in-down"
+           data-name-en="Computer Vision &amp; Voice/LLM-based Custom Pick and Place Cobot"
+           data-name-kr="Computer Vision · 음성 기반 및 LLM 활용 사용자 맞춤형 Pick and Place 협동로봇"
+           data-desc-en="Voice-driven nut pick &amp; place system. User speaks health conditions → Whisper STT + LLM generates a custom nut combo → YOLO-OBB detects each nut → Doosan M0609 picks and places with grasp verification."
+           data-desc-kr="음성으로 건강 상태를 말하면 Whisper STT + LLM이 견과류 조합을 생성하고, YOLO-OBB로 검출한 뒤 Doosan M0609이 파지·배치하는 맞춤형 픽 앤 플레이스 시스템."
+           data-img="/assets/img/projects/cobot2.gif"
+           data-demo="https://github.com/HeoPaulo/cobot2_CV_STT_nutbot"
+           data-tags="ROS2 Humble,YOLOv8-OBB,Whisper STT,LLM,Doosan M0609,Intel RealSense,Supabase,IsaacSim"
+           data-detail="nutbot">
+        <div class="project-thumb">
+          
+            <img src="/assets/img/projects/cobot2.gif" alt="Computer Vision & Voice/LLM-based Custom Pick and Place Cobot" loading="lazy">
+          
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">
+            <span class="lang-en">Computer Vision & Voice/LLM-based Custom Pick and Place Cobot</span>
+            <span class="lang-kr">Computer Vision · 음성 기반 및 LLM 활용 사용자 맞춤형 Pick and Place 협동로봇</span>
+          </h3>
+          
+            <div class="tag-wrapper">
+              
+                <span class="tag neumorphism-card">ROS2 Humble</span>
+              
+                <span class="tag neumorphism-card">YOLOv8-OBB</span>
+              
+                <span class="tag neumorphism-card">Whisper STT</span>
+              
+                <span class="tag neumorphism-card">LLM</span>
+              
+                <span class="tag neumorphism-card">Doosan M0609</span>
+              
+                <span class="tag neumorphism-card">Intel RealSense</span>
+              
+                <span class="tag neumorphism-card">Supabase</span>
+              
+                <span class="tag neumorphism-card">IsaacSim</span>
+              
+            </div>
+          
+          <button class="project-more-btn" onclick="openProjectModal(this.closest('.project'))">
+            <span class="lang-en">More →</span>
+            <span class="lang-kr">더보기 →</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="project neumorphism-card"
+           data-aos="zoom-in-down"
+           data-name-en="ROS2-based Cooking &amp; Serving Process Automation Cobot"
+           data-name-kr="ROS2 활용 조리 및 서빙 공정 자동화 협동로봇"
+           data-desc-en="Doosan M0609 cobot that fully automates pancake production across 6 sequential steps (dough → press → plate → flip → sauce → powder) with 5-tool auto-exchange, force control, and a Firebase web dashboard."
+           data-desc-kr="팬케이크 조리 전 과정(반죽 → 프레스 → 접시 → 뒤집기 → 소스 → 가루)을 6단계로 완전 자동화한 Doosan M0609 협동로봇 시스템. 5종 도구 자동 교환, 힘 제어, Firebase 웹 대시보드 포함."
+           data-img="/assets/img/projects/cobot1.gif"
+           data-demo="https://github.com/HeoPaulo/cobot1_pancake_machine"
+           data-tags="ROS2 Humble,Doosan M0609,Python,Firebase,Force Control,Web Speech API"
+           data-detail="pancake-robot">
+        <div class="project-thumb">
+          
+            <img src="/assets/img/projects/cobot1.gif" alt="ROS2-based Cooking & Serving Process Automation Cobot" loading="lazy">
+          
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">
+            <span class="lang-en">ROS2-based Cooking & Serving Process Automation Cobot</span>
+            <span class="lang-kr">ROS2 활용 조리 및 서빙 공정 자동화 협동로봇</span>
+          </h3>
+          
+            <div class="tag-wrapper">
+              
+                <span class="tag neumorphism-card">ROS2 Humble</span>
+              
+                <span class="tag neumorphism-card">Doosan M0609</span>
+              
+                <span class="tag neumorphism-card">Python</span>
+              
+                <span class="tag neumorphism-card">Firebase</span>
+              
+                <span class="tag neumorphism-card">Force Control</span>
+              
+                <span class="tag neumorphism-card">Web Speech API</span>
+              
+            </div>
+          
+          <button class="project-more-btn" onclick="openProjectModal(this.closest('.project'))">
+            <span class="lang-en">More →</span>
+            <span class="lang-kr">더보기 →</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="project neumorphism-card"
+           data-aos="zoom-in-down"
+           data-name-en="Linear-Drive High-Load Cobot &amp; ANN Inverse Kinematics"
+           data-name-kr="캡스톤디자인 &lt;선형구동 방식 고하중 협동로봇 및 ANN 역기구학&gt;"
+           data-desc-en="Undergraduate capstone research designing a linear-actuator collaborative robot for high-payload tasks and applying an ANN to solve inverse kinematics, replacing closed-form equations with a trained model."
+           data-desc-kr="선형 액추에이터 기반 고하중 협동로봇 구조 설계 및 ANN 역기구학 적용 연구. 기존 회전관절의 가반하중 한계를 극복하고 신경망으로 역기구학 해를 추정하는 졸업 논문."
+           data-img=""
+           data-demo=""
+           data-tags="Linear Actuator,ANN (IK),Forward/Inverse Kinematics,Python,CAD"
+           data-detail="capstone">
+        <div class="project-thumb">
+          
+            <span class="project-thumb-placeholder">LINE</span>
+          
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">
+            <span class="lang-en">Linear-Drive High-Load Cobot & ANN Inverse Kinematics</span>
+            <span class="lang-kr">캡스톤디자인 <선형구동 방식 고하중 협동로봇 및 ANN 역기구학></span>
+          </h3>
+          
+            <div class="tag-wrapper">
+              
+                <span class="tag neumorphism-card">Linear Actuator</span>
+              
+                <span class="tag neumorphism-card">ANN (IK)</span>
+              
+                <span class="tag neumorphism-card">Forward/Inverse Kinematics</span>
+              
+                <span class="tag neumorphism-card">Python</span>
+              
+                <span class="tag neumorphism-card">CAD</span>
+              
+            </div>
+          
+          <button class="project-more-btn" onclick="openProjectModal(this.closest('.project'))">
+            <span class="lang-en">More →</span>
+            <span class="lang-kr">더보기 →</span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="project neumorphism-card"
+           data-aos="zoom-in-down"
+           data-name-en="Automatic Conveyor Belt System with Ultrasonic Sensor"
+           data-name-kr="Arduino Uno와 초음파 센서를 활용한 자동 컨베이어벨트 시스템"
+           data-desc-en="Self-regulating conveyor belt that automatically starts and stops based on object detection. HC-SR04 measures distance above the belt; objects within 15 cm activate the stepper motor via a pulley mechanism."
+           data-desc-kr="HC-SR04 초음파 센서로 물체를 감지해 스텝모터·풀리 구동 컨베이어벨트를 자동으로 작동·정지하는 시스템. 물체 부재 시 자동 정지로 수동 전원 조작 불필요."
+           data-img="/assets/img/projects/mecha1.gif"
+           data-demo=""
+           data-tags="Arduino Uno,HC-SR04,Stepper Motor,C++ (Arduino)"
+           data-detail="conveyor">
+        <div class="project-thumb">
+          
+            <img src="/assets/img/projects/mecha1.gif" alt="Automatic Conveyor Belt System with Ultrasonic Sensor" loading="lazy">
+          
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">
+            <span class="lang-en">Automatic Conveyor Belt System with Ultrasonic Sensor</span>
+            <span class="lang-kr">Arduino Uno와 초음파 센서를 활용한 자동 컨베이어벨트 시스템</span>
+          </h3>
+          
+            <div class="tag-wrapper">
+              
+                <span class="tag neumorphism-card">Arduino Uno</span>
+              
+                <span class="tag neumorphism-card">HC-SR04</span>
+              
+                <span class="tag neumorphism-card">Stepper Motor</span>
+              
+                <span class="tag neumorphism-card">C++ (Arduino)</span>
+              
+            </div>
+          
+          <button class="project-more-btn" onclick="openProjectModal(this.closest('.project'))">
+            <span class="lang-en">More →</span>
+            <span class="lang-kr">더보기 →</span>
+          </button>
+        </div>
+      </div>
+    
+  </div>
+
+  <!-- Hidden rich detail panels (rendered at build time, loaded into modal at runtime) -->
+  
+    
+      <div id="pd-slam-robot" style="display:none">
+        
+            <div class="pd-meta">
+  <span class="pd-badge">
+    <span class="lang-en">2026.06.05 – 2026.06.12 &nbsp;·&nbsp; 10 members</span>
+    <span class="lang-kr">2026.06.05 ~ 2026.06.12 &nbsp;·&nbsp; 10인</span>
+  </span>
+</div>
+
+<h2 class="pd-title">
+  <span class="lang-en">MediCart — Intelligent Hospital Nursing Assistant Robot</span>
+  <span class="lang-kr">MediCart — 병원 지능형 간호사 보조 로봇</span>
+</h2>
+
+<p class="pd-overview">
+  <span class="lang-en">Designed to reduce nurses' repetitive mobility tasks so they can focus on core patient care. A TurtleBot4-based AMR operates in two modes: <strong>Mode A</strong> autonomously patrols wards, verifies patient identity via QR wristband, and assists with digital intake forms; <strong>Mode B</strong> follows the nurse to each room and cross-validates medication labels against prescriptions via OCR — preventing administration errors at the point of care.</span>
+  <span class="lang-kr">간호사의 반복·이동 업무를 자동화해 핵심 케어에 집중할 수 있도록 개발하였습니다. TurtleBot4 기반 AMR이 <strong>모드 A</strong>에서는 병실을 자율 순찰하며 QR 팔찌로 환자 신원을 확인하고 웹 문진을 보조하고, <strong>모드 B</strong>에서는 간호사를 추종하며 약품 라벨을 OCR로 처방전과 비교 검증해 투약 오류를 예방합니다.</span>
+</p>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Operating Modes</span>
+    <span class="lang-kr">운영 모드</span>
+  </h3>
+  <div class="pd-mode-grid">
+    <div class="pd-mode-card">
+      <span class="pd-mode-label">Mode A</span>
+      <p>
+        <span class="lang-en">Autonomous Patrol &amp; Interview Assist — Robot navigates ward waypoints, confirms patient presence (YOLOv8s), scans QR wristband, validates room assignment via DB, then waits for web intake form submission.</span>
+        <span class="lang-kr">자율 순찰 + 문진 보조 — Nav2 웨이포인트로 병실 순회, YOLOv8s 재실 확인, QR 팔찌 스캔, DB 병실 검증 후 웹 문진 완료 대기.</span>
+      </p>
+    </div>
+    <div class="pd-mode-card">
+      <span class="pd-mode-label">Mode B</span>
+      <p>
+        <span class="lang-en">Nurse-Following Medication Assist — Robot follows the nurse (OAK-D depth + ReID tracking), parks at each room, then sequentially verifies each medication label via GCP Vision OCR against the prescription order.</span>
+        <span class="lang-kr">간호사 추종 + 투약 보조 — OAK-D depth + ReID로 간호사 추종, 각 병실 도착 후 GCP Vision OCR로 약품 라벨을 처방 순서대로 순차 검증.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">My Contributions</span>
+    <span class="lang-kr">담당 역할</span>
+  </h3>
+  <div class="pd-contrib-list">
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Detection</span>
+        <span class="lang-kr">Detection</span>
+      </span>
+      <p>
+        <span class="lang-en"><code>patient_identifier</code> package (fully implemented) — YOLOv8s person detection for occupancy check → OpenCV QRCodeDetector wristband scan (3 retries) → Firebase DB room-assignment validation → publishes <code>/robot6/patient_identified</code></span>
+        <span class="lang-kr"><code>patient_identifier</code> 패키지 (완전 구현) — YOLOv8s 환자 재실 탐지 → OpenCV QRCodeDetector 팔찌 스캔(3회 재시도) → Firebase DB 병실 배정 검증 → <code>/robot6/patient_identified</code> 발행</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">OCR / QR</span>
+      <p>
+        <span class="lang-en">Medication label verification pipeline — GCP Vision API (Document Text Detection) extracts text from OAK-D frames and compares against prescription <code>admin_order</code> sequence, step by step.</span>
+        <span class="lang-kr">약품 라벨 검증 파이프라인 — GCP Vision API (Document Text Detection)로 OAK-D 프레임에서 텍스트 추출, 처방전 <code>admin_order</code> 순서대로 단계별 비교 검증.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">STT / LLM</span>
+      <p>
+        <span class="lang-en">Voice-based CS application — Web Speech API for STT, Ollama LLM for intent parsing, Next.js (TypeScript) frontend + Flask backend + Firebase Realtime DB for nurse–robot interaction via natural language.</span>
+        <span class="lang-kr">음성 기반 CS 앱 — Web Speech API STT, Ollama LLM 의도 파악, Next.js(TypeScript) 프론트 + Flask 백엔드 + Firebase Realtime DB로 자연어 기반 간호사–로봇 인터랙션 구현.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Tech Stack</span>
+    <span class="lang-kr">기술 스택</span>
+  </h3>
+  <p class="pd-stack-group-label">Robot / Perception</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">TurtleBot4 AMR</span>
+    <span class="tag neumorphism-card">OAK-D Pro (RGB-D)</span>
+    <span class="tag neumorphism-card">RPLIDAR</span>
+    <span class="tag neumorphism-card">ROS2 Humble</span>
+    <span class="tag neumorphism-card">Nav2</span>
+    <span class="tag neumorphism-card">YOLOv8s</span>
+    <span class="tag neumorphism-card">OpenCV QRCodeDetector</span>
+  </div>
+  <p class="pd-stack-group-label" style="margin-top:0.6rem">AI / Data</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">GCP Vision API</span>
+    <span class="tag neumorphism-card">Ollama LLM</span>
+    <span class="tag neumorphism-card">Web Speech API</span>
+    <span class="tag neumorphism-card">Firebase Realtime DB</span>
+  </div>
+  <p class="pd-stack-group-label" style="margin-top:0.6rem">Web</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">Next.js (TypeScript)</span>
+    <span class="tag neumorphism-card">Flask</span>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">System Architecture</span>
+    <span class="lang-kr">시스템 아키텍처</span>
+  </h3>
+  <a href="/assets/img/projects/slam-architecture.png" target="_blank" rel="noreferrer">
+    <img src="/assets/img/projects/slam-architecture.png" alt="MediCart System Architecture" class="pd-arch-img">
+  </a>
+  <p class="pd-img-caption">
+    <span class="lang-en">Click to enlarge</span>
+    <span class="lang-kr">클릭하여 확대</span>
+  </p>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Demo Video</span>
+    <span class="lang-kr">시연 영상</span>
+  </h3>
+  <video class="pd-video" controls playsinline preload="metadata">
+    <source src="/assets/video/intel1-demo.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="pd-links">
+  <a href="https://github.com/HeoPaulo/intel1_medicart" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">GitHub →</a>
+</div>
+
+          
+      </div>
+    
+  
+    
+      <div id="pd-jindo" style="display:none">
+        
+            <div class="pd-meta">
+  <span class="pd-badge">
+    <span class="lang-en">2026.05 &nbsp;·&nbsp; Team Project (5 members) &nbsp;·&nbsp; Team Leader</span>
+    <span class="lang-kr">2026.05 &nbsp;·&nbsp; 팀 프로젝트 (5인) &nbsp;·&nbsp; 조장</span>
+  </span>
+</div>
+
+<h2 class="pd-title">
+  <span class="lang-en">Project JINDO — Digital Twin Quadruped Robot Border Security Simulation</span>
+  <span class="lang-kr">Project JINDO — Digital Twin 기반 4족 보행 로봇 경계 자동화 시뮬레이션</span>
+</h2>
+
+<p class="pd-overview">
+  <span class="lang-en">JINDO (Joint Intelligence Navigation & Defense Operator) — a digital twin system where a Unitree Go2 quadruped robot performs autonomous border patrol inside Isaac Sim 5.1, driven by a walk-these-ways RL locomotion policy. A 2-PC architecture separates the simulation host (Isaac Sim) from the C2 command center: 7 camera feeds + telemetry stream over FastDDS at 0.57 MB/s (97% compression from 17.9 MB/s raw), while the C2 PC runs Nav2 patrol FSM, YOLOv8s object detection (mAP@50 96.7%), and a tactical Next.js web console for real-time monitoring and gamepad teleoperation.</span>
+  <span class="lang-kr">JINDO(합동 지능형 항법 및 방호 작전 로봇) — Unitree Go2 4족 보행 로봇이 walk-these-ways RL 보행 정책으로 Isaac Sim 5.1 안에서 자율 경계 순찰을 수행하는 디지털 트윈 시스템. 시뮬레이션 호스트와 C2 지휘통제실 PC의 2-PC 구조. 7채널 카메라 + 텔레메트리를 FastDDS로 0.57 MB/s(원시 대비 97% 압축) 전송. C2 PC에서 Nav2 순찰 FSM, YOLOv8s 객체 탐지(mAP@50 96.7%), Next.js 전술 콘솔 운영.</span>
+</p>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">System Flowchart</span>
+    <span class="lang-kr">시스템 플로우 차트</span>
+  </h3>
+  <img src="/assets/img/projects/jindo-flowchart.png"
+       alt="JINDO System Flowchart"
+       class="pd-arch-img"
+       onclick="this.classList.toggle('pd-arch-img--full')"
+       style="cursor:zoom-in;">
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">2-PC Architecture</span>
+    <span class="lang-kr">2-PC 시스템 구조</span>
+  </h3>
+  <div class="pd-mode-grid">
+    <div class="pd-mode-card">
+      <span class="pd-mode-label">
+        <span class="lang-en">Main PC — Simulation Host</span>
+        <span class="lang-kr">Main PC — 시뮬레이션 호스트</span>
+      </span>
+      <p>
+        <span class="lang-en">Isaac Sim 5.1 physics engine (500Hz PhysX TGS solver). Unitree Go2 12-DOF locomotion via walk-these-ways RL policy. 7 RGB cameras (3 body + 4 tower) + 4-ch depth. OmniGraph sensor bridge. Nav2 autonomous patrol path calculation. Compresses 17.9 MB/s raw stream → 0.57 MB/s via JPEG q50 / 5fps pipeline.</span>
+        <span class="lang-kr">Isaac Sim 5.1 물리 엔진(500Hz PhysX TGS 솔버). Go2 12-DOF 보행 — walk-these-ways RL 정책. RGB 7채널(바디 3 + 감시탑 4) + Depth 4채널. OmniGraph 센서 브리지. Nav2 자율 순찰 경로 계산. 원시 17.9 MB/s → JPEG q50 / 5fps 압축 → 0.57 MB/s.</span>
+      </p>
+    </div>
+    <div class="pd-mode-card">
+      <span class="pd-mode-label">
+        <span class="lang-en">C2 PC — Command Center</span>
+        <span class="lang-kr">C2 PC — 지휘통제실</span>
+      </span>
+      <p>
+        <span class="lang-en">FastAPI REST + WebSocket server. Next.js 14 tactical console: 7-cam grid, real-time minimap, YOLO detection overlay, telemetry panel, PS5 gamepad teleoperation, NPC/weather control. PostgreSQL event logging (5Hz telemetry, 1s DB flush). Foxglove bridge for debug visualization. Nav2 patrol FSM: IDLE → PATROL → HOME → PAUSED.</span>
+        <span class="lang-kr">FastAPI REST + WebSocket 서버. Next.js 14 전술 콘솔: 7캠 그리드, 실시간 미니맵, YOLO 탐지 오버레이, 텔레메트리 패널, PS5 게임패드 텔레옵, NPC·날씨 제어. PostgreSQL 이벤트 로그(5Hz, 1s DB flush). Foxglove 디버그 브리지. Nav2 FSM: IDLE → PATROL → HOME → PAUSED.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">My Contributions</span>
+    <span class="lang-kr">담당 역할</span>
+  </h3>
+  <div class="pd-contrib-list">
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">PM &amp; Leader</span>
+      <p>
+        <span class="lang-en">Led the 5-member team as 조장 (team leader). Coordinated milestone planning, cross-role integration, and final integration testing across simulation, C2, AI, and robotics sub-systems.</span>
+        <span class="lang-kr">5인 팀 조장. 마일스톤 기획, 시뮬레이션·C2·AI·로보틱스 역할 간 통합 조율 및 최종 통합 테스트 총괄.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">3D Environment</span>
+        <span class="lang-kr">3D 환경 구축</span>
+      </span>
+      <p>
+        <span class="lang-en">Built the Isaac Sim digital twin environment from scratch — referencing real GP (guard post) field photos to model terrain, hills (×2), 45 patrol waypoints, 4 surveillance towers, fences, and structures. Applied Phase 1 (solid textures) → Phase 2 (photorealistic textures + vegetation) to close the Sim-to-Real gap for YOLO training data quality.</span>
+        <span class="lang-kr">실제 GP 현장 사진을 레퍼런스로 Isaac Sim 디지털 트윈 환경 제작. 언덕 지형(×2), 45개 순찰 경로, 감시탑 4기, 철책·구조물 모델링. 1차(솔리드 텍스처) → 2차(실사 텍스처 + 식생) 단계적 정교화로 YOLO 학습 데이터 품질 향상.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">CAD</span>
+      <p>
+        <span class="lang-en">Modeled and prepared CAD assets (checkpoint structures, terrain features, patrol environment objects) and converted them for Isaac Sim USD format (<code>gp_scene.usd</code>). Managed the full visual pipeline including object animation integration (wildlife, soldier motion libraries).</span>
+        <span class="lang-kr">검문소 구조물, 지형 요소, 순찰 환경 객체의 CAD 에셋 모델링 및 Isaac Sim USD 포맷(<code>gp_scene.usd</code>) 변환. 야생 동물·군인 모션 라이브러리 포함 전체 비주얼 파이프라인 관리.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">AI Model — YOLOv8s Results</span>
+    <span class="lang-kr">AI 모델 — YOLOv8s 학습 결과</span>
+  </h3>
+  <div class="pd-step-grid" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
+      <span class="pd-step-num">96.7%</span>
+      <span style="font-size:0.78rem; opacity:0.7">mAP@50</span>
+    </div>
+    <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
+      <span class="pd-step-num">93.5%</span>
+      <span style="font-size:0.78rem; opacity:0.7">F1 Score</span>
+    </div>
+    <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
+      <span class="pd-step-num">95.0%</span>
+      <span style="font-size:0.78rem; opacity:0.7">Precision</span>
+    </div>
+    <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
+      <span class="pd-step-num">92.1%</span>
+      <span style="font-size:0.78rem; opacity:0.7">Recall</span>
+    </div>
+  </div>
+  <p style="font-size:0.8rem; opacity:0.65; margin: 0.5rem 0 0;">
+    <span class="lang-en">Dataset: 2,352 images / 4,175 boxes (train 3,313 + val 862) · Classes: person, soldier, drone, wildlife · 150 epochs, Mosaic/Mixup/HSV aug, Transfer Learning, AMP FP16</span>
+    <span class="lang-kr">데이터셋: 2,352장 / 4,175 박스 (train 3,313 + val 862) · 클래스: 사람·군인·드론·야생동물 · 150에폭, Mosaic/Mixup/HSV 증강, Transfer Learning, AMP FP16</span>
+  </p>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Tech Stack</span>
+    <span class="lang-kr">기술 스택</span>
+  </h3>
+  <p class="pd-stack-group-label">Simulation / Robot</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">Isaac Sim 5.1.0</span>
+    <span class="tag neumorphism-card">Unitree Go2</span>
+    <span class="tag neumorphism-card">walk-these-ways RL</span>
+    <span class="tag neumorphism-card">ROS2 Humble</span>
+    <span class="tag neumorphism-card">Nav2</span>
+    <span class="tag neumorphism-card">FastDDS (Domain 130)</span>
+    <span class="tag neumorphism-card">YOLOv8s</span>
+  </div>
+  <p class="pd-stack-group-label" style="margin-top:0.6rem">C2 / Web</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">FastAPI</span>
+    <span class="tag neumorphism-card">Next.js 14</span>
+    <span class="tag neumorphism-card">PostgreSQL</span>
+    <span class="tag neumorphism-card">Foxglove SDK</span>
+    <span class="tag neumorphism-card">Docker</span>
+    <span class="tag neumorphism-card">Ubuntu 22.04</span>
+  </div>
+</div>
+
+<div class="pd-links">
+  <a href="https://youtu.be/ClbRTyrHr9A" target="_blank" rel="noreferrer" class="modal-link modal-link-primary">
+    <span class="lang-en">Demo Video →</span>
+    <span class="lang-kr">시연 영상 →</span>
+  </a>
+  <a href="https://github.com/HeoPaulo/cobot3_project_JINDO" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">GitHub →</a>
+</div>
+
+          
+      </div>
+    
+  
+    
+      <div id="pd-nutbot" style="display:none">
+        
+            <div class="pd-meta">
+  <span class="pd-badge">
+    <span class="lang-en">2026.04.27 – 2026.05.13 &nbsp;·&nbsp; Team Project (5 members) &nbsp;·&nbsp; Team Leader</span>
+    <span class="lang-kr">2026.04.27 – 2026.05.13 &nbsp;·&nbsp; 팀 프로젝트 (5인) &nbsp;·&nbsp; 팀장</span>
+  </span>
+</div>
+
+<h2 class="pd-title">
+  <span class="lang-en">Computer Vision & Voice/LLM-based Custom Pick and Place Cobot</span>
+  <span class="lang-kr">Computer Vision · 음성 기반 및 LLM 활용 사용자 맞춤형 Pick and Place 협동로봇</span>
+</h2>
+
+<p class="pd-overview">
+  <span class="lang-en">A voice-driven, LLM-powered nut pick &amp; place system. The user speaks their health condition — Whisper STT transcribes it, GPT-4o maps it to a custom nut combo (almond / cashew / pistachio / walnut), YOLOv8n-OBB detects each nut's position and orientation on the conveyor, and a Doosan M0609 with OnRobot RG2 gripper executes approach → grasp → verify → place in sequence. A Supabase real-time bridge keeps the React web UI synchronized with robot state throughout.</span>
+  <span class="lang-kr">음성 기반 LLM 맞춤형 견과류 픽 앤 플레이스 시스템. 음성으로 건강 상태를 말하면 Whisper STT 전사 → GPT-4o가 맞춤 견과류 콤보(아몬드/캐슈넛/피스타치오/호두) 결정 → YOLOv8n-OBB로 각 견과류의 위치·방향 검출 → Doosan M0609 + OnRobot RG2가 접근 → 파지 → 검증 → 배치 순 실행. Supabase 실시간 브리지로 React 웹 UI와 로봇 상태 동기화.</span>
+</p>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">System Flow</span>
+    <span class="lang-kr">시스템 흐름</span>
+  </h3>
+  <div class="pd-flow">
+    <span class="pd-flow-step"><span class="lang-en">Wake Word</span><span class="lang-kr">웨이크워드</span></span>
+    <span class="pd-flow-arrow">→</span>
+    <span class="pd-flow-step"><span class="lang-en">Whisper STT</span><span class="lang-kr">Whisper STT</span></span>
+    <span class="pd-flow-arrow">→</span>
+    <span class="pd-flow-step"><span class="lang-en">GPT-4o Combo Engine</span><span class="lang-kr">GPT-4o 콤보 결정</span></span>
+    <span class="pd-flow-arrow">→</span>
+    <span class="pd-flow-step"><span class="lang-en">YOLOv8n-OBB Detection</span><span class="lang-kr">YOLOv8n-OBB 검출</span></span>
+    <span class="pd-flow-arrow">→</span>
+    <span class="pd-flow-step"><span class="lang-en">Pick &amp; Verify &amp; Place</span><span class="lang-kr">픽 · 검증 · 플레이스</span></span>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">My Contributions</span>
+    <span class="lang-kr">담당 역할</span>
+  </h3>
+  <div class="pd-contrib-list">
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">PM &amp; Leader</span>
+      <p>
+        <span class="lang-en">Led the 5-member team across the 17-day sprint as 팀장. Managed scheduling, documentation (8 operational docs including architecture, node, safety, and operations manuals), and cross-role integration across STT/LLM, vision, robot control, frontend, and infra sub-teams.</span>
+        <span class="lang-kr">17일 스프린트 5인 팀 팀장. 일정 관리, 운영 문서 작성(시스템 아키텍처·노드·안전·운영 매뉴얼 등 8종), STT/LLM·비전·로봇 제어·프론트엔드·인프라 서브팀 간 통합 조율.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Simulation &amp; Safety</span>
+        <span class="lang-kr">시뮬레이션 · 안전</span>
+      </span>
+      <p>
+        <span class="lang-en">Built the IsaacSim simulation environment for pre-deployment dry-run validation — configured the full work-cell scene (Doosan M0609 + Intel RealSense + conveyor + nut layout). Defined workspace boundaries and collision zones using RoboDK CAD, and implemented dual-layer safety validation in both task manager and robot control nodes to prevent out-of-bounds picks.</span>
+        <span class="lang-kr">IsaacSim 시뮬레이션 환경 구축으로 실 배포 전 dry-run 검증 지원(Doosan M0609 + RealSense + 컨베이어 + 견과류 배치 전체 씬 구성). RoboDK CAD로 워크스페이스 경계·충돌 구역 정의, 태스크 매니저·로봇 컨트롤 이중 안전 검증 로직으로 범위 초과 픽 방지.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Robot Control</span>
+        <span class="lang-kr">로봇 제어</span>
+      </span>
+      <p>
+        <span class="lang-en">Implemented <code>cobot_robot_control</code> — the pick action server executing the full motion sequence: approach → grasp → <code>verify_grip</code> (RG2 bit check) → lift → transit → place → retreat → home. Integrated pick verification (count-based retry up to 5 rounds) and clustering detection with OBB-gap push path generation to separate jammed nuts before grasping.</span>
+        <span class="lang-kr"><code>cobot_robot_control</code> 구현 — 접근 → 파지 → <code>verify_grip</code>(RG2 비트 확인) → 리프트 → 이동 → 배치 → 복귀 → 홈 전체 동작 시퀀스. 픽 수량 검증(최대 5회 재시도) 및 OBB 간격 기반 군집 판정 + Push 경로 생성으로 밀착 견과류 사전 분리.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Model Training</span>
+        <span class="lang-kr">모델 학습</span>
+      </span>
+      <p>
+        <span class="lang-en">Trained YOLOv8n-OBB (nano) across 3 iterations: ① standard bbox → ② OBB 2-phase training (80+30 epochs) → ③ evaluated YOLOv8s-OBB (rejected: walnut 0.00 on new-env generalization). Final model: conf=0.75 / iou=0.50 / imgsz=800, ~8ms inference, test mAP@0.5 = 0.992, F1 = 0.9931. Depth pipeline: OBB inset 0.7 median depth, per-class z_offset correction.</span>
+        <span class="lang-kr">YOLOv8n-OBB 3회 반복 학습: ① 일반 박스 → ② OBB 2단계(80+30에폭) → ③ YOLOv8s-OBB 평가(새 환경 호두 0.00 일반화 실패로 기각). 최종 모델: conf=0.75 / iou=0.50 / imgsz=800, 추론 ~8ms, test mAP@0.5 = 0.992, F1 = 0.9931. Depth 파이프라인: OBB inset 0.7 median depth, 클래스별 z_offset 보정.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">YOLO Model — Final Results</span>
+    <span class="lang-kr">YOLO 모델 — 최종 성능</span>
+  </h3>
+  <div class="pd-step-grid" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
+      <span class="pd-step-num">0.992</span>
+      <span style="font-size:0.78rem; opacity:0.7">test mAP@0.5</span>
+    </div>
+    <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
+      <span class="pd-step-num">0.9931</span>
+      <span style="font-size:0.78rem; opacity:0.7">F1 Score</span>
+    </div>
+    <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
+      <span class="pd-step-num">~8 ms</span>
+      <span style="font-size:0.78rem; opacity:0.7">
+        <span class="lang-en">Inference (RTX 5060)</span>
+        <span class="lang-kr">추론 속도 (RTX 5060)</span>
+      </span>
+    </div>
+    <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
+      <span class="pd-step-num">4 / 4</span>
+      <span style="font-size:0.78rem; opacity:0.7">
+        <span class="lang-en">All classes successful</span>
+        <span class="lang-kr">전 클래스 픽 성공</span>
+      </span>
+    </div>
+  </div>
+  <p style="font-size:0.8rem; opacity:0.65; margin:0.5rem 0 0;">
+    <span class="lang-en">YOLOv8n-OBB · 396 images / 2,992 boxes · 4 classes (almond / cashew / pistachio / walnut) · 2-phase training (80+30 epochs) · Mosaic, HSV, Mixup aug</span>
+    <span class="lang-kr">YOLOv8n-OBB · 396장 / 2,992 박스 · 4클래스(아몬드·캐슈넛·피스타치오·호두) · 2단계 학습(80+30에폭) · Mosaic·HSV·Mixup 증강</span>
+  </p>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Tech Stack</span>
+    <span class="lang-kr">기술 스택</span>
+  </h3>
+  <p class="pd-stack-group-label">Robot / Perception</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">Doosan M0609</span>
+    <span class="tag neumorphism-card">OnRobot RG2</span>
+    <span class="tag neumorphism-card">Intel RealSense D435i</span>
+    <span class="tag neumorphism-card">Arduino Conveyor</span>
+    <span class="tag neumorphism-card">ROS2 Humble</span>
+    <span class="tag neumorphism-card">YOLOv8n-OBB</span>
+    <span class="tag neumorphism-card">IsaacSim</span>
+    <span class="tag neumorphism-card">RoboDK</span>
+  </div>
+  <p class="pd-stack-group-label" style="margin-top:0.6rem">AI / Voice</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">Whisper STT</span>
+    <span class="tag neumorphism-card">GPT-4o (LangChain)</span>
+    <span class="tag neumorphism-card">Docker (CUDA)</span>
+  </div>
+  <p class="pd-stack-group-label" style="margin-top:0.6rem">Web / Data</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">React + Vite</span>
+    <span class="tag neumorphism-card">Three.js</span>
+    <span class="tag neumorphism-card">FastAPI</span>
+    <span class="tag neumorphism-card">Supabase (PostgreSQL)</span>
+  </div>
+</div>
+
+<div class="pd-links">
+  <a href="https://github.com/HeoPaulo/cobot2_CV_STT_nutbot" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">GitHub →</a>
+</div>
+
+          
+      </div>
+    
+  
+    
+      <div id="pd-pancake-robot" style="display:none">
+        
+            <div class="pd-meta">
+  <span class="pd-badge">
+    <span class="lang-en">2026.04.13 – 2026.04.24 &nbsp;·&nbsp; Team Project (5 members) &nbsp;·&nbsp; Team Leader</span>
+    <span class="lang-kr">2026.04.13 – 2026.04.24 &nbsp;·&nbsp; 팀 프로젝트 (5인) &nbsp;·&nbsp; 팀장</span>
+  </span>
+</div>
+
+<h2 class="pd-title">
+  <span class="lang-en">ROS2-based Cooking & Serving Process Automation Cobot</span>
+  <span class="lang-kr">ROS2 활용 조리 및 서빙 공정 자동화 협동로봇</span>
+</h2>
+
+<p class="pd-overview">
+  <span class="lang-en">A Doosan M0609 6-axis collaborative robot that fully automates pancake production across 6 sequential steps — dough placement (tong), pressing, plate setting, flipping (spatula), sauce, and powder topping. The system features 5-tool automatic exchange, force/compliance control, spline path planning, and a Firebase-backed web interface for remote control and real-time monitoring, including a customer-facing kiosk with TTS voice guidance.</span>
+  <span class="lang-kr">Doosan M0609 6축 협동로봇으로 반죽 배치(집게), 프레스, 접시 세팅, 뒤집기(스패튤라), 소스, 가루 토핑의 6단계 공정을 완전 자동화한 시스템. 5종 도구 자동 교환, 힘/컴플라이언스 제어, 스플라인 경로, Firebase 기반 웹 대시보드와 TTS 음성 안내 고객용 키오스크 포함.</span>
+</p>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">My Contributions</span>
+    <span class="lang-kr">담당 역할</span>
+  </h3>
+  <div class="pd-contrib-list">
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">PM &amp; Leader</span>
+      <p>
+        <span class="lang-en">Led the 5-member team across the 12-day sprint. Defined the 6-step workflow architecture, managed milestone delivery, and coordinated integration between robot motion, Firebase backend, and kiosk UI sub-teams.</span>
+        <span class="lang-kr">12일 스프린트 5인 팀 총괄. 6단계 워크플로우 아키텍처 정의, 마일스톤 관리, 로봇 모션·Firebase 백엔드·키오스크 UI 서브팀 간 통합 조율.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Motion Planning</span>
+        <span class="lang-kr">동작 계획</span>
+      </span>
+      <p>
+        <span class="lang-en">Designed robot motion planning and workflow coordination logic — implementing <code>TaskManagerNode</code> orchestration and task modules for each cooking step. Applied force control (<code>set_desired_force</code>), compliance mode, spline paths (<code>movesx</code>), circular motions (<code>movec</code>) for sauce, and periodic sweeping moves for powder topping. Developed Safe Motion Wrapping: 0.05s pause signal polling, Tool/TCP validation before each move, and strict execution order to prevent async command collisions.</span>
+        <span class="lang-kr">로봇 동작 계획 및 워크플로우 조율 로직 설계. <code>TaskManagerNode</code> 오케스트레이션 및 각 조리 단계 태스크 모듈 구현. 힘 제어(<code>set_desired_force</code>), 컴플라이언스 모드, 스플라인(<code>movesx</code>), 소스용 원형 동작(<code>movec</code>), 가루 토핑용 주기적 스윕 동작 적용. Safe Motion Wrapping: 0.05초 일시정지 신호 감시, 동작 전 Tool/TCP 검증, 비동기 명령 충돌 방지 엄격 순서 제어.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">6-Step Process</span>
+    <span class="lang-kr">6단계 공정</span>
+  </h3>
+  <div class="pd-step-grid">
+    <div class="pd-step"><span class="pd-step-num">01</span><span class="lang-en">Dough (Tong)</span><span class="lang-kr">반죽 배치 (집게)</span></div>
+    <div class="pd-step"><span class="pd-step-num">02</span><span class="lang-en">Press</span><span class="lang-kr">반죽 누르기</span></div>
+    <div class="pd-step"><span class="pd-step-num">03</span><span class="lang-en">Plate Setting</span><span class="lang-kr">접시 세팅</span></div>
+    <div class="pd-step"><span class="pd-step-num">04</span><span class="lang-en">Flip (Spatula)</span><span class="lang-kr">뒤집기 (스패튤라)</span></div>
+    <div class="pd-step"><span class="pd-step-num">05</span><span class="lang-en">Sauce</span><span class="lang-kr">소스 뿌리기</span></div>
+    <div class="pd-step"><span class="pd-step-num">06</span><span class="lang-en">Powder Topping</span><span class="lang-kr">가루 토핑</span></div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Node Architecture & Safety</span>
+    <span class="lang-kr">노드 구조 및 안전</span>
+  </h3>
+  <div class="pd-contrib-list">
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">2-Node 4-Thread</span>
+        <span class="lang-kr">2노드 4스레드</span>
+      </span>
+      <p>
+        <span class="lang-en">Task node (Main thread: Firebase command polling · Robot Task thread: motion dispatch) + Control node (Control Spin thread: always-on ROS comms · Status Polling thread: 0.5s <code>GetRobotState</code> polling). 1:1 acknowledged service calls instead of fire-and-forget topics — if no response, immediately triggers safe stop.</span>
+        <span class="lang-kr">태스크 노드(Main: Firebase 폴링 · Robot Task: 모션 디스패치) + 제어 노드(Control Spin: 항시 ROS 통신로 유지 · Status Polling: 0.5초 <code>GetRobotState</code>). 토픽 대신 1:1 확답 서비스 호출 — 응답 없으면 즉시 안전 정지.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Safety Zones</span>
+        <span class="lang-kr">안전 구역</span>
+      </span>
+      <p>
+        <span class="lang-en">Three-zone safety layout: solo work zone (TCP 125N limit, 45% collision sensitivity) · collaborative zone (TCP 80N, 85% sensitivity) · reduced sensitivity zone active only during the press step. 7-step emergency recovery procedure for safety-stop and E-stop events.</span>
+        <span class="lang-kr">3구역 안전 설계: 단독 작업 구역(TCP 125N · 충돌 민감도 45%) · 협동 작업 구역(TCP 80N · 85%) · 프레스 단계 한정 민감도 완화 구역. 안전정지·비상정지 7단계 긴급 복구 절차.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Tech Stack</span>
+    <span class="lang-kr">기술 스택</span>
+  </h3>
+  <p class="pd-stack-group-label">Robot</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">Doosan M0609</span>
+    <span class="tag neumorphism-card">ROS2 Humble</span>
+    <span class="tag neumorphism-card">Python 3.10</span>
+    <span class="tag neumorphism-card">Force Control</span>
+    <span class="tag neumorphism-card">Compliance Mode</span>
+  </div>
+  <p class="pd-stack-group-label" style="margin-top:0.6rem">Web / Data</p>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">Firebase Realtime DB</span>
+    <span class="tag neumorphism-card">Firebase Admin SDK</span>
+    <span class="tag neumorphism-card">Web Speech API (TTS)</span>
+    <span class="tag neumorphism-card">HTML / CSS / JS</span>
+  </div>
+</div>
+
+<div class="pd-links">
+  <a href="https://github.com/HeoPaulo/cobot1_pancake_machine" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">GitHub →</a>
+</div>
+
+          
+      </div>
+    
+  
+    
+      <div id="pd-capstone" style="display:none">
+        
+            <div class="pd-meta">
+  <span class="pd-badge">
+    <span class="lang-en">2023.11 &nbsp;·&nbsp; Capstone Design (Team)</span>
+    <span class="lang-kr">2023.11 &nbsp;·&nbsp; 캡스톤디자인 (팀 프로젝트)</span>
+  </span>
+</div>
+
+<h2 class="pd-title">
+  <span class="lang-en">Linear-Drive Heavy-Duty Collaborative Robot & ANN Inverse Kinematics</span>
+  <span class="lang-kr">선형구동 방식 고하중 협동로봇 설계 및 ANN 역기구학 적용</span>
+</h2>
+
+<p class="pd-overview">
+  <span class="lang-en">Undergraduate capstone research designing a 3-DOF collaborative robot arm driven by water-hydraulic EHA (Electro-Hydraulic Actuators) to achieve a payload-to-weight (P/W) ratio exceeding 1.0 — a benchmark no commercially available cobot currently meets. The arm (AL6061, 13.96 kg) lifts 20 kg payloads, yielding P/W = 1.43, compared to 0.18–0.47 for leading industrial cobots. An ANN was trained to instantly map end-effector positions to cylinder pressures, replacing iterative inverse kinematics calculation.</span>
+  <span class="lang-kr">수압 EHA(전기 유압 액추에이터)로 구동하는 3자유도 협동로봇 팔을 설계하여, 현재 상용 협동로봇 중 달성한 기기가 없는 P/W(가반하중/자체중량) 1 이상을 목표로 한 졸업 논문. AL6061 재질 로봇팔(13.96 kg)로 20 kg 가반하중을 실현해 P/W = 1.43 달성. UR20(0.31), LBR iiwa(0.47) 대비 3~8배 높은 수치. 역기구학 반복 계산 없이 실린더 압력을 즉시 추정하는 ANN 모델도 구성.</span>
+</p>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Research Motivation</span>
+    <span class="lang-kr">연구 배경</span>
+  </h3>
+  <p style="font-size:0.88rem; line-height:1.6; margin:0;">
+    <span class="lang-en">Commercial cobots average only 6.3 kg payload and all have P/W &lt; 1 — meaning they weigh more than they can carry. For heavy logistics tasks (20 kg+ parcels, waste sorting), existing solutions like forklifts and hoists are large, dangerous, or require human assistance. This project proposes EHA-driven linear actuation to achieve both high payload and compact, safe form factor for human collaboration.</span>
+    <span class="lang-kr">상용 협동로봇 평균 가반하중은 6.3 kg에 불과하고, P/W가 모두 1 미만 — 로봇 자체 무게가 가반하중보다 크다. 20 kg 이상 택배 분류, 생활계 폐기물 처리 등 고하중 작업에는 지게차·호이스트 등 대형 장비가 필요하다. EHA 선형 구동으로 고가반하중과 경량·안전 형태를 동시에 달성하는 것이 본 연구의 출발점.</span>
+  </p>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Key Results</span>
+    <span class="lang-kr">주요 결과</span>
+  </h3>
+  <div class="pd-mode-grid">
+    <div class="pd-mode-card">
+      <span class="pd-mode-label">
+        <span class="lang-en">Robot Design</span>
+        <span class="lang-kr">로봇 설계</span>
+      </span>
+      <p>
+        <span class="lang-en">3-DOF arm, AL6061, 13.96 kg self-weight, 20 kg payload → <strong>P/W = 1.43</strong>. Cylinder 2 max pressure: 2,111 N / 6.72 MPa. Cylinder 3 max pressure: 511 N / 1.2 MPa. EHA: water hydraulic, CM2E25-75Z cylinders (Ø25, stroke 75 mm), DC 24V 12.7W motor.</span>
+        <span class="lang-kr">3자유도 팔, AL6061, 자체중량 13.96 kg, 가반하중 20 kg → <strong>P/W = 1.43</strong>. 실린더 2 최대 압력: 2,111 N / 6.72 MPa. 실린더 3 최대 압력: 511 N / 1.2 MPa. 수압 EHA: CM2E25-75Z(Ø25, 스트로크 75 mm), DC 24V 12.7W 모터.</span>
+      </p>
+    </div>
+    <div class="pd-mode-card">
+      <span class="pd-mode-label">ANN IK Model</span>
+      <p>
+        <span class="lang-en">100-point workspace dataset (80:20 split), 1 hidden layer × 10 neurons, Adam optimizer, MSE loss, ReLU activation, early stopping at 222 epochs. <strong>Accuracy 0.95 / Loss 0.006 / RMSE 0.08</strong>. No overfitting confirmed. Instantly infers cylinder pressures from end-effector coordinates — no iterative IK computation required.</span>
+        <span class="lang-kr">작업공간 100개 데이터셋(8:2 분할), 은닉층 1 × 뉴런 10, Adam 옵티마이저, MSE 손실, ReLU 활성화, 222에폭 early stopping. <strong>정확도 0.95 / 손실 0.006 / RMSE 0.08</strong>. 과적합 없음 확인. 말단부 좌표 입력 시 실린더 압력 즉시 추론 — 반복 역기구학 계산 불필요.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">P/W Comparison vs. Commercial Cobots</span>
+    <span class="lang-kr">상용 협동로봇 P/W 비교</span>
+  </h3>
+  <div class="pd-pw-table">
+    <div class="pd-pw-row pd-pw-header">
+      <span>Model</span><span>Payload</span><span>Weight</span><span>P/W</span>
+    </div>
+    <div class="pd-pw-row"><span>UR20</span><span>20 kg</span><span>64 kg</span><span>0.31</span></div>
+    <div class="pd-pw-row"><span>ABB GoFa CRB 15000</span><span>5 kg</span><span>28 kg</span><span>0.18</span></div>
+    <div class="pd-pw-row"><span>Rethink Sawyer</span><span>4 kg</span><span>19 kg</span><span>0.21</span></div>
+    <div class="pd-pw-row"><span>KUKA LBR iiwa 14</span><span>14 kg</span><span>29.9 kg</span><span>0.47</span></div>
+    <div class="pd-pw-row pd-pw-highlight"><span>This Research (3-DOF EHA)</span><span>20 kg</span><span>13.96 kg</span><span><strong>1.43</strong></span></div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Methodology</span>
+    <span class="lang-kr">수행 방법</span>
+  </h3>
+  <div class="pd-contrib-list">
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">Kinematics</span>
+      <p>
+        <span class="lang-en">Derived the 3-DOF forward kinematics via D-H Table and Homogeneous Transformation Matrices (HTM). Computed the Jacobian to relate joint-space velocities to Cartesian velocities, then derived cylinder force and pressure from the required torque-to-linear-force conversion.</span>
+        <span class="lang-kr">D-H Table과 HTM(동차변환행렬)으로 3자유도 순기구학 유도. 자코비안으로 관절공간-데카르트공간 속도 관계 도출 후, 토크→선형힘 변환으로 실린더 힘·압력 산출.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">CAD</span>
+      <p>
+        <span class="lang-en">3D modeled the robot arm and EHA assembly in Autodesk Inventor. Designed the coordinate frames and cylinder attachment positions (link 2: 50 mm offset, link 3: 115 mm from joint 2).</span>
+        <span class="lang-kr">Autodesk Inventor로 로봇팔 및 EHA 조립체 3D 모델링. 좌표계 및 실린더 부착 위치(링크2: 50mm 오프셋, 링크3: 조인트2에서 115mm) 설계.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Analysis</span>
+        <span class="lang-kr">분석</span>
+      </span>
+      <p>
+        <span class="lang-en">Visualized the pressure distribution across the workspace using MATLAB 3D plots and XY projections. Identified maximum pressure positions for each cylinder and derived the required EHA specifications (max pressure, pump bore diameter).</span>
+        <span class="lang-kr">MATLAB 3D 그래프 및 XY 정사영으로 작업공간 전체 압력 분포 시각화. 각 실린더 최대 압력 위치 파악 및 요구 EHA 사양(최대 압력, 펌프 내경) 도출.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Tech Stack</span>
+    <span class="lang-kr">기술 스택</span>
+  </h3>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">EHA (Water Hydraulic)</span>
+    <span class="tag neumorphism-card">3-DOF Kinematics</span>
+    <span class="tag neumorphism-card">D-H / HTM / Jacobian</span>
+    <span class="tag neumorphism-card">ANN (Keras)</span>
+    <span class="tag neumorphism-card">MATLAB</span>
+    <span class="tag neumorphism-card">Autodesk Inventor</span>
+    <span class="tag neumorphism-card">Python</span>
+  </div>
+</div>
+
+          
+      </div>
+    
+  
+    
+      <div id="pd-conveyor" style="display:none">
+        
+            <div class="pd-meta">
+  <span class="pd-badge">
+    <span class="lang-en">2021 &nbsp;·&nbsp; Solo Project</span>
+    <span class="lang-kr">2021 &nbsp;·&nbsp; 개인 프로젝트</span>
+  </span>
+</div>
+
+<h2 class="pd-title">
+  <span class="lang-en">Automatic Conveyor Belt System with Arduino Uno & Ultrasonic Sensor</span>
+  <span class="lang-kr">Arduino Uno와 초음파 센서를 활용한 자동 컨베이어벨트 시스템</span>
+</h2>
+
+<p class="pd-overview">
+  <span class="lang-en">A self-regulating conveyor belt system that automatically starts and stops based on object presence. An HC-SR04 ultrasonic sensor continuously measures the distance above the belt; when an object is detected within 15 cm, the belt activates via a stepper motor and pulley mechanism. When the belt is clear, the motor stops — eliminating the need for manual power control.</span>
+  <span class="lang-kr">초음파 센서로 물체 유무를 감지해 컨베이어벨트를 자동으로 작동·정지하는 시스템. HC-SR04 센서가 벨트 위 거리를 지속 측정하고, 15cm 이내로 물체가 감지되면 스텝모터·풀리 기구를 통해 벨트가 가동됩니다. 벨트 위에 물체가 없으면 자동 정지되어 수동 전원 조작이 불필요합니다.</span>
+</p>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">System Logic</span>
+    <span class="lang-kr">동작 로직</span>
+  </h3>
+  <div class="pd-flow">
+    <span class="pd-flow-step"><span class="lang-en">Ultrasonic Sensing</span><span class="lang-kr">초음파 거리 측정</span></span>
+    <span class="pd-flow-arrow">→</span>
+    <span class="pd-flow-step"><span class="lang-en">Distance &lt; 15 cm?</span><span class="lang-kr">15cm 이내 감지?</span></span>
+    <span class="pd-flow-arrow">→</span>
+    <span class="pd-flow-step"><span class="lang-en">Stepper Motor ON / OFF</span><span class="lang-kr">스텝모터 작동 / 정지</span></span>
+    <span class="pd-flow-arrow">→</span>
+    <span class="pd-flow-step"><span class="lang-en">Conveyor Belt Runs / Stops</span><span class="lang-kr">벨트 가동 / 자동 정지</span></span>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Design Details</span>
+    <span class="lang-kr">설계 포인트</span>
+  </h3>
+  <div class="pd-contrib-list">
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Speed Control</span>
+        <span class="lang-kr">속도 제어</span>
+      </span>
+      <p>
+        <span class="lang-en">Used pulleys of different diameters to set the belt's linear speed independently of motor RPM, allowing speed adjustment without changing the stepper drive code.</span>
+        <span class="lang-kr">서로 다른 지름의 풀리를 사용해 모터 RPM과 독립적으로 벨트 선속도를 설정. 스텝 드라이브 코드 변경 없이 속도 조정 가능.</span>
+      </p>
+    </div>
+    <div class="pd-contrib-item">
+      <span class="pd-contrib-tag">
+        <span class="lang-en">Auto Idle</span>
+        <span class="lang-kr">자동 유휴</span>
+      </span>
+      <p>
+        <span class="lang-en">The belt halts automatically when no object is detected, reducing unnecessary power consumption and mechanical wear without requiring any manual intervention.</span>
+        <span class="lang-kr">물체 미감지 시 자동 정지로 불필요한 전력 소모 및 기계적 마모 절감. 사람의 개입 불필요.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Tech Stack</span>
+    <span class="lang-kr">기술 스택</span>
+  </h3>
+  <div class="tag-wrapper">
+    <span class="tag neumorphism-card">Arduino Uno</span>
+    <span class="tag neumorphism-card">HC-SR04 Ultrasonic</span>
+    <span class="tag neumorphism-card">Stepper Motor</span>
+    <span class="tag neumorphism-card">Pulley Mechanism</span>
+    <span class="tag neumorphism-card">C++ (Arduino)</span>
+  </div>
+</div>
+
+        
+      </div>
+    
+  
+
+
+
+
+      </section>
+    
+    
+      <section class="card neumorphism-card-big">
+        <h1 class="title">
+  <span class="lang-en">Skills</span>
+  <span class="lang-kr">기술 스택</span>
+</h1>
+
+<div id="skills" style="display:none"></div>
+<div class="skills-list">
+  <div class="skills-row" data-aos="fade-up">
+    <div class="skills-label">
+      <span class="lang-en">Languages</span>
+      <span class="lang-kr">언어</span>
+    </div>
+    <div class="skills-tags">
+      
+      <span class="tag neumorphism-card">Python</span>
+      
+      <span class="tag neumorphism-card">C++</span>
+      
+      <span class="tag neumorphism-card">MATLAB</span>
+      
+    </div>
+  </div>
+  <div class="skills-row" data-aos="fade-up">
+    <div class="skills-label">
+      <span class="lang-en">Frameworks</span>
+      <span class="lang-kr">프레임워크</span>
+    </div>
+    <div class="skills-tags">
+      
+      <span class="tag neumorphism-card">ROS2</span>
+      
+      <span class="tag neumorphism-card">YOLOv8</span>
+      
+      <span class="tag neumorphism-card">OpenCV</span>
+      
+      <span class="tag neumorphism-card">IsaacSim</span>
+      
+      <span class="tag neumorphism-card">Gazebo</span>
+      
+    </div>
+  </div>
+  <div class="skills-row" data-aos="fade-up">
+    <div class="skills-label">
+      <span class="lang-en">Tools</span>
+      <span class="lang-kr">도구</span>
+    </div>
+    <div class="skills-tags">
+      
+      <span class="tag neumorphism-card">VS Code</span>
+      
+      <span class="tag neumorphism-card">Ubuntu</span>
+      
+      <span class="tag neumorphism-card">Notion</span>
+      
+      <span class="tag neumorphism-card">Docker</span>
+      
+    </div>
+  </div>
+</div>
+
+      </section>
+    
+    
+      <section id="contact" class="card neumorphism-card-big">
+        <h1 class="title">
+  <span class="lang-en">Contact</span>
+  <span class="lang-kr">연락처</span>
+</h1>
+<div class="contact-icons">
+  
+  <a class="social-link" aria-label="My E-Mail" href="mailto:heopaulo70@gmail.com">
+    <div class="social">
+      <svg class="social-svg" viewBox="0 0 48 48">
+        <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="/assets/img/solid.svg#envelope"></use>
+      </svg>
+    </div>
+  </a>
+  
+
+  
+  <a class="social-link" aria-label="My GitHub" target="_blank" rel="noreferrer"
+    href="https://github.com/HeoPaulo">
+    <div class="social">
+      <svg class="social-svg" viewBox="0 0 48 48">
+        <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="/assets/img/brands.svg#github"></use>
+      </svg>
+    </div>
+  </a>
+  
+
+  
+  <a class="social-link linkedin" aria-label="My LinkedIn" target="_blank" rel="noreferrer"
+    href="https://www.linkedin.com/in/chanyoung-heo-509bbb419">
+    <div class="social">
+      <svg class="social-svg" viewBox="0 0 48 48">
+        <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="/assets/img/brands.svg#linkedin-in"></use>
+      </svg>
+    </div>
+  </a>
+  
+</div>
+
+      </section>
+    
+  </div>
+  <footer class="footer">
+  <p>
+    &copy; 2026 Designed & Developed by
+    <a class="highlight-link" href="https://github.com/HeoPaulo" target="_blank" rel="noreferrer">
+      <span class="lang-en">Chanyoung Heo</span>
+      <span class="lang-kr">허찬영</span>
+    </a>
+  </p>
+</footer>
+
+<!-- Google Analytics -->
+
+<script>
+  var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+  if (dnt != "1" && dnt != "yes") {
+    (function (i, s, o, g, r, a, m) {
+      i["GoogleAnalyticsObject"] = r;
+      (i[r] =
+        i[r] ||
+        function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        }),
+        (i[r].l = 1 * new Date());
+      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m);
+    })(
+      window,
+      document,
+      "script",
+      "https://www.google-analytics.com/analytics.js",
+      "ga"
+    );
+    ga("create", "", "auto");
+    ga("send", "pageview");
+  }
+</script>
+
+
+
+  <div id="project-modal" class="modal-overlay" onclick="closeProjectModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeProjectModal()">&#215;</button>
+      <div class="modal-content-simple">
+        <div class="modal-thumb"></div>
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <div class="modal-tags"></div>
+        <div class="modal-links"></div>
+      </div>
+      <div class="modal-content-rich"></div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var lang = document.documentElement.getAttribute('data-lang') || 'en';
+      document.getElementById('lang-btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-btn-kr').classList.toggle('active', lang === 'kr');
+    })();
+
+    var _modalScrollY = 0;
+
+    function openProjectModal(card) {
+      var modal = document.getElementById('project-modal');
+      var box = modal.querySelector('.modal-box');
+      var simpleEl = modal.querySelector('.modal-content-simple');
+      var richEl = modal.querySelector('.modal-content-rich');
+      var d = card.dataset;
+
+      if (d.detail) {
+        var panel = document.getElementById('pd-' + d.detail);
+        if (panel) {
+          simpleEl.style.display = 'none';
+          richEl.innerHTML = panel.innerHTML;
+          richEl.style.display = 'block';
+          box.classList.add('wide');
+        }
+      } else {
+        var lang = document.documentElement.getAttribute('data-lang') || 'en';
+        var name = lang === 'kr' ? d.nameKr : d.nameEn;
+        var desc = lang === 'kr' ? d.descKr : d.descEn;
+        var tags = d.tags ? d.tags.split(',').filter(Boolean) : [];
+        simpleEl.style.display = 'block';
+        richEl.style.display = 'none';
+        box.classList.remove('wide');
+        modal.querySelector('.modal-title').textContent = name;
+        modal.querySelector('.modal-desc').textContent = desc;
+        var thumbEl = modal.querySelector('.modal-thumb');
+        if (d.img) {
+          thumbEl.innerHTML = '<img src="' + d.img + '" alt="' + name + '">';
+        } else {
+          thumbEl.innerHTML = '<span class="modal-thumb-placeholder">' + name.substring(0, 4).toUpperCase() + '</span>';
+        }
+        modal.querySelector('.modal-tags').innerHTML = tags.map(function(t) {
+          return '<span class="tag neumorphism-card">' + t.trim() + '</span>';
+        }).join(' ');
+        var linksHtml = '';
+        if (d.demo) {
+          linksHtml += '<a href="' + d.demo + '" target="_blank" rel="noreferrer" class="modal-link modal-link-primary">GitHub / Demo</a>';
+        }
+        modal.querySelector('.modal-links').innerHTML = linksHtml;
+      }
+
+      _modalScrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + _modalScrollY + 'px';
+      document.body.style.width = '100%';
+      modal.classList.add('open');
+    }
+
+    function closeProjectModal(e) {
+      if (!e || e.target === document.getElementById('project-modal')) {
+        var modal = document.getElementById('project-modal');
+        modal.classList.remove('open');
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, _modalScrollY);
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeProjectModal();
+    });
+
+    function setLang(next) {
+      var html = document.documentElement;
+      html.setAttribute('data-lang', next);
+      localStorage.setItem('lang', next);
+      document.getElementById('lang-btn-en').classList.toggle('active', next === 'en');
+      document.getElementById('lang-btn-kr').classList.toggle('active', next === 'kr');
+
+      var el = document.getElementById('txt-rotate');
+      if (el) {
+        var rotateData = next === 'kr'
+          ? el.getAttribute('data-rotate-kr')
+          : el.getAttribute('data-rotate');
+        if (rotateData) {
+          el.innerHTML = '<span class="wrap"></span>';
+          new TxtRotate(el, JSON.parse(rotateData), el.getAttribute('data-period'));
+        }
+      }
+    }
+  </script>
+</body>
+</html>
