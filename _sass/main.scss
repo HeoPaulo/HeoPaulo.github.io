@@ -718,7 +718,7 @@ a {
   position: fixed;
   inset: 0;
   background: rgba($text-color, 0.45);
-  z-index: 999;
+  z-index: 10001;
   align-items: center;
   justify-content: center;
 }
