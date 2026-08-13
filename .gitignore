@@ -6,3 +6,8 @@ node_modules
 .env
 .prettierignore
 .jekyll-metadata
+CLAUDE.md
+*.pptx
+~$*.pptx
+make_ppt.js
+check_pptx.py
