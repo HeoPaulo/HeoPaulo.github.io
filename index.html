@@ -1291,12 +1291,16 @@
 </h1>
 <div class="contact-icons">
   
-  <a class="social-link" aria-label="My E-Mail" href="mailto:heopaulo70@gmail.com">
+  <a class="social-link" aria-label="My E-Mail" href="mailto:heopaulo70@gmail.com" onclick="copyEmail(event, this)">
     <div class="social">
       <svg class="social-svg" viewBox="0 0 48 48">
         <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="/assets/img/solid.svg#envelope"></use>
       </svg>
     </div>
+    <span class="copy-toast">
+      <span class="lang-en">Copied!</span>
+      <span class="lang-kr">복사됨!</span>
+    </span>
   </a>
   
 
@@ -1469,6 +1473,28 @@
           el.innerHTML = '<span class="wrap"></span>';
           new TxtRotate(el, JSON.parse(rotateData), el.getAttribute('data-period'));
         }
+      }
+    }
+
+    function copyEmail(e, el) {
+      e.preventDefault();
+      var email = 'heopaulo70@gmail.com';
+      var toast = el.querySelector('.copy-toast');
+
+      function showToast() {
+        toast.classList.add('show');
+        clearTimeout(el._toastTimer);
+        el._toastTimer = setTimeout(function() {
+          toast.classList.remove('show');
+        }, 1800);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(showToast).catch(function() {
+          window.location.href = 'mailto:' + email;
+        });
+      } else {
+        window.location.href = 'mailto:' + email;
       }
     }
   </script>

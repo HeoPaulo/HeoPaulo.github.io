@@ -85,6 +85,7 @@ a {
 
 .layout .card {
   background: $card-bg-color;
+  border: 1px solid rgba($primary-color, 0.22);
   border-radius: 2rem;
   margin: 3rem 0;
   padding: 1rem 2rem;
@@ -309,7 +310,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 58vh;
+  min-height: 26rem;
   position: relative;
   overflow: hidden;
   padding-top: 3.5rem;
@@ -1144,6 +1146,30 @@ a {
       fill: #007bb6;
     }
   }
+}
+
+.copy-toast {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 0.6rem;
+  padding: 0.35rem 0.75rem;
+  background: $text-color;
+  color: $bg-color;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 /* Media Queries */
