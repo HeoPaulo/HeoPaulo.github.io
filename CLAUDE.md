@@ -58,10 +58,13 @@ npx gulp styles
 - [x] GitHub Actions 배포 워크플로우 추가 (.github/workflows/deploy.yml)
 - [x] 프로젝트 상세 모달, nav 바, 프로젝트 카드 썸네일 (mushenghe 스타일 리디자인)
 - [x] Jekyll/Ruby 제거, index.html 단일 정적 파일로 마이그레이션 (2026-08-12)
+- [x] GitHub 저장소 Settings > Pages > Source를 GitHub Actions로 변경 (2026-08-12)
+- [x] git 히스토리 squash, 잔여 stale 브랜치(feature/project-card-thumbnails, work/project-card-thumbnails-impl) 삭제 (2026-08-12)
+- [x] 프로젝트 모달이 상단 nav바에 가리던 z-index 버그 수정 (2026-08-13)
 
 ## 남은 작업
-- [ ] GitHub 저장소 Settings > Pages > Source를 **GitHub Actions**로 변경 (수동)
 - [ ] CV 다운로드 링크: 현재 index.html에 CV 링크가 없음 (Timeline 섹션이 꺼진 상태) — 이력서 URL이 정해지면 Timeline 섹션을 다시 켜고 링크 추가 필요
+- [ ] 프로젝트 카드 썸네일 이미지 누락: `/assets/img/projects/cobot1.gif`, `cobot2.gif`가 한 번도 커밋된 적 없어 Pick-and-Place·Pancake Robot 카드 썸네일이 깨져 있음 (마이그레이션 이전부터 있던 문제)
 
 ## 주요 파일 구조
 | 파일 | 용도 |
