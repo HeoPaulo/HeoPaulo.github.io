@@ -310,8 +310,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 58vh;
-  min-height: 26rem;
+  height: 36vh;
+  min-height: 21rem;
   position: relative;
   overflow: hidden;
   padding-top: 3.5rem;
@@ -861,10 +861,26 @@ a {
   }
 
   .pd-overview {
+    margin: 0 0 1.5rem;
+    padding-left: 1.1rem;
     font-size: 0.88rem;
     line-height: 1.8;
     color: rgba($text-color, 0.85);
-    margin-bottom: 1.5rem;
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .pd-overview-lead {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: rgba($text-color, 0.85);
+    margin: 0 0 0.5rem;
   }
 
   .pd-section {
@@ -885,6 +901,7 @@ a {
     line-height: 1.7;
     color: rgba($text-color, 0.85);
     margin: 0;
+    text-indent: 1em;
   }
 
   .pd-arch-img {
@@ -943,6 +960,7 @@ a {
     line-height: 1.65;
     color: rgba($text-color, 0.82);
     margin: 0;
+    text-indent: 1em;
   }
 
   .pd-contrib-list {
@@ -975,6 +993,34 @@ a {
     line-height: 1.7;
     color: rgba($text-color, 0.85);
     margin: 0;
+    text-indent: 1em;
+  }
+
+  .pd-contrib-body {
+    flex: 1;
+  }
+
+  .pd-contrib-body > p {
+    font-size: 0.84rem;
+    line-height: 1.7;
+    color: rgba($text-color, 0.85);
+    margin: 0 0 0.35rem;
+  }
+
+  .pd-contrib-bullets {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.84rem;
+    line-height: 1.7;
+    color: rgba($text-color, 0.85);
+
+    li {
+      margin-bottom: 0.15rem;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .pd-contrib-item code {
@@ -992,6 +1038,15 @@ a {
     letter-spacing: 0.1em;
     color: rgba($text-color, 0.4);
     margin: 0 0 0.35rem;
+  }
+
+  .pd-placeholder {
+    border: 1px dashed rgba($primary-color, 0.35);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba($text-color, 0.45);
   }
 
   .pd-links {

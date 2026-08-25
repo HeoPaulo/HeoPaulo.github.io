@@ -23,7 +23,7 @@
     [data-lang="kr"] .lang-en { display: none; }
     [data-lang="kr"] .lang-kr { display: inline; }
 
-    /* About Me — photo layout */
+    /* About Me photo layout */
     .aboutme-wrapper {
       display: flex;
       align-items: center;
@@ -159,7 +159,7 @@
            data-aos="zoom-in-down"
            data-name-en="SLAM-based Autonomous Nursing Assistant Medical Robot"
            data-name-kr="SLAM 기반 자율주행 간호사 보조 의료 로봇"
-           data-desc-en="Hospital robot with two modes — autonomous ward patrol with QR-based patient identification (Mode A) and nurse-following medication verification via GCP OCR (Mode B). Led patient_identifier package and built the STT CS application with Ollama LLM."
+           data-desc-en="Hospital robot with two modes: autonomous ward patrol with QR-based patient identification (Mode A) and nurse-following medication verification via GCP OCR (Mode B). Led patient_identifier package and built the STT CS application with Ollama LLM."
            data-desc-kr="자율 순찰·QR 환자 인식(모드 A)과 간호사 추종·GCP OCR 약품 검증(모드 B)을 수행하는 병원 보조 로봇. patient_identifier 패키지 및 Ollama LLM 기반 STT CS 앱 개발 담당."
            data-img="/assets/img/projects/intel1.gif"
            data-demo=""
@@ -442,14 +442,24 @@
   <span class="lang-kr">SLAM 기반 자율주행 간호사 보조 의료 로봇</span>
 </h2>
 <p class="pd-subtitle">
-  <span class="lang-en">MediCart — Intelligent Hospital Nursing Assistant Robot</span>
-  <span class="lang-kr">MediCart — 병원 지능형 간호사 보조 로봇</span>
+  <span class="lang-en">MediCart: Intelligent Hospital Nursing Assistant Robot</span>
+  <span class="lang-kr">MediCart: 병원 지능형 간호사 보조 로봇</span>
 </p>
 
-<p class="pd-overview">
-  <span class="lang-en">Designed to reduce nurses' repetitive mobility tasks so they can focus on core patient care. A TurtleBot4-based AMR operates in two modes: <strong>Mode A</strong> autonomously patrols wards, verifies patient identity via QR wristband, and assists with digital intake forms; <strong>Mode B</strong> follows the nurse to each room and cross-validates medication labels against prescriptions via OCR — preventing administration errors at the point of care.</span>
-  <span class="lang-kr">간호사의 반복·이동 업무를 자동화해 핵심 케어에 집중할 수 있도록 개발하였습니다. TurtleBot4 기반 AMR이 <strong>모드 A</strong>에서는 병실을 자율 순찰하며 QR 팔찌로 환자 신원을 확인하고 웹 문진을 보조하고, <strong>모드 B</strong>에서는 간호사를 추종하며 약품 라벨을 OCR로 처방전과 비교 검증해 투약 오류를 예방합니다.</span>
-</p>
+<ul class="pd-overview">
+  <li>
+    <span class="lang-en">Designed to reduce nurses' repetitive mobility tasks so they can focus on core patient care</span>
+    <span class="lang-kr">간호사의 반복·이동 업무를 자동화해 핵심 케어에 집중할 수 있도록 개발</span>
+  </li>
+  <li>
+    <span class="lang-en"><strong>Mode A</strong>: autonomously patrols wards, verifies patient identity via QR wristband, and assists with digital intake forms</span>
+    <span class="lang-kr"><strong>모드 A</strong>: 병실을 자율 순찰하며 QR 팔찌로 환자 신원을 확인하고 웹 문진을 보조</span>
+  </li>
+  <li>
+    <span class="lang-en"><strong>Mode B</strong>: follows the nurse to each room and cross-validates medication labels against prescriptions via OCR, preventing administration errors at the point of care</span>
+    <span class="lang-kr"><strong>모드 B</strong>: 간호사를 추종하며 약품 라벨을 OCR로 처방전과 비교 검증해 투약 오류를 예방</span>
+  </li>
+</ul>
 
 <div class="pd-section">
   <h3 class="pd-section-title">
@@ -460,15 +470,15 @@
     <div class="pd-mode-card">
       <span class="pd-mode-label">Mode A</span>
       <p>
-        <span class="lang-en">Autonomous Patrol &amp; Interview Assist — Robot navigates ward waypoints, confirms patient presence (YOLOv8s), scans QR wristband, validates room assignment via DB, then waits for web intake form submission.</span>
-        <span class="lang-kr">자율 순찰 + 문진 보조 — Nav2 웨이포인트로 병실 순회, YOLOv8s 재실 확인, QR 팔찌 스캔, DB 병실 검증 후 웹 문진 완료 대기.</span>
+        <span class="lang-en">Autonomous Patrol &amp; Interview Assist: Robot navigates ward waypoints, confirms patient presence (YOLOv8s), scans QR wristband, validates room assignment via DB, then waits for web intake form submission.</span>
+        <span class="lang-kr">자율 순찰 + 문진 보조: Nav2 웨이포인트로 병실 순회, YOLOv8s 재실 확인, QR 팔찌 스캔, DB 병실 검증 후 웹 문진 완료 대기.</span>
       </p>
     </div>
     <div class="pd-mode-card">
       <span class="pd-mode-label">Mode B</span>
       <p>
-        <span class="lang-en">Nurse-Following Medication Assist — Robot follows the nurse (OAK-D depth + ReID tracking), parks at each room, then sequentially verifies each medication label via GCP Vision OCR against the prescription order.</span>
-        <span class="lang-kr">간호사 추종 + 투약 보조 — OAK-D depth + ReID로 간호사 추종, 각 병실 도착 후 GCP Vision OCR로 약품 라벨을 처방 순서대로 순차 검증.</span>
+        <span class="lang-en">Nurse-Following Medication Assist: Robot follows the nurse (OAK-D depth + ReID tracking), parks at each room, then sequentially verifies each medication label via GCP Vision OCR against the prescription order.</span>
+        <span class="lang-kr">간호사 추종 + 투약 보조: OAK-D depth + ReID로 간호사 추종, 각 병실 도착 후 GCP Vision OCR로 약품 라벨을 처방 순서대로 순차 검증.</span>
       </p>
     </div>
   </div>
@@ -485,24 +495,72 @@
         <span class="lang-en">Detection</span>
         <span class="lang-kr">Detection</span>
       </span>
-      <p>
-        <span class="lang-en"><code>patient_identifier</code> package (fully implemented) — YOLOv8s person detection for occupancy check → OpenCV QRCodeDetector wristband scan (3 retries) → Firebase DB room-assignment validation → publishes <code>/robot6/patient_identified</code></span>
-        <span class="lang-kr"><code>patient_identifier</code> 패키지 (완전 구현) — YOLOv8s 환자 재실 탐지 → OpenCV QRCodeDetector 팔찌 스캔(3회 재시도) → Firebase DB 병실 배정 검증 → <code>/robot6/patient_identified</code> 발행</span>
-      </p>
+      <div class="pd-contrib-body">
+        <p>
+          <span class="lang-en"><code>patient_identifier</code> package (fully implemented)</span>
+          <span class="lang-kr"><code>patient_identifier</code> 패키지 (완전 구현)</span>
+        </p>
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">YOLOv8s person detection for occupancy check</span>
+            <span class="lang-kr">YOLOv8s 환자 재실 탐지</span>
+          </li>
+          <li>
+            <span class="lang-en">OpenCV QRCodeDetector wristband scan (3 retries)</span>
+            <span class="lang-kr">OpenCV QRCodeDetector 팔찌 스캔(3회 재시도)</span>
+          </li>
+          <li>
+            <span class="lang-en">Firebase DB room-assignment validation</span>
+            <span class="lang-kr">Firebase DB 병실 배정 검증</span>
+          </li>
+          <li>
+            <span class="lang-en">Publishes <code>/robot6/patient_identified</code></span>
+            <span class="lang-kr"><code>/robot6/patient_identified</code> 발행</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">OCR / QR</span>
-      <p>
-        <span class="lang-en">Medication label verification pipeline — GCP Vision API (Document Text Detection) extracts text from OAK-D frames and compares against prescription <code>admin_order</code> sequence, step by step.</span>
-        <span class="lang-kr">약품 라벨 검증 파이프라인 — GCP Vision API (Document Text Detection)로 OAK-D 프레임에서 텍스트 추출, 처방전 <code>admin_order</code> 순서대로 단계별 비교 검증.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <p>
+          <span class="lang-en">Medication label verification pipeline</span>
+          <span class="lang-kr">약품 라벨 검증 파이프라인</span>
+        </p>
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">GCP Vision API (Document Text Detection) extracts text from OAK-D frames</span>
+            <span class="lang-kr">GCP Vision API (Document Text Detection)로 OAK-D 프레임에서 텍스트 추출</span>
+          </li>
+          <li>
+            <span class="lang-en">Compares against prescription <code>admin_order</code> sequence, step by step</span>
+            <span class="lang-kr">처방전 <code>admin_order</code> 순서대로 단계별 비교 검증</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">STT / LLM</span>
-      <p>
-        <span class="lang-en">Voice-based CS application — Web Speech API for STT, Ollama LLM for intent parsing, Next.js (TypeScript) frontend + Flask backend + Firebase Realtime DB for nurse–robot interaction via natural language.</span>
-        <span class="lang-kr">음성 기반 CS 앱 — Web Speech API STT, Ollama LLM 의도 파악, Next.js(TypeScript) 프론트 + Flask 백엔드 + Firebase Realtime DB로 자연어 기반 간호사–로봇 인터랙션 구현.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <p>
+          <span class="lang-en">Voice-based CS application</span>
+          <span class="lang-kr">음성 기반 CS 앱</span>
+        </p>
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Web Speech API for STT</span>
+            <span class="lang-kr">Web Speech API STT</span>
+          </li>
+          <li>
+            <span class="lang-en">Ollama LLM for intent parsing</span>
+            <span class="lang-kr">Ollama LLM 의도 파악</span>
+          </li>
+          <li>
+            <span class="lang-en">Next.js (TypeScript) frontend + Flask backend + Firebase Realtime DB for nurse–robot interaction via natural language</span>
+            <span class="lang-kr">Next.js(TypeScript) 프론트 + Flask 백엔드 + Firebase Realtime DB로 자연어 기반 간호사–로봇 인터랙션 구현</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -583,14 +641,32 @@
   <span class="lang-kr">Digital Twin 기반 4족 보행 로봇 경계 자동화 시뮬레이션 시스템</span>
 </h2>
 <p class="pd-subtitle">
-  <span class="lang-en">Project JINDO — Digital Twin Quadruped Robot Border Security Simulation</span>
-  <span class="lang-kr">Project JINDO — Digital Twin 기반 4족 보행 로봇 경계 자동화 시뮬레이션</span>
+  <span class="lang-en">Project JINDO: Digital Twin Quadruped Robot Border Security Simulation</span>
+  <span class="lang-kr">Project JINDO: Digital Twin 기반 4족 보행 로봇 경계 자동화 시뮬레이션</span>
 </p>
 
-<p class="pd-overview">
-  <span class="lang-en">JINDO (Joint Intelligence Navigation & Defense Operator) — a digital twin system where a Unitree Go2 quadruped robot performs autonomous border patrol inside Isaac Sim 5.1, driven by a walk-these-ways RL locomotion policy. A 2-PC architecture separates the simulation host (Isaac Sim) from the C2 command center: 7 camera feeds + telemetry stream over FastDDS at 0.57 MB/s (97% compression from 17.9 MB/s raw), while the C2 PC runs Nav2 patrol FSM, YOLOv8s object detection (mAP@50 96.7%), and a tactical Next.js web console for real-time monitoring and gamepad teleoperation.</span>
-  <span class="lang-kr">JINDO(합동 지능형 항법 및 방호 작전 로봇) — Unitree Go2 4족 보행 로봇이 walk-these-ways RL 보행 정책으로 Isaac Sim 5.1 안에서 자율 경계 순찰을 수행하는 디지털 트윈 시스템. 시뮬레이션 호스트와 C2 지휘통제실 PC의 2-PC 구조. 7채널 카메라 + 텔레메트리를 FastDDS로 0.57 MB/s(원시 대비 97% 압축) 전송. C2 PC에서 Nav2 순찰 FSM, YOLOv8s 객체 탐지(mAP@50 96.7%), Next.js 전술 콘솔 운영.</span>
+<p class="pd-overview-lead">
+  <span class="lang-en">JINDO (Joint Intelligence Navigation & Defense Operator)</span>
+  <span class="lang-kr">JINDO(합동 지능형 항법 및 방호 작전 로봇)</span>
 </p>
+<ul class="pd-overview">
+  <li>
+    <span class="lang-en">A digital twin system where a Unitree Go2 quadruped robot performs autonomous border patrol inside Isaac Sim 5.1, driven by a walk-these-ways RL locomotion policy</span>
+    <span class="lang-kr">Unitree Go2 4족 보행 로봇이 walk-these-ways RL 보행 정책으로 Isaac Sim 5.1 안에서 자율 경계 순찰을 수행하는 디지털 트윈 시스템</span>
+  </li>
+  <li>
+    <span class="lang-en">A 2-PC architecture separates the simulation host (Isaac Sim) from the C2 command center</span>
+    <span class="lang-kr">시뮬레이션 호스트와 C2 지휘통제실 PC의 2-PC 구조</span>
+  </li>
+  <li>
+    <span class="lang-en">7 camera feeds + telemetry stream over FastDDS at 0.57 MB/s (97% compression from 17.9 MB/s raw)</span>
+    <span class="lang-kr">7채널 카메라 + 텔레메트리를 FastDDS로 0.57 MB/s(원시 대비 97% 압축) 전송</span>
+  </li>
+  <li>
+    <span class="lang-en">The C2 PC runs Nav2 patrol FSM, YOLOv8s object detection (mAP@50 96.7%), and a tactical Next.js web console for real-time monitoring and gamepad teleoperation</span>
+    <span class="lang-kr">C2 PC에서 Nav2 순찰 FSM, YOLOv8s 객체 탐지(mAP@50 96.7%), Next.js 전술 콘솔 운영</span>
+  </li>
+</ul>
 
 <div class="pd-section">
   <h3 class="pd-section-title">
@@ -612,18 +688,18 @@
   <div class="pd-mode-grid">
     <div class="pd-mode-card">
       <span class="pd-mode-label">
-        <span class="lang-en">Main PC — Simulation Host</span>
-        <span class="lang-kr">Main PC — 시뮬레이션 호스트</span>
+        <span class="lang-en">Main PC: Simulation Host</span>
+        <span class="lang-kr">Main PC: 시뮬레이션 호스트</span>
       </span>
       <p>
         <span class="lang-en">Isaac Sim 5.1 physics engine (500Hz PhysX TGS solver). Unitree Go2 12-DOF locomotion via walk-these-ways RL policy. 7 RGB cameras (3 body + 4 tower) + 4-ch depth. OmniGraph sensor bridge. Nav2 autonomous patrol path calculation. Compresses 17.9 MB/s raw stream → 0.57 MB/s via JPEG q50 / 5fps pipeline.</span>
-        <span class="lang-kr">Isaac Sim 5.1 물리 엔진(500Hz PhysX TGS 솔버). Go2 12-DOF 보행 — walk-these-ways RL 정책. RGB 7채널(바디 3 + 감시탑 4) + Depth 4채널. OmniGraph 센서 브리지. Nav2 자율 순찰 경로 계산. 원시 17.9 MB/s → JPEG q50 / 5fps 압축 → 0.57 MB/s.</span>
+        <span class="lang-kr">Isaac Sim 5.1 물리 엔진(500Hz PhysX TGS 솔버). Go2 12-DOF 보행(walk-these-ways RL 정책). RGB 7채널(바디 3 + 감시탑 4) + Depth 4채널. OmniGraph 센서 브리지. Nav2 자율 순찰 경로 계산. 원시 17.9 MB/s → JPEG q50 / 5fps 압축 → 0.57 MB/s.</span>
       </p>
     </div>
     <div class="pd-mode-card">
       <span class="pd-mode-label">
-        <span class="lang-en">C2 PC — Command Center</span>
-        <span class="lang-kr">C2 PC — 지휘통제실</span>
+        <span class="lang-en">C2 PC: Command Center</span>
+        <span class="lang-kr">C2 PC: 지휘통제실</span>
       </span>
       <p>
         <span class="lang-en">FastAPI REST + WebSocket server. Next.js 14 tactical console: 7-cam grid, real-time minimap, YOLO detection overlay, telemetry panel, PS5 gamepad teleoperation, NPC/weather control. PostgreSQL event logging (5Hz telemetry, 1s DB flush). Foxglove bridge for debug visualization. Nav2 patrol FSM: IDLE → PATROL → HOME → PAUSED.</span>
@@ -652,7 +728,7 @@
         <span class="lang-kr">3D 환경 구축</span>
       </span>
       <p>
-        <span class="lang-en">Built the Isaac Sim digital twin environment from scratch — referencing real GP (guard post) field photos to model terrain, hills (×2), 45 patrol waypoints, 4 surveillance towers, fences, and structures. Applied Phase 1 (solid textures) → Phase 2 (photorealistic textures + vegetation) to close the Sim-to-Real gap for YOLO training data quality.</span>
+        <span class="lang-en">Built the Isaac Sim digital twin environment from scratch, referencing real GP (guard post) field photos to model terrain, hills (×2), 45 patrol waypoints, 4 surveillance towers, fences, and structures. Applied Phase 1 (solid textures) → Phase 2 (photorealistic textures + vegetation) to close the Sim-to-Real gap for YOLO training data quality.</span>
         <span class="lang-kr">실제 GP 현장 사진을 레퍼런스로 Isaac Sim 디지털 트윈 환경 제작. 언덕 지형(×2), 45개 순찰 경로, 감시탑 4기, 철책·구조물 모델링. 1차(솔리드 텍스처) → 2차(실사 텍스처 + 식생) 단계적 정교화로 YOLO 학습 데이터 품질 향상.</span>
       </p>
     </div>
@@ -668,8 +744,8 @@
 
 <div class="pd-section">
   <h3 class="pd-section-title">
-    <span class="lang-en">AI Model — YOLOv8s Results</span>
-    <span class="lang-kr">AI 모델 — YOLOv8s 학습 결과</span>
+    <span class="lang-en">AI Model: YOLOv8s Results</span>
+    <span class="lang-kr">AI 모델: YOLOv8s 학습 결과</span>
   </h3>
   <div class="pd-step-grid" style="grid-template-columns: repeat(2, 1fr);">
     <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
@@ -721,11 +797,17 @@
   </div>
 </div>
 
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Demo Video</span>
+    <span class="lang-kr">시연 영상</span>
+  </h3>
+  <video class="pd-video" controls playsinline preload="metadata">
+    <source src="/assets/video/jindo-demo.mp4" type="video/mp4">
+  </video>
+</div>
+
 <div class="pd-links">
-  <a href="https://youtu.be/ClbRTyrHr9A" target="_blank" rel="noreferrer" class="modal-link modal-link-primary">
-    <span class="lang-en">Demo Video →</span>
-    <span class="lang-kr">시연 영상 →</span>
-  </a>
   <a href="https://github.com/HeoPaulo/cobot3_project_JINDO" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">GitHub →</a>
 </div>
 
@@ -748,10 +830,34 @@
   <span class="lang-kr">Computer Vision · 음성 기반 및 LLM 활용 사용자 맞춤형 Pick and Place 협동로봇</span>
 </h2>
 
-<p class="pd-overview">
-  <span class="lang-en">A voice-driven, LLM-powered nut pick &amp; place system. The user speaks their health condition — Whisper STT transcribes it, GPT-4o maps it to a custom nut combo (almond / cashew / pistachio / walnut), YOLOv8n-OBB detects each nut's position and orientation on the conveyor, and a Doosan M0609 with OnRobot RG2 gripper executes approach → grasp → verify → place in sequence. A Supabase real-time bridge keeps the React web UI synchronized with robot state throughout.</span>
-  <span class="lang-kr">음성 기반 LLM 맞춤형 견과류 픽 앤 플레이스 시스템. 음성으로 건강 상태를 말하면 Whisper STT 전사 → GPT-4o가 맞춤 견과류 콤보(아몬드/캐슈넛/피스타치오/호두) 결정 → YOLOv8n-OBB로 각 견과류의 위치·방향 검출 → Doosan M0609 + OnRobot RG2가 접근 → 파지 → 검증 → 배치 순 실행. Supabase 실시간 브리지로 React 웹 UI와 로봇 상태 동기화.</span>
+<p class="pd-overview-lead">
+  <span class="lang-en">A voice-driven, LLM-powered custom nut pick &amp; place system</span>
+  <span class="lang-kr">음성 기반 LLM 맞춤형 견과류 픽 앤 플레이스 시스템</span>
 </p>
+<ul class="pd-overview">
+  <li>
+    <span class="lang-en">The user speaks their health condition and Whisper STT transcribes it</span>
+    <span class="lang-kr">음성으로 건강 상태를 말하면 Whisper STT 전사</span>
+    <ul class="pd-contrib-bullets" style="margin-top:0.3rem;">
+      <li>
+        <span class="lang-en">GPT-4o maps it to a custom nut combo (almond / cashew / pistachio / walnut)</span>
+        <span class="lang-kr">GPT-4o가 맞춤 견과류 콤보(아몬드/캐슈넛/피스타치오/호두) 결정</span>
+      </li>
+      <li>
+        <span class="lang-en">YOLOv8n-OBB detects each nut's position and orientation</span>
+        <span class="lang-kr">YOLOv8n-OBB로 각 견과류의 위치·방향 검출</span>
+      </li>
+      <li>
+        <span class="lang-en">A Doosan M0609 with OnRobot RG2 gripper executes approach → grasp → verify → place in sequence</span>
+        <span class="lang-kr">Doosan M0609 + OnRobot RG2가 접근 → 파지 → 검증 → 배치 순 실행</span>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <span class="lang-en">A Supabase real-time bridge keeps the React web UI synchronized with robot state throughout</span>
+    <span class="lang-kr">Supabase 실시간 브리지로 React 웹 UI와 로봇 상태 동기화</span>
+  </li>
+</ul>
 
 <div class="pd-section">
   <h3 class="pd-section-title">
@@ -779,48 +885,110 @@
   <div class="pd-contrib-list">
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">PM &amp; Leader</span>
-      <p>
-        <span class="lang-en">Led the 5-member team across the 17-day sprint as 팀장. Managed scheduling, documentation (8 operational docs including architecture, node, safety, and operations manuals), and cross-role integration across STT/LLM, vision, robot control, frontend, and infra sub-teams.</span>
-        <span class="lang-kr">17일 스프린트 5인 팀 팀장. 일정 관리, 운영 문서 작성(시스템 아키텍처·노드·안전·운영 매뉴얼 등 8종), STT/LLM·비전·로봇 제어·프론트엔드·인프라 서브팀 간 통합 조율.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Led the 5-member team across the 17-day sprint as team leader</span>
+            <span class="lang-kr">17일 스프린트 5인 팀 팀장</span>
+          </li>
+          <li>
+            <span class="lang-en">Managed scheduling and operational documentation (8 docs including architecture, node, safety, and operations manuals)</span>
+            <span class="lang-kr">일정 관리, 운영 문서 작성(시스템 아키텍처·노드·안전·운영 매뉴얼 등 8종)</span>
+          </li>
+          <li>
+            <span class="lang-en">Coordinated cross-role integration across STT/LLM, vision, robot control, frontend, and infra sub-teams</span>
+            <span class="lang-kr">STT/LLM·비전·로봇 제어·프론트엔드·인프라 서브팀 간 통합 조율</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">
-        <span class="lang-en">Simulation &amp; Safety</span>
-        <span class="lang-kr">시뮬레이션 · 안전</span>
+        <span class="lang-en">Safety Design</span>
+        <span class="lang-kr">안전 설계</span>
       </span>
-      <p>
-        <span class="lang-en">Built the IsaacSim simulation environment for pre-deployment dry-run validation — configured the full work-cell scene (Doosan M0609 + Intel RealSense + conveyor + nut layout). Defined workspace boundaries and collision zones using RoboDK CAD, and implemented dual-layer safety validation in both task manager and robot control nodes to prevent out-of-bounds picks.</span>
-        <span class="lang-kr">IsaacSim 시뮬레이션 환경 구축으로 실 배포 전 dry-run 검증 지원(Doosan M0609 + RealSense + 컨베이어 + 견과류 배치 전체 씬 구성). RoboDK CAD로 워크스페이스 경계·충돌 구역 정의, 태스크 매니저·로봇 컨트롤 이중 안전 검증 로직으로 범위 초과 픽 방지.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Defined workspace boundaries and collision zones using RoboDK CAD</span>
+            <span class="lang-kr">RoboDK CAD로 워크스페이스 경계·충돌 구역 정의</span>
+          </li>
+          <li>
+            <span class="lang-en">Implemented dual-layer safety validation in both the task manager and robot control nodes to prevent out-of-bounds picks</span>
+            <span class="lang-kr">태스크 매니저·로봇 컨트롤 이중 안전 검증 로직으로 범위 초과 픽 방지</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">
         <span class="lang-en">Robot Control</span>
         <span class="lang-kr">로봇 제어</span>
       </span>
-      <p>
-        <span class="lang-en">Implemented <code>cobot_robot_control</code> — the pick action server executing the full motion sequence: approach → grasp → <code>verify_grip</code> (RG2 bit check) → lift → transit → place → retreat → home. Integrated pick verification (count-based retry up to 5 rounds) and clustering detection with OBB-gap push path generation to separate jammed nuts before grasping.</span>
-        <span class="lang-kr"><code>cobot_robot_control</code> 구현 — 접근 → 파지 → <code>verify_grip</code>(RG2 비트 확인) → 리프트 → 이동 → 배치 → 복귀 → 홈 전체 동작 시퀀스. 픽 수량 검증(최대 5회 재시도) 및 OBB 간격 기반 군집 판정 + Push 경로 생성으로 밀착 견과류 사전 분리.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <p>
+          <span class="lang-en">Implemented <code>cobot_robot_control</code>, the pick action server</span>
+          <span class="lang-kr"><code>cobot_robot_control</code> 구현</span>
+        </p>
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Full motion sequence: approach → grasp → <code>verify_grip</code> (RG2 bit check) → lift → transit → place → retreat → home</span>
+            <span class="lang-kr">접근 → 파지 → <code>verify_grip</code>(RG2 비트 확인) → 리프트 → 이동 → 배치 → 복귀 → 홈 전체 동작 시퀀스</span>
+          </li>
+          <li>
+            <span class="lang-en">Pick verification (count-based retry up to 5 rounds) and clustering detection based on OBB-gap analysis</span>
+            <span class="lang-kr">픽 수량 검증(최대 5회 재시도) 및 OBB 간격 기반 군집 판정</span>
+          </li>
+          <li>
+            <span class="lang-en">Push path generation to separate jammed nuts before grasping</span>
+            <span class="lang-kr">Push 경로 생성으로 밀착 견과류 사전 분리</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">
         <span class="lang-en">Model Training</span>
         <span class="lang-kr">모델 학습</span>
       </span>
-      <p>
-        <span class="lang-en">Trained YOLOv8n-OBB (nano) across 3 iterations: ① standard bbox → ② OBB 2-phase training (80+30 epochs) → ③ evaluated YOLOv8s-OBB (rejected: walnut 0.00 on new-env generalization). Final model: conf=0.75 / iou=0.50 / imgsz=800, ~8ms inference, test mAP@0.5 = 0.992, F1 = 0.9931. Depth pipeline: OBB inset 0.7 median depth, per-class z_offset correction.</span>
-        <span class="lang-kr">YOLOv8n-OBB 3회 반복 학습: ① 일반 박스 → ② OBB 2단계(80+30에폭) → ③ YOLOv8s-OBB 평가(새 환경 호두 0.00 일반화 실패로 기각). 최종 모델: conf=0.75 / iou=0.50 / imgsz=800, 추론 ~8ms, test mAP@0.5 = 0.992, F1 = 0.9931. Depth 파이프라인: OBB inset 0.7 median depth, 클래스별 z_offset 보정.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Trained YOLOv8n-OBB (nano) across 3 iterations</span>
+            <span class="lang-kr">YOLOv8n-OBB 3회 반복 학습</span>
+            <ul class="pd-contrib-bullets" style="margin-top:0.3rem;">
+              <li>
+                <span class="lang-en">① Standard bounding box</span>
+                <span class="lang-kr">① 일반 박스</span>
+              </li>
+              <li>
+                <span class="lang-en">② OBB 2-phase training (80+30 epochs)</span>
+                <span class="lang-kr">② OBB 2단계(80+30에폭)</span>
+              </li>
+              <li>
+                <span class="lang-en">③ Evaluated YOLOv8s-OBB (rejected: walnut 0.00 on new-environment generalization)</span>
+                <span class="lang-kr">③ YOLOv8s-OBB 평가(새 환경 호두 0.00 일반화 실패로 기각)</span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="lang-en">Final model: conf=0.75 / iou=0.50 / imgsz=800, ~8ms inference, test mAP@0.5 = 0.992, F1 = 0.9931</span>
+            <span class="lang-kr">최종 모델: conf=0.75 / iou=0.50 / imgsz=800, 추론 ~8ms, test mAP@0.5 = 0.992, F1 = 0.9931</span>
+          </li>
+          <li>
+            <span class="lang-en">Depth pipeline: OBB inset 0.7 median depth, per-class z_offset correction</span>
+            <span class="lang-kr">Depth 파이프라인: OBB inset 0.7 median depth, 클래스별 z_offset 보정</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="pd-section">
   <h3 class="pd-section-title">
-    <span class="lang-en">YOLO Model — Final Results</span>
-    <span class="lang-kr">YOLO 모델 — 최종 성능</span>
+    <span class="lang-en">YOLO Model: Final Results</span>
+    <span class="lang-kr">YOLO 모델: 최종 성능</span>
   </h3>
   <div class="pd-step-grid" style="grid-template-columns: repeat(2, 1fr);">
     <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
@@ -883,6 +1051,18 @@
   </div>
 </div>
 
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Presentation & Demo</span>
+    <span class="lang-kr">발표 자료 및 시연 영상</span>
+  </h3>
+  <!-- TODO: insert PPT-derived slides/images and a demo video (assets/video/nutbot-demo.mp4) here -->
+  <div class="pd-placeholder">
+    <span class="lang-en">Presentation slides and demo video coming soon</span>
+    <span class="lang-kr">발표 자료 및 시연 영상 추가 예정</span>
+  </div>
+</div>
+
 <div class="pd-links">
   <a href="https://github.com/HeoPaulo/cobot2_CV_STT_nutbot" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">GitHub →</a>
 </div>
@@ -907,7 +1087,7 @@
 </h2>
 
 <p class="pd-overview">
-  <span class="lang-en">A Doosan M0609 6-axis collaborative robot that fully automates pancake production across 6 sequential steps — dough placement (tong), pressing, plate setting, flipping (spatula), sauce, and powder topping. The system features 5-tool automatic exchange, force/compliance control, spline path planning, and a Firebase-backed web interface for remote control and real-time monitoring, including a customer-facing kiosk with TTS voice guidance.</span>
+  <span class="lang-en">A Doosan M0609 6-axis collaborative robot that fully automates pancake production across 6 sequential steps: dough placement (tong), pressing, plate setting, flipping (spatula), sauce, and powder topping. The system features 5-tool automatic exchange, force/compliance control, spline path planning, and a Firebase-backed web interface for remote control and real-time monitoring, including a customer-facing kiosk with TTS voice guidance.</span>
   <span class="lang-kr">Doosan M0609 6축 협동로봇으로 반죽 배치(집게), 프레스, 접시 세팅, 뒤집기(스패튤라), 소스, 가루 토핑의 6단계 공정을 완전 자동화한 시스템. 5종 도구 자동 교환, 힘/컴플라이언스 제어, 스플라인 경로, Firebase 기반 웹 대시보드와 TTS 음성 안내 고객용 키오스크 포함.</span>
 </p>
 
@@ -919,20 +1099,52 @@
   <div class="pd-contrib-list">
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">PM &amp; Leader</span>
-      <p>
-        <span class="lang-en">Led the 5-member team across the 12-day sprint. Defined the 6-step workflow architecture, managed milestone delivery, and coordinated integration between robot motion, Firebase backend, and kiosk UI sub-teams.</span>
-        <span class="lang-kr">12일 스프린트 5인 팀 총괄. 6단계 워크플로우 아키텍처 정의, 마일스톤 관리, 로봇 모션·Firebase 백엔드·키오스크 UI 서브팀 간 통합 조율.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Led the 5-member team across the 12-day sprint</span>
+            <span class="lang-kr">12일 스프린트 5인 팀 총괄</span>
+          </li>
+          <li>
+            <span class="lang-en">Defined the 6-step workflow architecture</span>
+            <span class="lang-kr">6단계 워크플로우 아키텍처 정의</span>
+          </li>
+          <li>
+            <span class="lang-en">Managed milestone delivery</span>
+            <span class="lang-kr">마일스톤 관리</span>
+          </li>
+          <li>
+            <span class="lang-en">Coordinated integration between robot motion, Firebase backend, and kiosk UI sub-teams</span>
+            <span class="lang-kr">로봇 모션·Firebase 백엔드·키오스크 UI 서브팀 간 통합 조율</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">
         <span class="lang-en">Motion Planning</span>
         <span class="lang-kr">동작 계획</span>
       </span>
-      <p>
-        <span class="lang-en">Designed robot motion planning and workflow coordination logic — implementing <code>TaskManagerNode</code> orchestration and task modules for each cooking step. Applied force control (<code>set_desired_force</code>), compliance mode, spline paths (<code>movesx</code>), circular motions (<code>movec</code>) for sauce, and periodic sweeping moves for powder topping. Developed Safe Motion Wrapping: 0.05s pause signal polling, Tool/TCP validation before each move, and strict execution order to prevent async command collisions.</span>
-        <span class="lang-kr">로봇 동작 계획 및 워크플로우 조율 로직 설계. <code>TaskManagerNode</code> 오케스트레이션 및 각 조리 단계 태스크 모듈 구현. 힘 제어(<code>set_desired_force</code>), 컴플라이언스 모드, 스플라인(<code>movesx</code>), 소스용 원형 동작(<code>movec</code>), 가루 토핑용 주기적 스윕 동작 적용. Safe Motion Wrapping: 0.05초 일시정지 신호 감시, 동작 전 Tool/TCP 검증, 비동기 명령 충돌 방지 엄격 순서 제어.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Designed robot motion planning and workflow coordination logic</span>
+            <span class="lang-kr">로봇 동작 계획 및 워크플로우 조율 로직 설계</span>
+          </li>
+          <li>
+            <span class="lang-en">Implemented <code>TaskManagerNode</code> orchestration and task modules for each cooking step</span>
+            <span class="lang-kr"><code>TaskManagerNode</code> 오케스트레이션 및 각 조리 단계 태스크 모듈 구현</span>
+          </li>
+          <li>
+            <span class="lang-en">Applied force control (<code>set_desired_force</code>), compliance mode, spline paths (<code>movesx</code>), circular motion for sauce (<code>movec</code>), and periodic sweep motion for powder topping (<code>move_periodic</code>)</span>
+            <span class="lang-kr">힘 제어(<code>set_desired_force</code>), 컴플라이언스 모드, 스플라인(<code>movesx</code>), 소스용 원형 동작(<code>movec</code>), 가루 토핑용 주기적 스윕 동작(<code>move_periodic</code>) 적용</span>
+          </li>
+          <li>
+            <span class="lang-en">Developed Safe Motion Wrapping: 0.05s pause signal polling, Tool/TCP validation before each move, strict execution order to prevent async command collisions</span>
+            <span class="lang-kr">Safe Motion Wrapping 구현: 0.05초 일시정지 신호 감시, 동작 전 Tool/TCP 검증, 비동기 명령 충돌 방지 엄격 순서 제어</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -963,20 +1175,54 @@
         <span class="lang-en">2-Node 4-Thread</span>
         <span class="lang-kr">2노드 4스레드</span>
       </span>
-      <p>
-        <span class="lang-en">Task node (Main thread: Firebase command polling · Robot Task thread: motion dispatch) + Control node (Control Spin thread: always-on ROS comms · Status Polling thread: 0.5s <code>GetRobotState</code> polling). 1:1 acknowledged service calls instead of fire-and-forget topics — if no response, immediately triggers safe stop.</span>
-        <span class="lang-kr">태스크 노드(Main: Firebase 폴링 · Robot Task: 모션 디스패치) + 제어 노드(Control Spin: 항시 ROS 통신로 유지 · Status Polling: 0.5초 <code>GetRobotState</code>). 토픽 대신 1:1 확답 서비스 호출 — 응답 없으면 즉시 안전 정지.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Task node: Main thread polls Firebase commands, Robot Task thread dispatches motion</span>
+            <span class="lang-kr">태스크 노드: Main 스레드는 Firebase 폴링, Robot Task 스레드는 모션 디스패치</span>
+          </li>
+          <li>
+            <span class="lang-en">Control node: Control Spin thread keeps ROS comms always-on, Status Polling thread polls <code>GetRobotState</code> every 0.5s</span>
+            <span class="lang-kr">제어 노드: Control Spin 스레드는 항시 ROS 통신로 유지, Status Polling 스레드는 0.5초 간격으로 <code>GetRobotState</code> 폴링</span>
+          </li>
+          <li>
+            <span class="lang-en">Uses 1:1 acknowledged service calls instead of fire-and-forget topics; if no response arrives, immediately triggers safe stop</span>
+            <span class="lang-kr">토픽 대신 1:1 확답 서비스 호출 사용, 응답 없으면 즉시 안전 정지</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">
         <span class="lang-en">Safety Zones</span>
         <span class="lang-kr">안전 구역</span>
       </span>
-      <p>
-        <span class="lang-en">Three-zone safety layout: solo work zone (TCP 125N limit, 45% collision sensitivity) · collaborative zone (TCP 80N, 85% sensitivity) · reduced sensitivity zone active only during the press step. 7-step emergency recovery procedure for safety-stop and E-stop events.</span>
-        <span class="lang-kr">3구역 안전 설계: 단독 작업 구역(TCP 125N · 충돌 민감도 45%) · 협동 작업 구역(TCP 80N · 85%) · 프레스 단계 한정 민감도 완화 구역. 안전정지·비상정지 7단계 긴급 복구 절차.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Three-zone safety layout</span>
+            <span class="lang-kr">3구역 안전 설계</span>
+            <ul class="pd-contrib-bullets">
+              <li>
+                <span class="lang-en">Solo work zone (TCP 125N limit, 45% collision sensitivity)</span>
+                <span class="lang-kr">단독 작업 구역(TCP 125N · 충돌 민감도 45%)</span>
+              </li>
+              <li>
+                <span class="lang-en">Collaborative zone (TCP 80N, 85% sensitivity)</span>
+                <span class="lang-kr">협동 작업 구역(TCP 80N · 85%)</span>
+              </li>
+              <li>
+                <span class="lang-en">Reduced-sensitivity zone active only during the press step</span>
+                <span class="lang-kr">프레스 단계 한정 민감도 완화 구역</span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="lang-en">7-step emergency recovery procedure for safety-stop and E-stop events</span>
+            <span class="lang-kr">안전정지·비상정지 7단계 긴급 복구 절차</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -1003,6 +1249,18 @@
   </div>
 </div>
 
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Presentation & Demo</span>
+    <span class="lang-kr">발표 자료 및 시연 영상</span>
+  </h3>
+  <!-- TODO: insert PPT-derived slides/images and a demo video (assets/video/pancake-demo.mp4) here -->
+  <div class="pd-placeholder">
+    <span class="lang-en">Presentation slides and demo video coming soon</span>
+    <span class="lang-kr">발표 자료 및 시연 영상 추가 예정</span>
+  </div>
+</div>
+
 <div class="pd-links">
   <a href="https://github.com/HeoPaulo/cobot1_pancake_machine" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">GitHub →</a>
 </div>
@@ -1016,8 +1274,8 @@
         
             <div class="pd-meta">
   <span class="pd-badge">
-    <span class="lang-en">2023. 11. &nbsp;·&nbsp; Capstone Design (Team)</span>
-    <span class="lang-kr">2023. 11. &nbsp;·&nbsp; 캡스톤디자인 (팀 프로젝트)</span>
+    <span class="lang-en">2022. 9. – 2023. 11. &nbsp;·&nbsp; Capstone Design (Team)</span>
+    <span class="lang-kr">2022. 9. ~ 2023. 11. &nbsp;·&nbsp; 캡스톤디자인 (팀 프로젝트)</span>
   </span>
 </div>
 
@@ -1030,20 +1288,40 @@
   <span class="lang-kr">선형구동 방식 고하중 협동로봇 설계 및 ANN 역기구학 적용</span>
 </p>
 
-<p class="pd-overview">
-  <span class="lang-en">Undergraduate capstone research designing a 3-DOF collaborative robot arm driven by water-hydraulic EHA (Electro-Hydraulic Actuators) to achieve a payload-to-weight (P/W) ratio exceeding 1.0 — a benchmark no commercially available cobot currently meets. The arm (AL6061, 13.96 kg) lifts 20 kg payloads, yielding P/W = 1.43, compared to 0.18–0.47 for leading industrial cobots. An ANN was trained to instantly map end-effector positions to cylinder pressures, replacing iterative inverse kinematics calculation.</span>
-  <span class="lang-kr">수압 EHA(전기 유압 액추에이터)로 구동하는 3자유도 협동로봇 팔을 설계하여, 현재 상용 협동로봇 중 달성한 기기가 없는 P/W(가반하중/자체중량) 1 이상을 목표로 한 졸업 논문. AL6061 재질 로봇팔(13.96 kg)로 20 kg 가반하중을 실현해 P/W = 1.43 달성. UR20(0.31), LBR iiwa(0.47) 대비 3~8배 높은 수치. 역기구학 반복 계산 없이 실린더 압력을 즉시 추정하는 ANN 모델도 구성.</span>
+<p class="pd-overview-lead">
+  <span class="lang-en">Undergraduate capstone research designing a 3-DOF collaborative robot arm driven by water-hydraulic EHA (Electro-Hydraulic Actuators) to achieve a payload-to-weight (P/W) ratio exceeding 1.0, a benchmark no commercially available cobot currently meets</span>
+  <span class="lang-kr">수압 EHA(전기 유압 액추에이터)로 구동하는 3자유도 협동로봇 팔을 설계하여, 현재 상용 협동로봇 중 달성한 기기가 없는 P/W(가반하중/자체중량) 1 이상을 목표로 한 졸업 논문</span>
 </p>
+<ul class="pd-overview">
+  <li>
+    <span class="lang-en">The arm (AL6061, 13.96 kg) lifts 20 kg payloads, yielding P/W = 1.43, 3–8× higher than UR20 (0.31) and LBR iiwa (0.47)</span>
+    <span class="lang-kr">AL6061 재질 로봇팔(13.96 kg)로 20 kg 가반하중을 실현해 P/W = 1.43 달성. UR20(0.31), LBR iiwa(0.47) 대비 3~8배 높은 수치</span>
+  </li>
+  <li>
+    <span class="lang-en">Also built an ANN model that instantly estimates cylinder pressure without iterative inverse kinematics calculation</span>
+    <span class="lang-kr">역기구학 반복 계산 없이 실린더 압력을 즉시 추정하는 ANN 모델도 구성</span>
+  </li>
+</ul>
 
 <div class="pd-section">
   <h3 class="pd-section-title">
     <span class="lang-en">Research Motivation</span>
     <span class="lang-kr">연구 배경</span>
   </h3>
-  <p style="font-size:0.88rem; line-height:1.6; margin:0;">
-    <span class="lang-en">Commercial cobots average only 6.3 kg payload and all have P/W &lt; 1 — meaning they weigh more than they can carry. For heavy logistics tasks (20 kg+ parcels, waste sorting), existing solutions like forklifts and hoists are large, dangerous, or require human assistance. This project proposes EHA-driven linear actuation to achieve both high payload and compact, safe form factor for human collaboration.</span>
-    <span class="lang-kr">상용 협동로봇 평균 가반하중은 6.3 kg에 불과하고, P/W가 모두 1 미만 — 로봇 자체 무게가 가반하중보다 크다. 20 kg 이상 택배 분류, 생활계 폐기물 처리 등 고하중 작업에는 지게차·호이스트 등 대형 장비가 필요하다. EHA 선형 구동으로 고가반하중과 경량·안전 형태를 동시에 달성하는 것이 본 연구의 출발점.</span>
-  </p>
+  <ul class="pd-contrib-bullets" style="font-size:0.88rem;">
+    <li>
+      <span class="lang-en">Commercial cobots average only 6.3 kg payload and all have P/W &lt; 1, meaning they weigh more than they can carry</span>
+      <span class="lang-kr">상용 협동로봇 평균 가반하중은 6.3 kg에 불과하고, P/W가 모두 1 미만이다. 로봇 자체 무게가 가반하중보다 크다는 뜻</span>
+    </li>
+    <li>
+      <span class="lang-en">Heavy logistics tasks (20 kg+ parcels, waste sorting) still require large equipment like forklifts and hoists</span>
+      <span class="lang-kr">20 kg 이상 택배 분류, 생활계 폐기물 처리 등 고하중 작업에는 지게차·호이스트 등 대형 장비가 필요</span>
+    </li>
+    <li>
+      <span class="lang-en">EHA-driven linear actuation to achieve both high payload and a compact, safe form factor for human collaboration is the starting point of this research</span>
+      <span class="lang-kr">EHA 선형 구동으로 고가반하중과 경량·안전 형태를 동시에 달성하는 것이 본 연구의 출발점</span>
+    </li>
+  </ul>
 </div>
 
 <div class="pd-section">
@@ -1057,17 +1335,49 @@
         <span class="lang-en">Robot Design</span>
         <span class="lang-kr">로봇 설계</span>
       </span>
-      <p>
-        <span class="lang-en">3-DOF arm, AL6061, 13.96 kg self-weight, 20 kg payload → <strong>P/W = 1.43</strong>. Cylinder 2 max pressure: 2,111 N / 6.72 MPa. Cylinder 3 max pressure: 511 N / 1.2 MPa. EHA: water hydraulic, CM2E25-75Z cylinders (Ø25, stroke 75 mm), DC 24V 12.7W motor.</span>
-        <span class="lang-kr">3자유도 팔, AL6061, 자체중량 13.96 kg, 가반하중 20 kg → <strong>P/W = 1.43</strong>. 실린더 2 최대 압력: 2,111 N / 6.72 MPa. 실린더 3 최대 압력: 511 N / 1.2 MPa. 수압 EHA: CM2E25-75Z(Ø25, 스트로크 75 mm), DC 24V 12.7W 모터.</span>
-      </p>
+      <ul class="pd-contrib-bullets">
+        <li>
+          <span class="lang-en">3-DOF arm, AL6061, 13.96 kg self-weight, 20 kg payload → <strong>P/W = 1.43</strong></span>
+          <span class="lang-kr">3자유도 팔, AL6061, 자체중량 13.96 kg, 가반하중 20 kg → <strong>P/W = 1.43</strong></span>
+        </li>
+        <li>
+          <span class="lang-en">Cylinder 2 max pressure: 2,111 N / 6.72 MPa (drives Link 2, mounted 50 mm from its end)</span>
+          <span class="lang-kr">실린더 2 최대 압력: 2,111 N / 6.72 MPa (링크 2 구동, 링크 2 끝에서 50mm 지점에 설치)</span>
+        </li>
+        <li>
+          <span class="lang-en">Cylinder 3 max pressure: 511 N / 1.2 MPa (drives Link 3, mounted 115 mm from Joint 2; the two cylinders act independently, so each one's peak-pressure position differs)</span>
+          <span class="lang-kr">실린더 3 최대 압력: 511 N / 1.2 MPa (링크 3 구동, 조인트 2에서 115mm 지점에 설치; 두 실린더가 독립적으로 작용해 최대 압력이 걸리는 위치가 각각 다르게 나타남)</span>
+        </li>
+        <li>
+          <span class="lang-en">EHA: water hydraulic, CM2E25-75Z cylinders (Ø25, stroke 75 mm), sized to cover the peak pressures above</span>
+          <span class="lang-kr">수압 EHA: CM2E25-75Z(Ø25, 스트로크 75 mm), 위 최대 압력값을 감당하도록 선정한 사양</span>
+        </li>
+        <li>
+          <span class="lang-en">DC 24V 12.7W motor (drives the EHA pump)</span>
+          <span class="lang-kr">DC 24V 12.7W 모터 (EHA 펌프 구동용)</span>
+        </li>
+      </ul>
     </div>
     <div class="pd-mode-card">
       <span class="pd-mode-label">ANN IK Model</span>
-      <p>
-        <span class="lang-en">100-point workspace dataset (80:20 split), 1 hidden layer × 10 neurons, Adam optimizer, MSE loss, ReLU activation, early stopping at 222 epochs. <strong>Accuracy 0.95 / Loss 0.006 / RMSE 0.08</strong>. No overfitting confirmed. Instantly infers cylinder pressures from end-effector coordinates — no iterative IK computation required.</span>
-        <span class="lang-kr">작업공간 100개 데이터셋(8:2 분할), 은닉층 1 × 뉴런 10, Adam 옵티마이저, MSE 손실, ReLU 활성화, 222에폭 early stopping. <strong>정확도 0.95 / 손실 0.006 / RMSE 0.08</strong>. 과적합 없음 확인. 말단부 좌표 입력 시 실린더 압력 즉시 추론 — 반복 역기구학 계산 불필요.</span>
-      </p>
+      <ul class="pd-contrib-bullets">
+        <li>
+          <span class="lang-en">100-point workspace dataset (80:20 split), 1 hidden layer × 10 neurons, Adam optimizer, MSE loss, ReLU + Linear activation, early stopping at 222 epochs</span>
+          <span class="lang-kr">작업공간 100개 데이터셋(8:2 분할), 은닉층 1 × 뉴런 10, Adam 옵티마이저, MSE 손실, ReLU + Linear 활성화, 222에폭 early stopping</span>
+        </li>
+        <li>
+          <span class="lang-en"><strong>Accuracy 0.95 / Loss 0.006 / RMSE 0.08</strong> (no overfitting confirmed)</span>
+          <span class="lang-kr"><strong>정확도 0.95 / 손실 0.006 / RMSE 0.08</strong> (과적합 없음 확인)</span>
+        </li>
+        <li>
+          <span class="lang-en">Instantly infers cylinder pressures from end-effector coordinates</span>
+          <span class="lang-kr">말단부 좌표 입력 시 실린더 압력 즉시 추론</span>
+        </li>
+        <li>
+          <span class="lang-en">No iterative IK computation required</span>
+          <span class="lang-kr">반복 역기구학 계산 불필요</span>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -1097,27 +1407,51 @@
   <div class="pd-contrib-list">
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">Kinematics</span>
-      <p>
-        <span class="lang-en">Derived the 3-DOF forward kinematics via D-H Table and Homogeneous Transformation Matrices (HTM). Computed the Jacobian to relate joint-space velocities to Cartesian velocities, then derived cylinder force and pressure from the required torque-to-linear-force conversion.</span>
-        <span class="lang-kr">D-H Table과 HTM(동차변환행렬)으로 3자유도 순기구학 유도. 자코비안으로 관절공간-데카르트공간 속도 관계 도출 후, 토크→선형힘 변환으로 실린더 힘·압력 산출.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Derived the 3-DOF forward kinematics via D-H Table and Homogeneous Transformation Matrices (HTM)</span>
+            <span class="lang-kr">D-H Table과 HTM(동차변환행렬)으로 3자유도 순기구학 유도</span>
+          </li>
+          <li>
+            <span class="lang-en">Computed the Jacobian to relate joint-space velocities to Cartesian velocities, then derived cylinder force and pressure from the required torque-to-linear-force conversion</span>
+            <span class="lang-kr">자코비안으로 관절공간-데카르트공간 속도 관계 도출 후, 토크→선형힘 변환으로 실린더 힘·압력 산출</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">CAD</span>
-      <p>
-        <span class="lang-en">3D modeled the robot arm and EHA assembly in Autodesk Inventor. Designed the coordinate frames and cylinder attachment positions (link 2: 50 mm offset, link 3: 115 mm from joint 2).</span>
-        <span class="lang-kr">Autodesk Inventor로 로봇팔 및 EHA 조립체 3D 모델링. 좌표계 및 실린더 부착 위치(링크2: 50mm 오프셋, 링크3: 조인트2에서 115mm) 설계.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">3D modeled the robot arm and EHA assembly in Autodesk Inventor</span>
+            <span class="lang-kr">Autodesk Inventor로 로봇팔 및 EHA 조립체 3D 모델링</span>
+          </li>
+          <li>
+            <span class="lang-en">Designed the coordinate frames and cylinder attachment positions (link 2: 50 mm offset, link 3: 115 mm from joint 2)</span>
+            <span class="lang-kr">좌표계 및 실린더 부착 위치(링크2: 50mm 오프셋, 링크3: 조인트2에서 115mm) 설계</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">
         <span class="lang-en">Analysis</span>
         <span class="lang-kr">분석</span>
       </span>
-      <p>
-        <span class="lang-en">Visualized the pressure distribution across the workspace using MATLAB 3D plots and XY projections. Identified maximum pressure positions for each cylinder and derived the required EHA specifications (max pressure, pump bore diameter).</span>
-        <span class="lang-kr">MATLAB 3D 그래프 및 XY 정사영으로 작업공간 전체 압력 분포 시각화. 각 실린더 최대 압력 위치 파악 및 요구 EHA 사양(최대 압력, 펌프 내경) 도출.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Visualized the pressure distribution across the workspace using MATLAB 3D plots and XY projections</span>
+            <span class="lang-kr">MATLAB 3D 그래프 및 XY 정사영으로 작업공간 전체 압력 분포 시각화</span>
+          </li>
+          <li>
+            <span class="lang-en">Identified maximum pressure positions for each cylinder and derived the required EHA specifications (max pressure, pump bore diameter)</span>
+            <span class="lang-kr">각 실린더 최대 압력 위치 파악 및 요구 EHA 사양(최대 압력, 펌프 내경) 도출</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -1138,7 +1472,19 @@
   </div>
 </div>
 
-          
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Publications</span>
+    <span class="lang-kr">관련 논문 및 발표 자료</span>
+  </h3>
+  <!-- TODO: insert the 2 competition proceedings papers + capstone thesis for this research -->
+  <div class="pd-placeholder">
+    <span class="lang-en">Competition proceedings and thesis coming soon</span>
+    <span class="lang-kr">경진대회 논문집 및 캡스톤 논문 추가 예정</span>
+  </div>
+</div>
+
+
       </div>
     
   
@@ -1147,8 +1493,8 @@
         
             <div class="pd-meta">
   <span class="pd-badge">
-    <span class="lang-en">2021 &nbsp;·&nbsp; Solo Project</span>
-    <span class="lang-kr">2021 &nbsp;·&nbsp; 개인 프로젝트</span>
+    <span class="lang-en">2021. 12. &nbsp;·&nbsp; Solo Project</span>
+    <span class="lang-kr">2021. 12. &nbsp;·&nbsp; 개인 프로젝트</span>
   </span>
 </div>
 
@@ -1157,10 +1503,24 @@
   <span class="lang-kr">Arduino Uno와 초음파 센서를 활용한 자동 컨베이어벨트 시스템</span>
 </h2>
 
-<p class="pd-overview">
-  <span class="lang-en">A self-regulating conveyor belt system that automatically starts and stops based on object presence. An HC-SR04 ultrasonic sensor continuously measures the distance above the belt; when an object is detected within 15 cm, the belt activates via a stepper motor and pulley mechanism. When the belt is clear, the motor stops — eliminating the need for manual power control.</span>
-  <span class="lang-kr">초음파 센서로 물체 유무를 감지해 컨베이어벨트를 자동으로 작동·정지하는 시스템. HC-SR04 센서가 벨트 위 거리를 지속 측정하고, 15cm 이내로 물체가 감지되면 스텝모터·풀리 기구를 통해 벨트가 가동됩니다. 벨트 위에 물체가 없으면 자동 정지되어 수동 전원 조작이 불필요합니다.</span>
+<p class="pd-overview-lead">
+  <span class="lang-en">A self-regulating conveyor belt system that automatically starts and stops based on object presence</span>
+  <span class="lang-kr">초음파 센서로 물체 유무를 감지해 컨베이어벨트를 자동으로 작동·정지하는 시스템</span>
 </p>
+<ul class="pd-overview">
+  <li>
+    <span class="lang-en">An HC-SR04 ultrasonic sensor continuously measures the distance above the belt</span>
+    <span class="lang-kr">HC-SR04 센서가 벨트 위 거리를 지속 측정</span>
+  </li>
+  <li>
+    <span class="lang-en">When an object is detected within 15 cm, the belt activates via a stepper motor and pulley mechanism</span>
+    <span class="lang-kr">15cm 이내로 물체가 감지될 시 스텝모터·풀리 기구를 통해 동작</span>
+  </li>
+  <li>
+    <span class="lang-en">When the belt is clear, the motor stops automatically, eliminating the need for manual power control</span>
+    <span class="lang-kr">벨트 위에 물체가 없으면 자동 정지되어 수동 전원 조작이 불필요</span>
+  </li>
+</ul>
 
 <div class="pd-section">
   <h3 class="pd-section-title">
@@ -1189,20 +1549,36 @@
         <span class="lang-en">Speed Control</span>
         <span class="lang-kr">속도 제어</span>
       </span>
-      <p>
-        <span class="lang-en">Used pulleys of different diameters to set the belt's linear speed independently of motor RPM, allowing speed adjustment without changing the stepper drive code.</span>
-        <span class="lang-kr">서로 다른 지름의 풀리를 사용해 모터 RPM과 독립적으로 벨트 선속도를 설정. 스텝 드라이브 코드 변경 없이 속도 조정 가능.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Used pulleys of different diameters to set the belt's linear speed independently of motor RPM</span>
+            <span class="lang-kr">서로 다른 지름의 풀리를 사용해 모터 RPM과 독립적으로 벨트 선속도를 설정</span>
+          </li>
+          <li>
+            <span class="lang-en">Speed adjustment possible without changing the stepper drive code</span>
+            <span class="lang-kr">스텝 드라이브 코드 변경 없이 속도 조정 가능</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="pd-contrib-item">
       <span class="pd-contrib-tag">
         <span class="lang-en">Auto Idle</span>
         <span class="lang-kr">자동 유휴</span>
       </span>
-      <p>
-        <span class="lang-en">The belt halts automatically when no object is detected, reducing unnecessary power consumption and mechanical wear without requiring any manual intervention.</span>
-        <span class="lang-kr">물체 미감지 시 자동 정지로 불필요한 전력 소모 및 기계적 마모 절감. 사람의 개입 불필요.</span>
-      </p>
+      <div class="pd-contrib-body">
+        <ul class="pd-contrib-bullets">
+          <li>
+            <span class="lang-en">Automatic stop on no-detection reduces unnecessary power consumption and mechanical wear</span>
+            <span class="lang-kr">물체 미감지 시 자동 정지로 불필요한 전력 소모 및 기계적 마모 절감</span>
+          </li>
+          <li>
+            <span class="lang-en">No manual intervention required</span>
+            <span class="lang-kr">사람의 개입 불필요</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -1221,10 +1597,22 @@
   </div>
 </div>
 
-        
+<div class="pd-section">
+  <h3 class="pd-section-title">
+    <span class="lang-en">Presentation</span>
+    <span class="lang-kr">발표 자료</span>
+  </h3>
+  <!-- TODO: insert PPT-derived slides/images here -->
+  <div class="pd-placeholder">
+    <span class="lang-en">Presentation slides coming soon</span>
+    <span class="lang-kr">발표 자료 추가 예정</span>
+  </div>
+</div>
+
+
       </div>
-    
-  
+
+
 
 
 
