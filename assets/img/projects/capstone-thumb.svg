@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img" aria-label="3-DOF linear-actuated cobot arm schematic with ANN inverse kinematics network">
+<defs><pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#00c896" stroke-opacity=".07"/></pattern></defs>
+<rect width="800" height="400" fill="#0e1512"/><rect width="800" height="400" fill="url(#g)"/>
+<g stroke-linecap="round" fill="none" stroke="#d7e5df">
+<path d="M95 330H245" stroke-width="6"/><path d="M170 330V250" stroke-width="16"/>
+<path d="M170 250L300 125" stroke-width="13"/><path d="M300 125L410 215" stroke-width="10"/>
+</g>
+<g stroke-linecap="round" stroke="#00c896">
+<path d="M205 310L228 232" stroke-width="11"/><path d="M228 232L250 174" stroke-width="5"/>
+<path d="M262 196L320 178" stroke-width="10"/><path d="M320 178L368 181" stroke-width="5"/>
+</g>
+<circle cx="170" cy="250" r="11" fill="#0e1512" stroke="#00c896" stroke-width="4"/>
+<circle cx="300" cy="125" r="11" fill="#0e1512" stroke="#00c896" stroke-width="4"/>
+<circle cx="410" cy="215" r="11" fill="#0e1512" stroke="#00c896" stroke-width="4"/>
+<rect x="388" y="235" width="44" height="34" rx="3" fill="#00c896" fill-opacity=".18" stroke="#00c896" stroke-width="2"/>
+<path d="M410 226V235" stroke="#d7e5df" stroke-width="4"/>
+<text x="410" y="290" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,Menlo,monospace" font-size="16" fill="#00c896">20 kg</text>
+<g stroke="#3c5a50" stroke-width="1">
+<path d="M530 143L620 92.5"/>
+<path d="M530 143L620 117.5"/>
+<path d="M530 143L620 142.5"/>
+<path d="M530 143L620 167.5"/>
+<path d="M530 143L620 192.5"/>
+<path d="M530 143L620 217.5"/>
+<path d="M530 143L620 242.5"/>
+<path d="M530 143L620 267.5"/>
+<path d="M530 143L620 292.5"/>
+<path d="M530 143L620 317.5"/>
+<path d="M530 205L620 92.5"/>
+<path d="M530 205L620 117.5"/>
+<path d="M530 205L620 142.5"/>
+<path d="M530 205L620 167.5"/>
+<path d="M530 205L620 192.5"/>
+<path d="M530 205L620 217.5"/>
+<path d="M530 205L620 242.5"/>
+<path d="M530 205L620 267.5"/>
+<path d="M530 205L620 292.5"/>
+<path d="M530 205L620 317.5"/>
+<path d="M530 267L620 92.5"/>
+<path d="M530 267L620 117.5"/>
+<path d="M530 267L620 142.5"/>
+<path d="M530 267L620 167.5"/>
+<path d="M530 267L620 192.5"/>
+<path d="M530 267L620 217.5"/>
+<path d="M530 267L620 242.5"/>
+<path d="M530 267L620 267.5"/>
+<path d="M530 267L620 292.5"/>
+<path d="M530 267L620 317.5"/>
+<path d="M620 92.5L710 160"/>
+<path d="M620 92.5L710 250"/>
+<path d="M620 117.5L710 160"/>
+<path d="M620 117.5L710 250"/>
+<path d="M620 142.5L710 160"/>
+<path d="M620 142.5L710 250"/>
+<path d="M620 167.5L710 160"/>
+<path d="M620 167.5L710 250"/>
+<path d="M620 192.5L710 160"/>
+<path d="M620 192.5L710 250"/>
+<path d="M620 217.5L710 160"/>
+<path d="M620 217.5L710 250"/>
+<path d="M620 242.5L710 160"/>
+<path d="M620 242.5L710 250"/>
+<path d="M620 267.5L710 160"/>
+<path d="M620 267.5L710 250"/>
+<path d="M620 292.5L710 160"/>
+<path d="M620 292.5L710 250"/>
+<path d="M620 317.5L710 160"/>
+<path d="M620 317.5L710 250"/>
+</g>
+<circle cx="620" cy="92.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="117.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="142.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="167.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="192.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="217.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="242.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="267.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="292.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="620" cy="317.5" r="8" fill="#0e1512" stroke="#00c896" stroke-width="2"/>
+<circle cx="530" cy="143" r="11" fill="#00c896"/>
+<circle cx="530" cy="205" r="11" fill="#00c896"/>
+<circle cx="530" cy="267" r="11" fill="#00c896"/>
+<circle cx="710" cy="160" r="11" fill="#00c896"/>
+<circle cx="710" cy="250" r="11" fill="#00c896"/>
+<text x="40" y="104" font-family="'IBM Plex Mono',Consolas,Menlo,monospace" font-size="30" font-weight="700" fill="#00c896">P/W 1.43</text>
+<text x="40" y="130" font-family="'IBM Plex Mono',Consolas,Menlo,monospace" font-size="15" fill="#d7e5df">3-DOF · LINEAR DRIVE</text>
+<text x="620" y="78" text-anchor="middle" font-family="'IBM Plex Mono',Consolas,Menlo,monospace" font-size="15" fill="#d7e5df">ANN IK</text>
+</svg>
