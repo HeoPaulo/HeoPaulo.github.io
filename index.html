@@ -347,10 +347,13 @@
            data-name-kr="캡스톤디자인 &lt;선형구동 방식 고하중 협동로봇 및 ANN 역기구학&gt;"
            data-desc-en="Undergraduate capstone research designing a linear-actuator collaborative robot for high-payload tasks and applying an ANN to solve inverse kinematics, replacing closed-form equations with a trained model."
            data-desc-kr="선형 액추에이터 기반 고하중 협동로봇 구조 설계 및 ANN 역기구학 적용 연구. 기존 회전관절의 가반하중 한계를 극복하고 신경망으로 역기구학 해를 추정하는 졸업 논문."
-           data-img=""
+           data-img="/assets/img/projects/capstone-thesis-thumb.png"
            data-demo=""
            data-tags="Linear Actuator,ANN (IK),Forward/Inverse Kinematics,Python,CAD"
            data-detail="capstone">
+        <div class="project-thumb">
+            <img src="/assets/img/projects/capstone-thesis-thumb.png" alt="Linear-Drive High-Load Cobot &amp; ANN Inverse Kinematics" loading="lazy" style="object-position: center 28%;">
+        </div>
         <div class="project-body">
           <h3 class="project-title">
             <span class="lang-en">Linear-Drive High-Load Cobot & ANN Inverse Kinematics</span>
@@ -1251,14 +1254,16 @@
     <span class="lang-en">Presentation & Demo</span>
     <span class="lang-kr">발표 자료 및 시연 영상</span>
   </h3>
-  <!-- TODO: insert PPT-derived slides/images and a demo video (assets/video/pancake-demo.mp4) here -->
-  <div class="pd-placeholder">
-    <span class="lang-en">Presentation slides and demo video coming soon</span>
-    <span class="lang-kr">발표 자료 및 시연 영상 추가 예정</span>
-  </div>
+  <video class="pd-video" controls playsinline preload="metadata">
+    <source src="/assets/video/pancake-demo.mp4" type="video/mp4">
+  </video>
 </div>
 
 <div class="pd-links">
+  <a href="/assets/docs/pancake-presentation.pdf" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">
+    <span class="lang-en">Presentation (PDF) →</span>
+    <span class="lang-kr">발표 자료 (PDF) →</span>
+  </a>
   <a href="https://github.com/HeoPaulo/cobot1_pancake_machine" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">GitHub →</a>
 </div>
 
@@ -1474,11 +1479,47 @@
     <span class="lang-en">Publications</span>
     <span class="lang-kr">관련 논문 및 발표 자료</span>
   </h3>
-  <!-- TODO: insert the 2 competition proceedings papers + capstone thesis for this research -->
-  <div class="pd-placeholder">
-    <span class="lang-en">Competition proceedings and thesis coming soon</span>
-    <span class="lang-kr">경진대회 논문집 및 캡스톤 논문 추가 예정</span>
+  <ul class="pd-overview">
+    <li>
+      <span class="lang-en"><strong>Graduation Thesis</strong> — Linear Actuated Heavy-duty Collaborative Robot Design &amp; Methodology of ANN Inverse Kinematics (Univ. of Suwon, Nov 2023)</span>
+      <span class="lang-kr"><strong>졸업논문</strong> — 선형구동 방식 고하중 협동로봇 구동기 설계 및 ANN 역기구학 방법 (수원대학교, 2023. 11.)</span>
+    </li>
+    <li>
+      <span class="lang-en"><strong>KSME 2023 Spring Conference (IT Convergence)</strong> — Design of a Safe High-Payload Cobot Actuator (Apr 2023, Jeonbuk National Univ.)</span>
+      <span class="lang-kr"><strong>대한기계학회 2023 춘계학술대회 (IT융합부문)</strong> — 안전한 고하중 협동로봇 구동기 설계 (2023. 4., 전북대학교)</span>
+    </li>
+    <li>
+      <span class="lang-en"><strong>38th ICROS Annual Conference (ICROS2023)</strong> — ANN Inverse Kinematics Method for a Linear-Drive High-Payload Cobot (Jun 2023, Samcheok)</span>
+      <span class="lang-kr"><strong>제38회 제어·로봇·시스템학회 학술대회 (ICROS2023)</strong> — 선형구동 방식 고하중 협동로봇 ANN 역기구학 방법 (2023. 6., 삼척)</span>
+    </li>
+  </ul>
+  <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+    <figure style="margin:0">
+      <a href="/assets/img/projects/ksme2023.jpg" target="_blank" rel="noreferrer">
+        <img src="/assets/img/projects/ksme2023.jpg" alt="KSME 2023 Spring Conference proceedings" class="pd-arch-img" loading="lazy">
+      </a>
+      <figcaption class="pd-img-caption">
+        <span class="lang-en">KSME 2023 Spring Conference</span>
+        <span class="lang-kr">대한기계학회 2023 춘계학술대회</span>
+      </figcaption>
+    </figure>
+    <figure style="margin:0">
+      <a href="/assets/img/projects/icros2023.jpg" target="_blank" rel="noreferrer">
+        <img src="/assets/img/projects/icros2023.jpg" alt="ICROS2023 Annual Conference" class="pd-arch-img" loading="lazy">
+      </a>
+      <figcaption class="pd-img-caption">
+        <span class="lang-en">ICROS2023 Annual Conference</span>
+        <span class="lang-kr">제38회 제어·로봇·시스템학회 학술대회</span>
+      </figcaption>
+    </figure>
   </div>
+</div>
+
+<div class="pd-links">
+  <a href="/assets/docs/capstone-thesis.pdf" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">
+    <span class="lang-en">Graduation Thesis (PDF) →</span>
+    <span class="lang-kr">졸업논문 (PDF) →</span>
+  </a>
 </div>
 
 
@@ -1599,10 +1640,11 @@
     <span class="lang-en">Presentation</span>
     <span class="lang-kr">발표 자료</span>
   </h3>
-  <!-- TODO: insert PPT-derived slides/images here -->
-  <div class="pd-placeholder">
-    <span class="lang-en">Presentation slides coming soon</span>
-    <span class="lang-kr">발표 자료 추가 예정</span>
+  <div class="pd-links">
+    <a href="/assets/docs/conveyor-presentation.pdf" target="_blank" rel="noreferrer" class="modal-link modal-link-secondary">
+      <span class="lang-en">Presentation (PDF) →</span>
+      <span class="lang-kr">발표 자료 (PDF) →</span>
+    </a>
   </div>
 </div>
 
