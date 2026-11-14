@@ -1241,8 +1241,8 @@
             </ul>
           </li>
           <li>
-            <span class="lang-en">Final model: conf=0.75 / iou=0.50 / imgsz=800, ~8ms inference, test mAP@0.5 = 0.992, F1 = 0.9931</span>
-            <span class="lang-kr">최종 모델: conf=0.75 / iou=0.50 / imgsz=800, 추론 ~8ms, test mAP@0.5 = 0.992, F1 = 0.9931</span>
+            <span class="lang-en">Final model: test mAP@0.5 = 0.992, 7.4 ms inference (about 15 ms per image end to end); a 33-run threshold sweep gave conf=0.40 / iou=0.50 as the optimum (F1 = 0.993), and the robot runs at conf=0.75 / imgsz=800</span>
+            <span class="lang-kr">최종 모델: test mAP@0.5 = 0.992, 추론 7.4ms(이미지당 전체 약 15ms). 33회 threshold 스윕으로 최적값 conf=0.40 / iou=0.50 도출(F1 = 0.993), 실제 구동은 conf=0.75 / imgsz=800</span>
           </li>
           <li>
             <span class="lang-en">Depth pipeline: OBB inset 0.7 median depth, per-class z_offset correction</span>
@@ -1265,11 +1265,11 @@
       <span style="font-size:0.78rem; opacity:0.7">test mAP@0.5</span>
     </div>
     <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
-      <span class="pd-step-num">0.9931</span>
+      <span class="pd-step-num">0.993</span>
       <span style="font-size:0.78rem; opacity:0.7">F1 Score</span>
     </div>
     <div class="pd-step" style="flex-direction: column; align-items: flex-start; gap: 0.15rem;">
-      <span class="pd-step-num">~8 ms</span>
+      <span class="pd-step-num">7.4 ms</span>
       <span style="font-size:0.78rem; opacity:0.7">
         <span class="lang-en">Inference (RTX 5060)</span>
         <span class="lang-kr">추론 속도 (RTX 5060)</span>
@@ -1284,8 +1284,8 @@
     </div>
   </div>
   <p style="font-size:0.8rem; opacity:0.65; margin:0.5rem 0 0;">
-    <span class="lang-en">YOLOv8n-OBB · 396 images / 2,992 boxes · 4 classes (almond / cashew / pistachio / walnut) · 2-phase training (80+30 epochs) · Mosaic, HSV, Mixup aug</span>
-    <span class="lang-kr">YOLOv8n-OBB · 396장 / 2,992 박스 · 4클래스(아몬드·캐슈넛·피스타치오·호두) · 2단계 학습(80+30에폭) · Mosaic·HSV·Mixup 증강</span>
+    <span class="lang-en">YOLOv8n-OBB · 446 images / 3,559 instances · 4 classes (almond / cashew / pistachio / walnut) · 2-phase training (80+30 epochs) · Mosaic, HSV, Mixup aug</span>
+    <span class="lang-kr">YOLOv8n-OBB · 446장 / 3,559 인스턴스 · 4클래스(아몬드·캐슈넛·피스타치오·호두) · 2단계 학습(80+30에폭) · Mosaic·HSV·Mixup 증강</span>
   </p>
 </div>
 
@@ -1489,8 +1489,8 @@
             </ul>
           </li>
           <li>
-            <span class="lang-en">7-step emergency recovery procedure for safety-stop and E-stop events</span>
-            <span class="lang-kr">안전정지·비상정지 7단계 긴급 복구 절차</span>
+            <span class="lang-en">4-step automatic recovery procedure for safety-stop and E-stop events</span>
+            <span class="lang-kr">안전정지·비상정지 4단계 자동 복구 절차</span>
           </li>
         </ul>
       </div>
