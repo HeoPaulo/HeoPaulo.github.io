@@ -1056,6 +1056,22 @@ a {
     margin-top: 0.5rem;
   }
 
+  .pd-poster-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+
+    figure { margin: 0; }
+    img { display: block; width: 100%; border-radius: 0.4rem; }
+    figcaption {
+      margin-top: 0.35rem;
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba($text-color, 0.55);
+    }
+  }
+
   .pd-links-note {
     font-size: 0.78rem;
     color: rgba($text-color, 0.5);

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 830" width="1400" height="830">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8c85"/></marker></defs>
+<rect width="1400" height="830" fill="#ffffff"/>
+<rect x="20" y="55" width="380" height="365" rx="16" fill="#eef1ef"/>
+<text x="26" y="41" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="24" font-weight="700" fill="#16211c" text-anchor="start">① Sensor input</text>
+<rect x="510" y="55" width="380" height="365" rx="16" fill="#eef1ef"/>
+<text x="516" y="41" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="24" font-weight="700" fill="#16211c" text-anchor="start">② On-device AI</text>
+<rect x="1000" y="55" width="380" height="365" rx="16" fill="#eef1ef"/>
+<text x="1006" y="41" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="24" font-weight="700" fill="#16211c" text-anchor="start">③ Wellness check</text>
+<rect x="20" y="485" width="380" height="310" rx="16" fill="#eef1ef"/>
+<text x="26" y="471" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="24" font-weight="700" fill="#c0392b" text-anchor="start">⑥ Escalation</text>
+<rect x="510" y="485" width="380" height="310" rx="16" fill="#eef1ef"/>
+<text x="516" y="471" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="24" font-weight="700" fill="#16211c" text-anchor="start">⑤ Response</text>
+<rect x="1000" y="485" width="380" height="310" rx="16" fill="#eef1ef"/>
+<text x="1006" y="471" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="24" font-weight="700" fill="#16211c" text-anchor="start">④ Server · alerts</text>
+<path d="M370,135 L538,135" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M370,212 L445,212 L445,340 L538,340" fill="none" stroke="#7d8c85" stroke-width="2.5" stroke-dasharray="9 7" marker-end="url(#a)"/>
+<path d="M370,291 L445,291" fill="none" stroke="#7d8c85" stroke-width="2.5" stroke-dasharray="9 7"/>
+<path d="M700,174 L700,198" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M700,274 L700,298" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M860,350 L945,350 L945,235 L1028,235" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M1350,235 L1388,235 L1388,732 L1352,732" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="1378" y="480" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="600" fill="#4b5a53" text-anchor="end">no response</text>
+<path d="M1190,295 L1190,513" fill="none" stroke="#7d8c85" stroke-width="2.5" stroke-dasharray="9 7" marker-end="url(#a)"/>
+<text x="1176" y="370" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="600" fill="#4b5a53" text-anchor="end">detections · responses</text>
+<path d="M1030,552 L862,552" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M1030,732 L862,732" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M1030,642 L372,642" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<path d="M540,732 L455,732 L455,675 L372,675" fill="none" stroke="#7d8c85" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="445" y="722" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="600" fill="#4b5a53" text-anchor="end">unconfirmed</text>
+<path d="M800,515 L800,402" fill="none" stroke="#7d8c85" stroke-width="2.5" stroke-dasharray="9 7" marker-end="url(#a)"/>
+<text x="815" y="450" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="600" fill="#4b5a53" text-anchor="start">feedback loop</text>
+<rect x="50" y="105" width="320" height="60" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="210.0" y="144.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Camera</text>
+<rect x="50" y="180" width="320" height="64" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="210.0" y="208.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">IMU</text>
+<text x="210.0" y="236.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">accel · tilt</text>
+<rect x="50" y="259" width="320" height="64" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="210.0" y="287.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Comms</text>
+<text x="210.0" y="315.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">GPS / LTE · Wi-Fi</text>
+<rect x="50" y="338" width="320" height="64" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2" stroke-dasharray="8 6"/>
+<text x="210.0" y="366.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Power</text>
+<text x="210.0" y="394.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">low-frame saving + battery</text>
+<rect x="540" y="100" width="320" height="74" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="700.0" y="133.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">MoveNet Lightning</text>
+<text x="700.0" y="161.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">TFLite pose estimation</text>
+<rect x="540" y="200" width="320" height="74" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="700.0" y="233.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">LightGBM</text>
+<text x="700.0" y="261.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">first-pass fall decision</text>
+<rect x="540" y="300" width="320" height="100" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="700.0" y="334.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">State machine</text>
+<text x="700.0" y="362.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">NORMAL → FALLING →</text>
+<text x="700.0" y="387.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">IMPACT → CONFIRMED</text>
+<rect x="1030" y="175" width="320" height="120" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="1190.0" y="219.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Wellness check</text>
+<text x="1190.0" y="247.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">voice · screen prompt</text>
+<text x="1190.0" y="272.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">“Are you okay?”</text>
+<rect x="1030" y="515" width="320" height="74" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="1190.0" y="548.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Data store</text>
+<text x="1190.0" y="576.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">FP / FN labels</text>
+<rect x="1030" y="610" width="320" height="64" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="1190.0" y="651.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Monitoring web</text>
+<rect x="1030" y="700" width="320" height="64" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="1190.0" y="741.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Alert server (FCM)</text>
+<rect x="540" y="515" width="320" height="74" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="700.0" y="548.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Model retraining</text>
+<text x="700.0" y="576.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">pipeline</text>
+<rect x="540" y="700" width="320" height="64" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<text x="700.0" y="741.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="middle">Guardian app</text>
+<rect x="50" y="585" width="320" height="110" rx="10" fill="#fff" stroke="#c0392b" stroke-width="2.2"/>
+<text x="210.0" y="636.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#c0392b" text-anchor="middle">Control center</text>
+<text x="210.0" y="664.5" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#c0392b" text-anchor="middle">→ automatic 119 call</text>
+</svg>
