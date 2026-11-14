@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7d8c85"/></marker><marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
+<rect width="1400" height="720" fill="#ffffff"/>
+<rect x="20" y="28" width="1360" height="148" rx="14" fill="#eef3fb"/>
+<text x="40" y="96.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">C2</text>
+<text x="40" y="123.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">지휘통제실</text>
+<rect x="20" y="198" width="1360" height="148" rx="14" fill="#eef6f2"/>
+<text x="40" y="266.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">순찰 제어</text>
+<text x="40" y="293.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">(Nav2)</text>
+<rect x="20" y="368" width="1360" height="148" rx="14" fill="#fbf6ea"/>
+<text x="40" y="436.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">시뮬레이션</text>
+<text x="40" y="463.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">(Isaac Sim)</text>
+<rect x="20" y="538" width="1360" height="148" rx="14" fill="#f6eef3"/>
+<text x="40" y="619.0" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">인지 · 관제</text>
+<path d="M630,102.0 L668,102.0" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M1000,102.0 L1038,102.0" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M1205.0,154 L1205.0,218" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M1040,272.0 L1002,272.0" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M670,272.0 L632,272.0" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M465.0,324 L465.0,388" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M630,442.0 L668,442.0" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M1000,442.0 L1038,442.0" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M1205.0,494 L1205.0,558" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M1040,612.0 L1002,612.0" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M670,612.0 L632,612.0" fill="none" stroke="#7d8c85" stroke-width="2.6" marker-end="url(#a)"/>
+<path d="M300,612.0 L262,612.0 L262,16 L835.0,16 L835.0,48" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-dasharray="9 7" marker-end="url(#r)"/>
+<rect x="849.0" y="2" width="300" height="24" fill="#fff"/>
+<text x="855.0" y="21" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="700" fill="#c0392b" text-anchor="start">경보 → C2 서버 (순환)</text>
+<rect x="300" y="50" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="330" cy="82" r="17" fill="#047857"/>
+<text x="330" y="89" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+<text x="358" y="90" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">관제자 시작</text>
+<text x="358" y="126" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">관제자가 시스템 시작</text>
+<rect x="670" y="50" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="700" cy="82" r="17" fill="#047857"/>
+<text x="700" y="89" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+<text x="728" y="90" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">C2 서버 통신</text>
+<text x="728" y="126" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">관제자 ↔ C2 서버</text>
+<rect x="1040" y="50" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="1070" cy="82" r="17" fill="#047857"/>
+<text x="1070" y="89" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+<text x="1098" y="90" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">임무 명령 전송</text>
+<text x="1098" y="126" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">C2 서버가 임무 하달</text>
+<rect x="1040" y="220" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="1070" cy="252" r="17" fill="#047857"/>
+<text x="1070" y="259" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+<text x="1098" y="260" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">순찰 목표 관리</text>
+<text x="1098" y="296" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">nav2_patrol 경유지 관리</text>
+<rect x="670" y="220" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="700" cy="252" r="17" fill="#047857"/>
+<text x="700" y="259" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+<text x="728" y="260" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">속도 명령 생성</text>
+<text x="728" y="296" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">nav2_patrol → cmd_vel</text>
+<rect x="300" y="220" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="330" cy="252" r="17" fill="#047857"/>
+<text x="330" y="259" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+<text x="358" y="260" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">안전 필터 적용</text>
+<text x="358" y="296" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">속도 상한 제한</text>
+<rect x="300" y="390" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="330" cy="422" r="17" fill="#047857"/>
+<text x="330" y="429" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">7</text>
+<text x="358" y="430" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">보행 실행</text>
+<text x="358" y="466" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">RL 정책으로 4족 보행</text>
+<rect x="670" y="390" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="700" cy="422" r="17" fill="#047857"/>
+<text x="700" y="429" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">8</text>
+<text x="728" y="430" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">DMZ 순찰</text>
+<text x="728" y="466" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">로봇이 경계 구역 순찰</text>
+<rect x="1040" y="390" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="1070" cy="422" r="17" fill="#047857"/>
+<text x="1070" y="429" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">9</text>
+<text x="1098" y="430" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">카메라 영상 수집</text>
+<text x="1098" y="466" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">7채널 카메라 스트림</text>
+<rect x="1040" y="560" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="1070" cy="592" r="17" fill="#047857"/>
+<text x="1070" y="599" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">10</text>
+<text x="1098" y="600" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">YOLO 감지</text>
+<text x="1098" y="636" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">사람 · 군인 · 드론 · 동물</text>
+<rect x="670" y="560" width="330" height="104" rx="10" fill="#fff" stroke="#16211c" stroke-width="2.2"/>
+<circle cx="700" cy="592" r="17" fill="#047857"/>
+<text x="700" y="599" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">11</text>
+<text x="728" y="600" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#16211c" text-anchor="start">관제 화면 갱신</text>
+<text x="728" y="636" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">전술 콘솔 업데이트</text>
+<rect x="300" y="560" width="330" height="104" rx="10" fill="#fff" stroke="#c0392b" stroke-width="2.2"/>
+<circle cx="330" cy="592" r="17" fill="#c0392b"/>
+<text x="330" y="599" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">12</text>
+<text x="358" y="600" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="23" font-weight="700" fill="#c0392b" text-anchor="start">경보 발생</text>
+<text x="358" y="636" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="start">C2 서버로 경보 전송</text>
+</svg>
