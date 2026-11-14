@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 940" width="1400" height="940">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9fb0a8"/></marker></defs>
+<rect width="1400" height="940" fill="#ffffff"/>
+<rect x="20" y="20" width="640" height="190" rx="12" fill="#eef3fb" stroke="#7a9cc6" stroke-width="2"/>
+<text x="40" y="54" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="start">PC3 · 웹 / UI</text>
+<rect x="40" y="72" width="260" height="120" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="170.0" y="102" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">Web Frontend</text>
+<text x="170.0" y="132" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">문진 · 환자 디스플레이</text>
+<text x="170.0" y="158" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">순찰 시작 / 투약 시작</text>
+<rect x="360" y="72" width="280" height="120" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="500.0" y="102" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">FastAPI Backend</text>
+<text x="500.0" y="132" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">환자 · 처방 · OCR API</text>
+<text x="500.0" y="158" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">Firebase 읽기 / 쓰기</text>
+<line x1="302" y1="132" x2="358" y2="132" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="330" y="122" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="400" fill="#4b5a53" text-anchor="middle">REST</text>
+<rect x="740" y="20" width="640" height="190" rx="12" fill="#fbeeee" stroke="#c98a8a" stroke-width="2"/>
+<text x="760" y="54" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" fill="#16211c" text-anchor="start">Firebase Realtime DB</text>
+<rect x="760" y="74" width="300" height="50" rx="25" fill="#fff" stroke="#c98a8a" stroke-width="1.5"/>
+<text x="910" y="106" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#16211c" text-anchor="middle">mission_pool · 미션 큐</text>
+<rect x="1070" y="74" width="300" height="50" rx="25" fill="#fff" stroke="#c98a8a" stroke-width="1.5"/>
+<text x="1220" y="106" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#16211c" text-anchor="middle">mission_status · 1Hz 상태</text>
+<rect x="760" y="136" width="300" height="50" rx="25" fill="#fff" stroke="#c98a8a" stroke-width="1.5"/>
+<text x="910" y="168" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#16211c" text-anchor="middle">mission_log · 결과 기록</text>
+<rect x="1070" y="136" width="300" height="50" rx="25" fill="#fff" stroke="#c98a8a" stroke-width="1.5"/>
+<text x="1220" y="168" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#16211c" text-anchor="middle">rooms · 병실 좌표 · 환자</text>
+<line x1="662" y1="132" x2="738" y2="132" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="700" y="120" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="400" fill="#4b5a53" text-anchor="middle">미션 등록</text>
+<line x1="1060" y1="210" x2="1060" y2="240" stroke="#9fb0a8" stroke-width="2.5"/>
+<line x1="340" y1="240" x2="1060" y2="240" stroke="#9fb0a8" stroke-width="2.5"/>
+<line x1="340" y1="240" x2="340" y2="286" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="1060" y1="240" x2="1060" y2="286" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="490" y="226" width="420" height="28" fill="#fff"/>
+<text x="700" y="247" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">db_bridge ↔ RTDB : 미션 요청 · 상태 · 결과</text>
+<rect x="20" y="288" width="660" height="500" rx="12" fill="#f6f8f7" stroke="#a9b8b1" stroke-width="2"/>
+<text x="40" y="320" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">PC1 · robot3 — 모드 A: 자율 순찰 + 문진 보조</text>
+<rect x="40" y="334" width="620" height="70" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="350.0" y="364" font-family="Consolas, 'D2Coding', monospace" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">db_bridge</text>
+<text x="350.0" y="390" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">db_node (RTDB ↔ ROS) · rooms_server · prescription_server</text>
+<line x1="350.0" y1="404" x2="350.0" y2="420" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="40" y="422" width="620" height="70" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="350.0" y="452" font-family="Consolas, 'D2Coding', monospace" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">mission_manager_node</text>
+<text x="350.0" y="482" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">IDLE → UNDOCK → PATROL_START → DOCK → DONE</text>
+<line x1="350.0" y1="492" x2="350.0" y2="508" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="40" y="510" width="300" height="160" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="190.0" y="540" font-family="Consolas, 'D2Coding', monospace" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">patrol_mode_node</text>
+<text x="190.0" y="570" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">병실 목록 조회</text>
+<text x="190.0" y="596" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">NavigateToPose 이동</text>
+<text x="190.0" y="622" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">도착 시 환자 식별 요청</text>
+<text x="190.0" y="648" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">30초 대기 후 다음 병실</text>
+<rect x="360" y="510" width="300" height="160" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="510.0" y="540" font-family="Consolas, 'D2Coding', monospace" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">patient_identifier_node</text>
+<text x="510.0" y="570" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">YOLOv8s 재실 확인</text>
+<text x="510.0" y="596" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">QR 팔찌 스캔 (3회 재시도)</text>
+<text x="510.0" y="622" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">처방 · 병실 DB 대조</text>
+<text x="510.0" y="648" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="400" fill="#4b5a53" text-anchor="middle">identified / mismatch / absent</text>
+<line x1="342" y1="590" x2="358" y2="590" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)" marker-start="url(#a)"/>
+<line x1="350.0" y1="670" x2="350.0" y2="686" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="40" y="688" width="620" height="84" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="350.0" y="718" font-family="Consolas, 'D2Coding', monospace" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">Nav2 Stack</text>
+<text x="350.0" y="748" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">bt_navigator · planner / controller · AMCL · costmap</text>
+<line x1="350" y1="790" x2="350" y2="846" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="365" y="824" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="400" fill="#4b5a53" text-anchor="start">/scan · /cmd_vel · 카메라 영상</text>
+<rect x="20" y="848" width="660" height="80" rx="8" fill="#fdf6e3" stroke="#d2b26a" stroke-width="2"/>
+<text x="350.0" y="878" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="700" fill="#16211c" text-anchor="middle">TurtleBot4 AMR · robot3</text>
+<text x="350.0" y="908" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">Create3 베이스 · RPLIDAR · OAK-D</text>
+<rect x="720" y="288" width="660" height="500" rx="12" fill="#f6f8f7" stroke="#a9b8b1" stroke-width="2"/>
+<text x="740" y="320" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" fill="#16211c" text-anchor="start">PC2 · robot6 — 모드 B: 간호사 추종 + 투약 보조</text>
+<rect x="740" y="334" width="620" height="70" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="1050.0" y="364" font-family="Consolas, 'D2Coding', monospace" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">db_bridge</text>
+<text x="1050.0" y="390" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">db_node (RTDB ↔ ROS) · rooms_server · prescription_server</text>
+<line x1="1050.0" y1="404" x2="1050.0" y2="420" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="740" y="422" width="620" height="70" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="1050.0" y="452" font-family="Consolas, 'D2Coding', monospace" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">mission_manager_node</text>
+<text x="1050.0" y="482" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">IDLE → UNDOCK → MEDICINE_START → DOCK → DONE</text>
+<line x1="1050.0" y1="492" x2="1050.0" y2="508" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="740" y="510" width="200" height="160" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="840.0" y="540" font-family="Consolas, 'D2Coding', monospace" font-size="15" font-weight="700" fill="#047857" text-anchor="middle">medicine_mode_node</text>
+<text x="840.0" y="570" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">병실 이동</text>
+<text x="840.0" y="596" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">추종 cmd_vel 중계</text>
+<text x="840.0" y="622" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">safety_gate</text>
+<text x="840.0" y="648" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">장애물 0.30 m 이내 정지</text>
+<rect x="950" y="510" width="200" height="160" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="1050.0" y="540" font-family="Consolas, 'D2Coding', monospace" font-size="15" font-weight="700" fill="#047857" text-anchor="middle">tracker_node</text>
+<text x="1050.0" y="570" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">RGB + Depth 동기화</text>
+<text x="1050.0" y="596" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">간호사 탐지 · 추적</text>
+<text x="1050.0" y="622" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">거리 유지 cmd_vel</text>
+<rect x="1160" y="510" width="200" height="160" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="1260.0" y="540" font-family="Consolas, 'D2Coding', monospace" font-size="15" font-weight="700" fill="#047857" text-anchor="middle">medicine_verifier_node</text>
+<text x="1260.0" y="570" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">QR → 처방 조회</text>
+<text x="1260.0" y="596" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">약품 라벨 OCR</text>
+<text x="1260.0" y="622" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">처방 순서 대조</text>
+<line x1="1050.0" y1="670" x2="1050.0" y2="686" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="740" y="688" width="620" height="84" rx="8" fill="#ffffff" stroke="#6f8179" stroke-width="2"/>
+<text x="1050.0" y="718" font-family="Consolas, 'D2Coding', monospace" font-size="20" font-weight="700" fill="#047857" text-anchor="middle">Nav2 Stack</text>
+<text x="1050.0" y="748" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="400" fill="#4b5a53" text-anchor="middle">bt_navigator · planner / controller · AMCL · costmap</text>
+<line x1="1050" y1="790" x2="1050" y2="846" stroke="#9fb0a8" stroke-width="2.5" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="1065" y="824" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="400" fill="#4b5a53" text-anchor="start">/scan · /cmd_vel · 카메라 영상</text>
+<rect x="720" y="848" width="660" height="80" rx="8" fill="#fdf6e3" stroke="#d2b26a" stroke-width="2"/>
+<text x="1050.0" y="878" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="700" fill="#16211c" text-anchor="middle">TurtleBot4 AMR · robot6</text>
+<text x="1050.0" y="908" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="400" fill="#4b5a53" text-anchor="middle">Create3 베이스 · RPLIDAR · OAK-D</text>
+</svg>
